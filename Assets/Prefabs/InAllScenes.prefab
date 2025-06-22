@@ -174,8 +174,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3555266551222408329}
   serializedVersion: 2
-  m_LocalRotation: {x: -5.1266833e-16, y: 0.0056212344, z: 2.8818743e-18, w: 0.9999842}
-  m_LocalPosition: {x: -11.024775, y: 5, z: -14.099568}
+  m_LocalRotation: {x: 0.000000023283372, y: -0.009373765, z: 2.1826244e-10, w: 0.9999561}
+  m_LocalPosition: {x: -10.486379, y: 5.05, z: -12.772191}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -453,8 +453,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5005362440837675223}
   serializedVersion: 2
-  m_LocalRotation: {x: -5.126296e-16, y: 0.0056212344, z: 9.767173e-18, w: 0.9999842}
-  m_LocalPosition: {x: -11.024775, y: 5, z: -14.099568}
+  m_LocalRotation: {x: 0.000000023283368, y: -0.0093737645, z: 2.1826238e-10, w: 0.99995613}
+  m_LocalPosition: {x: -10.486379, y: 5.05, z: -12.772191}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -521,7 +521,7 @@ MonoBehaviour:
     AngularDampingMode: 0
     RotationDamping: {x: 0, y: 0, z: 0}
     QuaternionDamping: 1
-  FollowOffset: {x: 0.5, y: 5, z: -7.5}
+  FollowOffset: {x: 0.5, y: 5, z: -8}
 --- !u!114 &5818064858881530791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -577,8 +577,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6114391257106352590}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.015619296, z: -0, w: 0.99987805}
-  m_LocalPosition: {x: -11.29027, y: 0, z: -6.5876102}
+  m_LocalRotation: {x: 0, y: 9.673984e-12, z: 0, w: 1}
+  m_LocalPosition: {x: -10.986379, y: 0.05, z: -4.772191}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -664,7 +664,7 @@ Transform:
   m_GameObject: {fileID: 6349819000789709333}
   serializedVersion: 2
   m_LocalRotation: {x: 0.1736051, y: -0.021935413, z: 0.003867804, w: 0.98456347}
-  m_LocalPosition: {x: 0.15, y: 0.86000013, z: 0}
+  m_LocalPosition: {x: 0.15, y: 0.6, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -714,9 +714,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d22484419b446c0a935018fde9cc55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lateralSpeed: 2
+  lateralSpeed: 3
   movementRadius: 5
-  movementCenterHeight: 5
+  playerCenter: 0.5
 --- !u!1 &7604523944830542364
 GameObject:
   m_ObjectHideFlags: 0
