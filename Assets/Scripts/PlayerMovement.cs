@@ -5,19 +5,19 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float lateralSpeed = 2f;
     [SerializeField] float movementRadius = 10f;
-    [SerializeField] float movementCenterHeight = 0f;
+    [SerializeField] float playerCenter = 0f;
 
     float moveDir = 0f;
     float angle = 0;
-    float radius;
     bool isInTheAir = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         angle = 0;
-        radius = GetComponentInChildren<Renderer>().bounds.size.x / 2;
         isInTheAir = false;
+        UpdatePosition();
+        UpdateOrientation();
     }
 
     // Update is called once per frame
@@ -33,8 +33,8 @@ public class PlayerMovement : MonoBehaviour
     void UpdatePosition()
     {
         transform.localPosition = new Vector3(
-            (movementRadius - radius) * Mathf.Sin(angle),
-            -(movementRadius - radius) * Mathf.Cos(angle) + movementRadius,
+            (movementRadius - playerCenter) * Mathf.Sin(angle),
+            -(movementRadius - playerCenter) * Mathf.Cos(angle) + movementRadius,
             0
         );
     }
@@ -61,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 movementSpherePosition = new Vector3(
             transform.position.x,
-            movementCenterHeight,
+            movementRadius,
             transform.position.z
         );
 
