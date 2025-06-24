@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,28 +10,39 @@ public class PlayerMovement : MonoBehaviour
 
     float moveDir = 0f;
     float angle = 0;
-    bool isInTheAir = false;
+    bool isJumping = false;
+
+    InputAction movementAction;
+    InputAction jumpAction;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        angle = 0;
-        isInTheAir = false;
-        UpdatePosition();
+        movementAction = InputSystem.actions.FindAction("Move");
+        jumpAction = InputSystem.actions.FindAction("Jump");
+
+        UpdatePositionOnCircle();
         UpdateOrientation();
     }
 
     // Update is called once per frame
     void Update()
     {
+        ReadMoveInputAndUpdateAngle();
+        UpdatePositionOnCircle();
+        UpdateOrientation();
+        ReadAndProcessJumpInput();
+    }
+
+    void ReadMoveInputAndUpdateAngle()
+    {
+        moveDir = movementAction.ReadValue<Vector2>().x;
         if (moveDir == 0f) return;
 
         angle += moveDir * lateralSpeed * Time.deltaTime;
-        UpdatePosition();
-        UpdateOrientation();
     }
 
-    void UpdatePosition()
+    void UpdatePositionOnCircle()
     {
         transform.localPosition = new Vector3(
             (movementRadius - playerCenter) * Mathf.Sin(angle),
@@ -44,17 +56,18 @@ public class PlayerMovement : MonoBehaviour
         transform.localEulerAngles = new Vector3(0, 0, Mathf.Rad2Deg*angle);
     }
 
-    public void OnMove(InputValue value)
+    void ReadAndProcessJumpInput()
     {
-        moveDir = value.Get<Vector2>().x;
-    }
-
-    public void OnJump(InputValue value)
-    {
-        if (isInTheAir) return;
-
-        isInTheAir = true;
-
+        if (jumpAction.IsPressed() && !isJumping)
+        {
+            print("I Jump");
+            isJumping = true;
+        }
+        else if (!jumpAction.IsPressed() && isJumping)
+        {
+            print("I land");
+            isJumping = false;
+        }
     }
 
     private void OnDrawGizmos()
@@ -67,5 +80,5 @@ public class PlayerMovement : MonoBehaviour
 
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(movementSpherePosition, movementRadius);
-   }
+    }
 }
