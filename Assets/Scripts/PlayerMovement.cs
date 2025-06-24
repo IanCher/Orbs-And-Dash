@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float lateralSpeed = 2f;
     [SerializeField] float movementRadius = 10f;
     [SerializeField] float playerCenter = 0f;
+    [SerializeField] float playerJumpSpeed = 1f;
 
     float moveDir = 0f;
     float angle = 0;
