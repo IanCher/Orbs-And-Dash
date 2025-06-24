@@ -8,10 +8,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float movementRadius = 10f;
     [SerializeField] float playerCenter = 0f;
     [SerializeField] float playerJumpSpeed = 1f;
+    [SerializeField] float playerLandingSpeed = 1f;
 
     float moveDir = 0f;
     float angle = 0;
+    float defaulPlayerCenter;
     bool isJumping = false;
+    bool isLanding = false;
 
     InputAction movementAction;
     InputAction jumpAction;
@@ -21,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movementAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
+        defaulPlayerCenter = playerCenter;
 
         UpdatePositionOnCircle();
         UpdateOrientation();
@@ -29,18 +33,19 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        ReadMoveInputAndUpdateAngle();
-        UpdatePositionOnCircle();
-        UpdateOrientation();
-        ReadAndProcessJumpInput();
+        ReadMoveInputAndUpdatePosition();
+        ReadJumpInput();
+        ProcessJump();
     }
 
-    void ReadMoveInputAndUpdateAngle()
+    void ReadMoveInputAndUpdatePosition()
     {
         moveDir = movementAction.ReadValue<Vector2>().x;
         if (moveDir == 0f) return;
 
         angle += moveDir * lateralSpeed * Time.deltaTime;
+        UpdatePositionOnCircle();
+        UpdateOrientation();
     }
 
     void UpdatePositionOnCircle()
@@ -57,18 +62,32 @@ public class PlayerMovement : MonoBehaviour
         transform.localEulerAngles = new Vector3(0, 0, Mathf.Rad2Deg*angle);
     }
 
-    void ReadAndProcessJumpInput()
+    void ReadJumpInput()
     {
-        if (jumpAction.IsPressed() && !isJumping)
+        if (jumpAction.IsPressed() == isJumping) return;
+
+        isJumping = jumpAction.IsPressed();
+        if (!isJumping) isLanding = true;
+    }
+
+    void ProcessJump()
+    {
+        if (!isJumping && !isLanding) return;
+        
+        if (isJumping)
         {
-            print("I Jump");
-            isJumping = true;
+            playerCenter += playerJumpSpeed * Time.deltaTime;
         }
-        else if (!jumpAction.IsPressed() && isJumping)
+        if (isLanding)
         {
-            print("I land");
-            isJumping = false;
+            playerCenter -= playerJumpSpeed * Time.deltaTime;
+            if (playerCenter <= defaulPlayerCenter)
+            {
+                playerCenter = defaulPlayerCenter;
+                isLanding = false;
+            }
         }
+        UpdatePositionOnCircle();
     }
 
     private void OnDrawGizmos()
