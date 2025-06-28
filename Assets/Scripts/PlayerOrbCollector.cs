@@ -1,8 +1,12 @@
 using UnityEngine;
 using TMPro;
+using System;
+using static Orb;
 
 public class PlayerOrbCollector : MonoBehaviour
 {
+    public static event Action<OrbType> OnOrbCollected;
+
     [SerializeField] TMP_Text text;
     int orbCount = 0;
 
@@ -17,6 +21,7 @@ public class PlayerOrbCollector : MonoBehaviour
 
         if (!orb.WasCollected())
         {
+            OnOrbCollected?.Invoke(orb.GetOrbType());
             orbCount += orb.GetValue();
             orb.SetWasCollected(true);
 
