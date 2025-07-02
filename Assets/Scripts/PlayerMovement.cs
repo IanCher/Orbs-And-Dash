@@ -63,6 +63,22 @@ public class PlayerMovement : MonoBehaviour
     {
         if (jumpAction.IsPressed() == isJumping) return;
         isJumping = true;
+
+        // Make sure the player won't make more flips than necessary while jumping
+        // by setting the angle in the range [-pi ; pi]
+        SetAngleInMinusPiPiRange();
+    }
+
+    private void SetAngleInMinusPiPiRange()
+    {
+        while (angle < -Mathf.PI)
+        {
+            angle += 2 * Mathf.PI;
+        }
+        while (angle > Mathf.PI)
+        {
+            angle -= 2*Mathf.PI;
+        }
     }
 
     void ProcessJump()
