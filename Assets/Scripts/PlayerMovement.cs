@@ -1,5 +1,6 @@
 using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
@@ -7,14 +8,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float lateralSpeed = 2f;
     [SerializeField] float movementRadius = 10f;
     [SerializeField] float playerCenter = 0f;
-    [SerializeField] float playerJumpSpeed = 1f;
-    [SerializeField] float playerLandingSpeed = 1f;
+    [SerializeField] float jumpDuration = 0.5f;
+    [SerializeField] float jumpControlPointOffset = 2f;
 
     float moveDir = 0f;
     float angle = 0;
-    float defaulPlayerCenter;
     bool isJumping = false;
-    bool isLanding = false;
+    float timeSincePlayerJumped = 0f;
 
     InputAction movementAction;
     InputAction jumpAction;
@@ -24,7 +24,6 @@ public class PlayerMovement : MonoBehaviour
     {
         movementAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
-        defaulPlayerCenter = playerCenter;
 
         UpdatePositionOnCircle();
         UpdateOrientation();
@@ -40,6 +39,8 @@ public class PlayerMovement : MonoBehaviour
 
     void ReadMoveInputAndUpdatePosition()
     {
+        if (isJumping) return;
+
         moveDir = movementAction.ReadValue<Vector2>().x;
         if (moveDir == 0f) return;
 
@@ -50,44 +51,68 @@ public class PlayerMovement : MonoBehaviour
 
     void UpdatePositionOnCircle()
     {
-        transform.localPosition = new Vector3(
+        transform.localPosition = GetPositionOnCircleFromAngle(angle);
+    }
+
+    void UpdateOrientation()
+    {
+        transform.localEulerAngles = new Vector3(0, 0, Mathf.Rad2Deg * angle);
+    }
+
+    void ReadJumpInput()
+    {
+        if (jumpAction.IsPressed() == isJumping) return;
+        isJumping = true;
+    }
+
+    void ProcessJump()
+    {
+        if (!isJumping) return;
+
+        timeSincePlayerJumped += Time.deltaTime;
+        if (timeSincePlayerJumped > jumpDuration)
+        {
+            isJumping = false;
+            angle = -angle;
+            timeSincePlayerJumped = 0f;
+            UpdatePositionOnCircle();
+            UpdateOrientation();
+        }
+        else
+        {
+            float param = timeSincePlayerJumped / jumpDuration;
+            transform.localPosition = BezierCurve(param);
+            transform.localEulerAngles = new Vector3(
+                0,
+                0,
+                Mathf.Rad2Deg * Mathf.Lerp(angle, -angle, param)
+            );
+        }
+    }
+
+    private Vector3 GetPositionOnCircleFromAngle(float angle)
+    {
+        return new Vector3(
             (movementRadius - playerCenter) * Mathf.Sin(angle),
             -(movementRadius - playerCenter) * Mathf.Cos(angle) + movementRadius,
             0
         );
     }
 
-    void UpdateOrientation()
+    private Vector3 BezierCurve(float param)
     {
-        transform.localEulerAngles = new Vector3(0, 0, Mathf.Rad2Deg*angle);
-    }
+        Vector3 startPoint = GetPositionOnCircleFromAngle(angle);
+        Vector3 endPoint = GetPositionOnCircleFromAngle(-angle);
+        Vector3 controlPoint = new Vector3(
+            0,
+            transform.localPosition.y + jumpControlPointOffset, 
+            0
+        );
 
-    void ReadJumpInput()
-    {
-        if (jumpAction.IsPressed() == isJumping) return;
+        Vector3 start2control = Vector3.Lerp(startPoint, controlPoint, param);
+        Vector3 control2end = Vector3.Lerp(controlPoint, endPoint, param);
 
-        isJumping = jumpAction.IsPressed();
-        if (!isJumping) isLanding = true;
-    }
-
-    void ProcessJump()
-    {
-        if (!isJumping && !isLanding) return;
-        
-        if (isJumping)
-        {
-            playerCenter += playerJumpSpeed * Time.deltaTime;
-        }
-        if (isLanding)
-        {
-            playerCenter -= playerJumpSpeed * Time.deltaTime;
-            if (playerCenter <= defaulPlayerCenter)
-            {
-                playerCenter = defaulPlayerCenter;
-                isLanding = false;
-            }
-        }
-        UpdatePositionOnCircle();
+        return Vector3.Lerp(start2control, control2end, param);
     }
 
     private void OnDrawGizmos()
