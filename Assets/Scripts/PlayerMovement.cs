@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpControlPointOffset = 2f;
 
     float moveDir = 0f;
-    float angle = 0;
+    [SerializeField]float angle = 0;
     bool isJumping = false;
     float timeSincePlayerJumped = 0f;
 
@@ -85,7 +85,7 @@ public class PlayerMovement : MonoBehaviour
             transform.localEulerAngles = new Vector3(
                 0,
                 0,
-                Mathf.Rad2Deg * Mathf.Lerp(angle, -angle, param)
+                Mathf.Rad2Deg * Mathf.Lerp(angle, -angle + 4 * Mathf.Sign(angle) * Mathf.PI, param)
             );
         }
     }

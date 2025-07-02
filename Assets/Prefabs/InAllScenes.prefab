@@ -907,6 +907,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 9048206834004115896, guid: 5fc5dbc66f2f14956a5fe1b408fc3bf9, type: 3}
+      propertyPath: jumpDuration
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9048206834004115896, guid: 5fc5dbc66f2f14956a5fe1b408fc3bf9, type: 3}
+      propertyPath: jumpControlPointOffset
+      value: 2.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
