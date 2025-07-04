@@ -859,6 +859,14 @@ PrefabInstance:
       value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 9048206834004115896, guid: 5fc5dbc66f2f14956a5fe1b408fc3bf9, type: 3}
+      propertyPath: maxLateralSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9048206834004115896, guid: 5fc5dbc66f2f14956a5fe1b408fc3bf9, type: 3}
+      propertyPath: timeBeforeFullLoop
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9048206834004115896, guid: 5fc5dbc66f2f14956a5fe1b408fc3bf9, type: 3}
       propertyPath: jumpControlPointOffset
       value: 2.5
       objectReference: {fileID: 0}
@@ -892,7 +900,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f1c2b33c2cc94681aef8928ced2e58d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
+  startSpeed: 5
+  maxSpeed: 50
+  acceleration: 5
   dollyCart: {fileID: 731812069974117386}
 --- !u!1001 &8705200206873895591
 PrefabInstance:

@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
@@ -11,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float playerCenter = 0f;
     [SerializeField] float jumpDuration = 0.5f;
     [SerializeField] float jumpControlPointOffset = 2f;
+    [SerializeField] float timeBeforeFullLoop = 1.0f;
+    [SerializeField] float fullLoopSpeed = 10f;
 
     float lateralSpeed = 2f;
     float moveDir = 0f;
@@ -18,6 +21,9 @@ public class PlayerMovement : MonoBehaviour
     float angle = 0;
     bool isJumping = false;
     float timeSincePlayerJumped = 0f;
+    float timeSincePlayerPushesAtTheTop = 0f;
+    bool isPushingAtTheTop = false;
+    bool isGoingFullLoop = false;
 
     InputAction movementAction;
     InputAction jumpAction;
@@ -45,6 +51,12 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isGoingFullLoop)
+        {
+            ProcessFullLoopMovement();
+            return;
+        }
+
         ReadMoveInputAndUpdatePosition();
         ReadJumpInput();
         ProcessJump();
@@ -57,11 +69,26 @@ public class PlayerMovement : MonoBehaviour
         if (isJumping) return;
 
         moveDir = movementAction.ReadValue<Vector2>().x;
-        print(moveDir);
         if (moveDir == 0f) return;
 
         angle += moveDir * lateralSpeed * Time.deltaTime;
         angle = Mathf.Clamp(angle, -maxAngle, maxAngle);
+
+        // Player is at the top
+        if ((Mathf.Abs(angle) == Mathf.PI / 2) && !isPushingAtTheTop)
+        {
+            isPushingAtTheTop = true;
+            timeSincePlayerPushesAtTheTop = 0f;
+        }
+        else if (isPushingAtTheTop)
+        {
+            timeSincePlayerPushesAtTheTop += Time.deltaTime;
+            if (timeSincePlayerPushesAtTheTop >= timeBeforeFullLoop)
+            {
+                isGoingFullLoop = true;
+                isPushingAtTheTop = false;
+            }
+        }
 
         UpdatePositionOnCircle();
         UpdateOrientation();
@@ -160,6 +187,20 @@ public class PlayerMovement : MonoBehaviour
         if (lateralSpeed == maxLateralSpeed) return;
         lateralSpeed = maxLateralSpeed * railProgression.GetSpeedRatio();
         lateralSpeed = Mathf.Clamp(lateralSpeed, minLateralSpeed, maxLateralSpeed);
+    }
+
+    private void ProcessFullLoopMovement()
+    {
+        angle += moveDir * fullLoopSpeed * Time.deltaTime;
+
+        if (Mathf.Abs(angle) >= 1.5 * Mathf.PI)
+        {
+            isGoingFullLoop = false;
+            SetAngleInMinusPiPiRange();
+        }
+
+        UpdatePositionOnCircle();
+        UpdateOrientation();
     }
 
     private void OnDrawGizmos()
