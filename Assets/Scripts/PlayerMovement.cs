@@ -5,19 +5,30 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float lateralSpeed = 2f;
+    [SerializeField] float maxLateralSpeed = 2f;
+    [SerializeField] float minLateralSpeed = 1f;
     [SerializeField] float movementRadius = 10f;
     [SerializeField] float playerCenter = 0f;
     [SerializeField] float jumpDuration = 0.5f;
     [SerializeField] float jumpControlPointOffset = 2f;
 
+    float lateralSpeed = 2f;
     float moveDir = 0f;
-    [SerializeField]float angle = 0;
+    float maxAngle = 0f;
+    float angle = 0;
     bool isJumping = false;
     float timeSincePlayerJumped = 0f;
 
     InputAction movementAction;
     InputAction jumpAction;
+
+    PlayerRailProgression railProgression;
+
+
+    void Awake()
+    {
+        railProgression = GetComponent<PlayerRailProgression>();
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,6 +38,8 @@ public class PlayerMovement : MonoBehaviour
 
         UpdatePositionOnCircle();
         UpdateOrientation();
+        UpdateMaxAngle();
+        UpdateLateralSpeed();
     }
 
     // Update is called once per frame
@@ -35,6 +48,8 @@ public class PlayerMovement : MonoBehaviour
         ReadMoveInputAndUpdatePosition();
         ReadJumpInput();
         ProcessJump();
+        UpdateMaxAngle();
+        UpdateLateralSpeed();
     }
 
     void ReadMoveInputAndUpdatePosition()
@@ -42,9 +57,12 @@ public class PlayerMovement : MonoBehaviour
         if (isJumping) return;
 
         moveDir = movementAction.ReadValue<Vector2>().x;
+        print(moveDir);
         if (moveDir == 0f) return;
 
         angle += moveDir * lateralSpeed * Time.deltaTime;
+        angle = Mathf.Clamp(angle, -maxAngle, maxAngle);
+
         UpdatePositionOnCircle();
         UpdateOrientation();
     }
@@ -129,6 +147,19 @@ public class PlayerMovement : MonoBehaviour
         Vector3 control2end = Vector3.Lerp(controlPoint, endPoint, param);
 
         return Vector3.Lerp(start2control, control2end, param);
+    }
+
+    private void UpdateMaxAngle()
+    {
+        if (angle == Mathf.PI / 2) return;
+        maxAngle = railProgression.GetSpeedRatio() * Mathf.PI / 2;
+    }
+
+    private void UpdateLateralSpeed()
+    {
+        if (lateralSpeed == maxLateralSpeed) return;
+        lateralSpeed = maxLateralSpeed * railProgression.GetSpeedRatio();
+        lateralSpeed = Mathf.Clamp(lateralSpeed, minLateralSpeed, maxLateralSpeed);
     }
 
     private void OnDrawGizmos()
