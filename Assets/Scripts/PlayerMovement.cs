@@ -193,7 +193,7 @@ public class PlayerMovement : MonoBehaviour
     {
         angle += moveDir * fullLoopSpeed * Time.deltaTime;
 
-        if (Mathf.Abs(angle) >= 1.5 * Mathf.PI)
+        if (Mathf.Abs(angle) >= 1.52 * Mathf.PI)
         {
             isGoingFullLoop = false;
             SetAngleInMinusPiPiRange();
