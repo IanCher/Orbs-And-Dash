@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.InputSystem;
@@ -69,25 +70,29 @@ public class PlayerMovement : MonoBehaviour
         if (isJumping) return;
 
         moveDir = movementAction.ReadValue<Vector2>().x;
-        if (moveDir == 0f) return;
+        if (moveDir == 0f) {
+            if (isPushingAtTheTop) isPushingAtTheTop = false;
+            return;
+        }
 
         angle += moveDir * lateralSpeed * Time.deltaTime;
         angle = Mathf.Clamp(angle, -maxAngle, maxAngle);
 
         // Player is at the top
-        if ((Mathf.Abs(angle) == Mathf.PI / 2) && !isPushingAtTheTop)
+        if (Mathf.Abs(angle) == Mathf.PI / 2)
         {
-            isPushingAtTheTop = true;
-            timeSincePlayerPushesAtTheTop = 0f;
-        }
-        else if (isPushingAtTheTop)
-        {
+            if (!isPushingAtTheTop)
+            {
+                isPushingAtTheTop = true;
+                timeSincePlayerPushesAtTheTop = 0f;
+            }
+
             timeSincePlayerPushesAtTheTop += Time.deltaTime;
             if (timeSincePlayerPushesAtTheTop >= timeBeforeFullLoop)
             {
                 isGoingFullLoop = true;
                 isPushingAtTheTop = false;
-            }
+            }   
         }
 
         UpdatePositionOnCircle();
