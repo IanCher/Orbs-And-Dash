@@ -550,6 +550,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5a37bc25b68a40841b83371aa26fedf3, type: 3}
   m_PrefabInstance: {fileID: 207874552}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &241432014
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 241432015}
+  m_Layer: 0
+  m_Name: PotionBomb
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &241432015
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 241432014}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.72552, y: -0.50786, z: -0.72552}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &247894539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5756,6 +5787,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 160337595607731052, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 160337595607731052, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 160337595607731052, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 160337595607731052, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 731812069974117386, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_SplineSettings.Spline
       value: 
@@ -5800,9 +5847,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4136241668041021847, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4136241668041021847, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4136241668041021847, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4136241668041021847, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4827982506997547911, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_Name
       value: InAllScenes
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057910331924978939, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057910331924978939, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057910331924978939, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5057910331924978939, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5877,3 +5956,4 @@ SceneRoots:
   - {fileID: 1145441045}
   - {fileID: 250667544}
   - {fileID: 1972036144}
+  - {fileID: 241432015}
