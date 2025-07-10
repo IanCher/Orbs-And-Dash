@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Orb : MonoBehaviour
 {
-    public enum OrbType { Low,Mid,High };
     [SerializeField] private OrbType type;
 
     [SerializeField] int value = 1;
@@ -14,3 +13,4 @@ public class Orb : MonoBehaviour
 
     public OrbType GetOrbType() => type;
 }
+public enum OrbType { Low, Mid, High, All };
