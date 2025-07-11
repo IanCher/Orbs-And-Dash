@@ -19,5 +19,6 @@ public class PotionData
     public float PercentOrbsToLose;
     public int OrbsToLose;
     public float PercentToSlowBy;
+    public float SlowDuration;
     public OrbType OrbTypeToLose;
 }

@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3182307300413749307}
   - component: {fileID: 9048206834004115896}
-  - component: {fileID: 8086324004293838517}
   - component: {fileID: 7867103063312864521}
+  - component: {fileID: 521919980915227826}
+  - component: {fileID: 8086324004293838517}
   - component: {fileID: 5439522863874856850}
   - component: {fileID: 7602720299800609537}
   m_Layer: 0
@@ -58,18 +59,6 @@ MonoBehaviour:
   jumpControlPointOffset: 2.5
   timeBeforeFullLoop: 0.5
   fullLoopSpeed: 10
---- !u!114 &8086324004293838517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6963217438158432805}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8282103db21e1142ad460329816ff6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7867103063312864521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,6 +75,31 @@ MonoBehaviour:
   maxSpeed: 50
   acceleration: 5
   dollyCart: {fileID: 0}
+--- !u!114 &521919980915227826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6963217438158432805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2015db7bba0f9064988ec44a90bf5d66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedMultiplier: 1
+--- !u!114 &8086324004293838517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6963217438158432805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8282103db21e1142ad460329816ff6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &5439522863874856850
 CapsuleCollider:
   m_ObjectHideFlags: 0

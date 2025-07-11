@@ -30,11 +30,12 @@ public class PlayerMovement : MonoBehaviour
     InputAction jumpAction;
 
     PlayerRailProgression railProgression;
-
+    private PlayerStats playerStats;
 
     void Awake()
     {
         railProgression = GetComponent<PlayerRailProgression>();
+        playerStats = GetComponent<PlayerStats>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -191,7 +192,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (lateralSpeed == maxLateralSpeed) return;
         lateralSpeed = maxLateralSpeed * railProgression.GetSpeedRatio();
-        lateralSpeed = Mathf.Clamp(lateralSpeed, minLateralSpeed, maxLateralSpeed);
+        lateralSpeed = Mathf.Clamp(lateralSpeed * playerStats.speedMultiplier, minLateralSpeed, maxLateralSpeed);
     }
 
     private void ProcessFullLoopMovement()

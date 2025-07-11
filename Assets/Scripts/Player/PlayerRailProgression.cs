@@ -10,6 +10,11 @@ public class PlayerRailProgression : MonoBehaviour
     [SerializeField] CinemachineSplineCart dollyCart;
 
     float speed = 0;
+    private PlayerStats playerStats;
+    private void Awake()
+    {
+        playerStats = GetComponent<PlayerStats>();
+    }
 
     void Start()
     {
@@ -19,7 +24,7 @@ public class PlayerRailProgression : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        dollyCart.SplinePosition += speed * Time.deltaTime / 1000f;
+        dollyCart.SplinePosition += speed * playerStats.speedMultiplier * Time.deltaTime / 1000f;
 
         if (speed < maxSpeed)
         {

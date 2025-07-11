@@ -1010,8 +1010,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4321939980370079377, guid: 8e9ecae43a105a94f811fa102163794d, type: 3}
+      propertyPath: PotionsData.SlowDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321939980370079377, guid: 8e9ecae43a105a94f811fa102163794d, type: 3}
       propertyPath: PotionsData.OrbTypeToLose
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321939980370079377, guid: 8e9ecae43a105a94f811fa102163794d, type: 3}
+      propertyPath: PotionsData.PercentToSlowBy
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6841134428837642177, guid: 8e9ecae43a105a94f811fa102163794d, type: 3}
       propertyPath: m_Name
@@ -1735,6 +1743,14 @@ PrefabInstance:
     - target: {fileID: 4003269782694434730, guid: 8e9ecae43a105a94f811fa102163794d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321939980370079377, guid: 8e9ecae43a105a94f811fa102163794d, type: 3}
+      propertyPath: PotionsData.SlowDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321939980370079377, guid: 8e9ecae43a105a94f811fa102163794d, type: 3}
+      propertyPath: PotionsData.PercentToSlowBy
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6841134428837642177, guid: 8e9ecae43a105a94f811fa102163794d, type: 3}
       propertyPath: m_Name
@@ -6331,8 +6347,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4321939980370079377, guid: 8e9ecae43a105a94f811fa102163794d, type: 3}
+      propertyPath: PotionsData.SlowDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321939980370079377, guid: 8e9ecae43a105a94f811fa102163794d, type: 3}
       propertyPath: PotionsData.OrbTypeToLose
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4321939980370079377, guid: 8e9ecae43a105a94f811fa102163794d, type: 3}
+      propertyPath: PotionsData.PercentToSlowBy
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6841134428837642177, guid: 8e9ecae43a105a94f811fa102163794d, type: 3}
       propertyPath: m_Name
