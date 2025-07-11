@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3182307300413749307}
   - component: {fileID: 9048206834004115896}
-  - component: {fileID: 3301518825686331741}
+  - component: {fileID: 8086324004293838517}
   - component: {fileID: 7867103063312864521}
   - component: {fileID: 5439522863874856850}
   - component: {fileID: 7602720299800609537}
@@ -58,7 +58,7 @@ MonoBehaviour:
   jumpControlPointOffset: 2.5
   timeBeforeFullLoop: 0.5
   fullLoopSpeed: 10
---- !u!114 &3301518825686331741
+--- !u!114 &8086324004293838517
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -67,10 +67,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 6963217438158432805}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 564798be718ae48d89618b2d9629d104, type: 3}
+  m_Script: {fileID: 11500000, guid: c8282103db21e1142ad460329816ff6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 0}
 --- !u!114 &7867103063312864521
 MonoBehaviour:
   m_ObjectHideFlags: 0

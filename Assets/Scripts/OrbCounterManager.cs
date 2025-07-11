@@ -12,14 +12,14 @@ public class OrbCounterManager : MonoBehaviour
 
     private void Start()
     {
-        PlayerOrbCollector.OnOrbCollected += PlayerOrbCollector_OnOrbCollected;
-        PlayerOrbCollector.OnCollidedWithPotion += PlayerOrbCollector_OnCollidedWithPotion;
+        Orb.OnOrbCollected += PlayerOrbCollector_OnOrbCollected;
+        PotionBomb.OnCollidedWithPotion += PlayerOrbCollector_OnCollidedWithPotion;
     }
 
     private void OnDestroy()
     {
-        PlayerOrbCollector.OnOrbCollected -= PlayerOrbCollector_OnOrbCollected;
-        PlayerOrbCollector.OnCollidedWithPotion -= PlayerOrbCollector_OnCollidedWithPotion;
+        Orb.OnOrbCollected -= PlayerOrbCollector_OnOrbCollected;
+        PotionBomb.OnCollidedWithPotion -= PlayerOrbCollector_OnCollidedWithPotion;
     }
 
     private void PlayerOrbCollector_OnOrbCollected(OrbType obj)
