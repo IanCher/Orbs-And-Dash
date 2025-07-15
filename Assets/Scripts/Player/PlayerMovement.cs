@@ -7,6 +7,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    enum LoopStyle { Classic, PushForFullLoop, Gravity };
+
+    [SerializeField] LoopStyle loopStyle = LoopStyle.Classic;
     [SerializeField] float maxLateralSpeed = 2f;
     [SerializeField] float minLateralSpeed = 1f;
     [SerializeField] float movementRadius = 10f;
@@ -67,6 +70,42 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void ReadMoveInputAndUpdatePosition()
+    {
+        switch (loopStyle)
+        {
+            case LoopStyle.Classic:
+                ReadMoveInputAndUpdatePositionClassic();
+                break;
+
+            case LoopStyle.PushForFullLoop:
+                ReadMoveInputAndUpdatePositionPushForFullLoop();
+                break;
+
+            case LoopStyle.Gravity:
+                print("aie");
+                break;
+
+            default:
+                return;
+        }
+    }
+
+    void ReadMoveInputAndUpdatePositionClassic()
+    {
+        if (isJumping) return;
+
+        moveDir = movementAction.ReadValue<Vector2>().x;
+        if (moveDir == 0f) return;
+
+        angle += moveDir * lateralSpeed * Time.deltaTime;
+
+        if (maxAngle < Mathf.PI/2) angle = Mathf.Clamp(angle, -maxAngle, maxAngle);
+
+        UpdatePositionOnCircle();
+        UpdateOrientation();
+    }
+
+    void ReadMoveInputAndUpdatePositionPushForFullLoop()
     {
         if (isJumping) return;
 
@@ -184,7 +223,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateMaxAngle()
     {
-        if (angle == Mathf.PI / 2) return;
         maxAngle = railProgression.GetSpeedRatio() * Mathf.PI / 2;
     }
 
