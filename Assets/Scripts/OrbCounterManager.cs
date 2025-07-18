@@ -9,9 +9,18 @@ public class OrbCounterManager : MonoBehaviour
     private int lowOrbCount = 0;
     private int midOrbCount = 0;
     private int highOrbCount = 0;
+    
+    private PlayerStats playerStats;
+
+    private void Awake()
+    {
+        // Subscribe to player registration events - guaranteed to happen before any Start for placed objects in the level.
+        PlayerStats.OnPlayerStatsReady += OnPlayerStatsRegistered;
+        PlayerStats.OnPlayerStatsDestroyed += OnPlayerStatsDestroyed;
+    }
 
     private void Start()
-    {
+    {        
         Orb.OnOrbCollected += PlayerOrbCollector_OnOrbCollected;
         PotionBomb.OnCollidedWithPotion += PlayerOrbCollector_OnCollidedWithPotion;
     }
@@ -20,6 +29,18 @@ public class OrbCounterManager : MonoBehaviour
     {
         Orb.OnOrbCollected -= PlayerOrbCollector_OnOrbCollected;
         PotionBomb.OnCollidedWithPotion -= PlayerOrbCollector_OnCollidedWithPotion;
+    }
+
+    private void OnPlayerStatsRegistered(PlayerStats stats)
+    {
+        Debug.Log("OrbCounterManager: PlayerStats registered.");
+        playerStats = stats;
+    }
+
+    private void OnPlayerStatsDestroyed()
+    {
+        Debug.Log("OrbCounterManager: PlayerStats unregistered.");
+        playerStats = null;
     }
 
     private void PlayerOrbCollector_OnOrbCollected(OrbType obj)
@@ -42,8 +63,43 @@ public class OrbCounterManager : MonoBehaviour
         OnSendOrbCountVisualUpdateRequest?.Invoke(lowOrbCount, midOrbCount, highOrbCount, TotalOrbCount());
     }
 
-
     private void PlayerOrbCollector_OnCollidedWithPotion(PotionData potionData)
+    {
+        // Don't lose orbs if player is invulnerable
+        if (playerStats != null && playerStats.IsInvulnerable)
+        {
+            Debug.Log("OrbCounterManager: Player is invulnerable - ignoring orb losses");
+            return;
+        }
+
+        if (playerStats == null || !playerStats.IsInvulnerable)
+        {
+            if (playerStats == null)
+            {
+                Debug.LogWarning("OrbCounterManager: PlayerStats is null!  Precondition violation with event registration");
+            }
+
+            LoseOrbs(potionData);
+        }
+        else
+        {
+            Debug.Log("OrbCounterManager: Player is invulnerable - ignoring orb losses");
+        }
+
+        if (potionData.PercentToSlowBy > 0)
+        {
+            //slow player here
+        }
+
+        if (lowOrbCount < 0 || midOrbCount < 0 || highOrbCount < 0)
+        {
+            //game over here
+            //temporary reload scene
+            SceneManager.LoadScene(0);
+        }
+    }
+
+    private void LoseOrbs(PotionData potionData)
     {
         if (potionData.PercentOrbsToLose <= 0)
         {
@@ -88,24 +144,11 @@ public class OrbCounterManager : MonoBehaviour
         }
 
         OnSendOrbCountVisualUpdateRequest?.Invoke(lowOrbCount, midOrbCount, highOrbCount, TotalOrbCount());
-
-        if (potionData.PercentToSlowBy > 0)
-        {
-            //slow player here
-        }
-
-        if (lowOrbCount < 0 || midOrbCount < 0 || highOrbCount < 0)
-        {
-            //game over here
-            //temporary reload scene
-            SceneManager.LoadScene(0);
-        }
-
     }
+
     private int TotalOrbCount()
     {
         int totalCount = lowOrbCount + midOrbCount + highOrbCount;
         return totalCount;
     }
-
 }
