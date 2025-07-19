@@ -80,22 +80,17 @@ public class OrbCounterManager : MonoBehaviour
             }
 
             LoseOrbs(potionData);
+
+            if (lowOrbCount < 0 || midOrbCount < 0 || highOrbCount < 0)
+            {
+                //game over here
+                //temporary reload scene
+                SceneManager.LoadScene(0);
+            }
         }
         else
         {
-            Debug.Log("OrbCounterManager: Player is invulnerable - ignoring orb losses");
-        }
-
-        if (potionData.PercentToSlowBy > 0)
-        {
-            //slow player here
-        }
-
-        if (lowOrbCount < 0 || midOrbCount < 0 || highOrbCount < 0)
-        {
-            //game over here
-            //temporary reload scene
-            SceneManager.LoadScene(0);
+            Debug.Log("OrbCounterManager: Player is invulnerable - ignoring orb losses and de-buffs");
         }
     }
 

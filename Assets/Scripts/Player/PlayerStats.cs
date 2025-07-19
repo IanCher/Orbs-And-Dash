@@ -36,6 +36,12 @@ public class PlayerStats : MonoBehaviour
 
     void ApplyPotionEffects(PotionData potionData)
     {
+        if (IsInvulnerable)
+        {
+            Debug.Log("Ignoring effect of slow down potion since player is invulnerable to damage and de-buffs");
+            return;
+        }
+
         float reduceSpeedMultiplierBy = Mathf.Clamp01(potionData.PercentToSlowBy / 100f);
         speedMultiplier = 1f - reduceSpeedMultiplierBy;
 
