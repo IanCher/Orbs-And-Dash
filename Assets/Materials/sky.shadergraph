@@ -11,6 +11,9 @@
         },
         {
             "m_Id": "d5a7fd512e2a4f4e93c06befdd66a268"
+        },
+        {
+            "m_Id": "3fcda5a2c8304f909d1b15bfd75d768e"
         }
     ],
     "m_Keywords": [],
@@ -44,11 +47,28 @@
         },
         {
             "m_Id": "c2ecf8ee08fd48fdadedf1df411734f0"
+        },
+        {
+            "m_Id": "203d044ab3f4473694560b88dffbfa01"
         }
     ],
     "m_GroupDatas": [],
     "m_StickyNoteDatas": [],
     "m_Edges": [
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "203d044ab3f4473694560b88dffbfa01"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "599cba63b7cd44d6af24188a12c7235d"
+                },
+                "m_SlotId": -108338491
+            }
+        },
         {
             "m_OutputSlot": {
                 "m_Node": {
@@ -156,9 +176,60 @@
 }
 
 {
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "039e3f8cc009404880178af28393d5d3",
+    "m_Id": 0,
+    "m_DisplayName": "voroniseed",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
+}
+
+{
     "m_SGVersion": 2,
     "m_Type": "UnityEditor.Rendering.Universal.ShaderGraph.UniversalUnlitSubTarget",
     "m_ObjectId": "0960f2afd2b1460a99679dbf6d081cc3"
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "203d044ab3f4473694560b88dffbfa01",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -545.0000610351563,
+            "y": 157.50003051757813,
+            "width": 133.50003051757813,
+            "height": 34.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "039e3f8cc009404880178af28393d5d3"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "3fcda5a2c8304f909d1b15bfd75d768e"
+    }
 }
 
 {
@@ -174,6 +245,34 @@
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
     "m_Labels": []
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "3fcda5a2c8304f909d1b15bfd75d768e",
+    "m_Guid": {
+        "m_GuidSerialized": "303d4ff3-18d0-4dc6-9bfa-ca8e4840e91c"
+    },
+    "m_Name": "voroniseed",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "voroniseed",
+    "m_DefaultReferenceName": "_voroniseed",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": 5.0,
+    "m_FloatType": 0,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
+    }
 }
 
 {
@@ -267,6 +366,9 @@
             "m_Id": "cd16ed31a4f5429e97852714f33a919b"
         },
         {
+            "m_Id": "eb5c72c480e5442b9e0527ee0a85e544"
+        },
+        {
             "m_Id": "73110c9ced8349158f6b2f1cf75c4759"
         },
         {
@@ -285,12 +387,14 @@
     "m_PropertyGuids": [
         "ef7987b6-7d3d-4625-a0cd-0f998ac76d00",
         "802e357e-11fe-4f09-886d-ffd9e26363fb",
-        "8000dd27-0d70-40e4-8ef7-79932f6f520e"
+        "8000dd27-0d70-40e4-8ef7-79932f6f520e",
+        "9e49c4fb-0f39-4583-a3f8-1d73a4d15d51"
     ],
     "m_PropertyIds": [
         809431201,
         -306500886,
-        1573865718
+        1573865718,
+        -108338491
     ],
     "m_Dropdowns": [],
     "m_DropdownSelectedEntries": []
@@ -414,7 +518,7 @@
     "m_SlotType": 1,
     "m_Hidden": false,
     "m_ShaderOutputName": "Colour",
-    "m_StageCapability": 3,
+    "m_StageCapability": 2,
     "m_Value": {
         "x": 0.0,
         "y": 0.0,
@@ -437,7 +541,7 @@
     "m_SlotType": 0,
     "m_Hidden": false,
     "m_ShaderOutputName": "_Blend",
-    "m_StageCapability": 3,
+    "m_StageCapability": 2,
     "m_Value": 1.5299999713897706,
     "m_DefaultValue": 0.0,
     "m_Labels": []
@@ -603,6 +707,9 @@
         },
         {
             "m_Id": "d5a7fd512e2a4f4e93c06befdd66a268"
+        },
+        {
+            "m_Id": "3fcda5a2c8304f909d1b15bfd75d768e"
         }
     ]
 }
@@ -675,7 +782,7 @@
     "m_SlotType": 0,
     "m_Hidden": false,
     "m_ShaderOutputName": "_Blend_2",
-    "m_StageCapability": 3,
+    "m_StageCapability": 2,
     "m_Value": -0.8600000143051148,
     "m_DefaultValue": 0.0,
     "m_Labels": []
@@ -726,7 +833,7 @@
     "m_SlotType": 0,
     "m_Hidden": false,
     "m_ShaderOutputName": "_Background",
-    "m_StageCapability": 3,
+    "m_StageCapability": 2,
     "m_Value": {
         "x": 0.1839621365070343,
         "y": 0.6700837016105652,
@@ -824,6 +931,21 @@
     },
     "m_Labels": [],
     "m_Space": 0
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "eb5c72c480e5442b9e0527ee0a85e544",
+    "m_Id": -108338491,
+    "m_DisplayName": "voroniseed",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "_voroniseed",
+    "m_StageCapability": 2,
+    "m_Value": 5.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
 }
 
 {

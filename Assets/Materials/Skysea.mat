@@ -55,6 +55,8 @@ Material:
     - _QueueOffset: 0
     - _blend: 1.91
     - _blend2: -0.36
+    - _voronieeed: 5
+    - _voroniseed: 55.059982
     m_Colors:
     - _background: {r: 0.21568626, g: 0.7647059, b: 0.678123, a: 1}
   m_BuildTextureStacks: []
