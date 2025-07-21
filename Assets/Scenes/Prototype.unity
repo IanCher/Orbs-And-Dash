@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 0e92063b31aaa45a79d90a9cf5cec213, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 485b83339f393ae41a246d34afb8a0e2, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -533,6 +533,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4a09fc2d9794226409e4bdb7cb38665b, type: 3}
       propertyPath: m_Name
       value: terrain-dark
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4a09fc2d9794226409e4bdb7cb38665b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1399,6 +1403,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-light
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5a37bc25b68a40841b83371aa26fedf3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2103,6 +2111,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-dark
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4a09fc2d9794226409e4bdb7cb38665b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2210,6 +2222,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c024937c85dce804c81fab70b8680b58, type: 3}
       propertyPath: m_Name
       value: terrain-dark
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c024937c85dce804c81fab70b8680b58, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2748,6 +2764,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-dark
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: da5ee07c2b4bd0546bf9039ef8e79862, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2963,6 +2983,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c024937c85dce804c81fab70b8680b58, type: 3}
       propertyPath: m_Name
       value: terrain-medium (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c024937c85dce804c81fab70b8680b58, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3396,6 +3420,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-HUGE
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c024937c85dce804c81fab70b8680b58, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3503,6 +3531,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b562a9c2c0b02324eb4cca0eafeb9e47, type: 3}
       propertyPath: m_Name
       value: terrain-dark
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b562a9c2c0b02324eb4cca0eafeb9e47, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4386,6 +4418,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-light
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b562a9c2c0b02324eb4cca0eafeb9e47, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4688,6 +4724,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b562a9c2c0b02324eb4cca0eafeb9e47, type: 3}
       propertyPath: m_Name
       value: terrain-medium
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b562a9c2c0b02324eb4cca0eafeb9e47, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5309,6 +5349,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: terrain-light
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c024937c85dce804c81fab70b8680b58, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5524,6 +5568,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c024937c85dce804c81fab70b8680b58, type: 3}
       propertyPath: m_Name
       value: terrain-medium
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c024937c85dce804c81fab70b8680b58, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6621,6 +6669,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: b562a9c2c0b02324eb4cca0eafeb9e47, type: 3}
       propertyPath: m_Name
       value: terrain-light
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b562a9c2c0b02324eb4cca0eafeb9e47, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
