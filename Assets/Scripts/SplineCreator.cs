@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Splines;
@@ -28,16 +29,20 @@ public class SplineCreator : MonoBehaviour
         BlenderKnot[] blenderKnots = blenderSpline.knots;
 
         SplineContainer splineContainer = GetComponent<SplineContainer>();
+        for (int i = splineContainer.Spline.Knots.Count()-1; i >= 0; i--)
+        {
+            splineContainer.Spline.RemoveAt(i);
+        }
 
         foreach (BlenderKnot knot in blenderKnots)
-        {
-            splineContainer.Spline.Add(
-                new BezierKnot(
-                    knot.position,
-                    knot.tangentIn,
-                    knot.tangentOut
-                )
-            );
-        }
+            {
+                splineContainer.Spline.Add(
+                    new BezierKnot(
+                        knot.position,
+                        knot.tangentIn,
+                        knot.tangentOut
+                    )
+                );
+            }
     }
 }
