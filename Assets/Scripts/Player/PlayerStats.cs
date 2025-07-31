@@ -7,14 +7,21 @@ public class PlayerStats : MonoBehaviour
     // Use eventing to broadcast the player state to other game objects
     public static event Action<PlayerStats> OnPlayerStatsReady;
     public static event Action OnPlayerStatsDestroyed;
-
+    
     public float speedMultiplier = 1f;
+    [SerializeField] private float baseSpeed = 5.0f;
+    [SerializeField] private float maxSpeed = 50.0f;
+    [SerializeField] private float timeBasedAcceleration = 1.0f;
+    [SerializeField] private float speedPerOrb = 0.5f;
+    
     public int activeInvulnerabilityCount = 0;
 
     public bool IsInvulnerable => activeInvulnerabilityCount > 0;
-
+    public float currentSpeed;
+    
     void Start()
     {
+        currentSpeed = baseSpeed;
         // Start fires after all Awake methods have been called,
         // so we can safely assume all placed components are initialized.
         // Any dynamically spawned components would need to read it from level with 
@@ -24,14 +31,35 @@ public class PlayerStats : MonoBehaviour
 
         PotionBomb.OnCollidedWithPotion += ApplyPotionEffects;
         Shield.OnCollidedWithShield += ApplyShieldEffects;
+        OrbCounterManager.OnOrbCollected += OrbCounterManagerOnOnOrbCollected;
     }
 
-    void OnDestroy()
+    private void OrbCounterManagerOnOnOrbCollected(int orbsCollected)
     {
-        PotionBomb.OnCollidedWithPotion -= ApplyPotionEffects;
-        Shield.OnCollidedWithShield -= ApplyShieldEffects;
+        UpdateOrbSpeed(orbsCollected);
+    }
+    
+    public float GetCurrentSpeed()
+    {
+        return currentSpeed * speedMultiplier;
+    }
+    public float GetSpeedRatio()
+    {
+        return currentSpeed / maxSpeed;
+    }
 
-        OnPlayerStatsDestroyed?.Invoke();
+    public void UpdateSpeed()
+    {
+        if (currentSpeed < maxSpeed)
+        {
+            currentSpeed += Time.deltaTime * timeBasedAcceleration;
+            currentSpeed = Mathf.Clamp(currentSpeed, 0, maxSpeed);
+        }
+    }
+    
+    private void UpdateOrbSpeed(int orbCount)
+    {
+        currentSpeed = Mathf.Clamp(baseSpeed + (orbCount * speedPerOrb), baseSpeed, maxSpeed);
     }
 
     void ApplyPotionEffects(PotionData potionData)
@@ -78,4 +106,13 @@ public class PlayerStats : MonoBehaviour
         Debug.Log($"Shield effect expired: activeInvulnerabilityCount={activeInvulnerabilityCount}");
 #endif
     }
+    
+    void OnDestroy()
+    {
+        PotionBomb.OnCollidedWithPotion -= ApplyPotionEffects;
+        Shield.OnCollidedWithShield -= ApplyShieldEffects;
+
+        OnPlayerStatsDestroyed?.Invoke();
+    }
+
 }

@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     enum LoopStyle { Classic, PushForFullLoop, Gravity };
 
     [SerializeField] LoopStyle loopStyle = LoopStyle.Classic;
+    [SerializeField] private bool tieAngleToSpeed = false;
+    [SerializeField] private float fixedMaxAngle = Mathf.PI / 2; 
     [SerializeField] float maxLateralSpeed = 2f;
     [SerializeField] float minLateralSpeed = 1f;
     [SerializeField] float movementRadius = 10f;
@@ -31,13 +33,11 @@ public class PlayerMovement : MonoBehaviour
 
     InputAction movementAction;
     InputAction jumpAction;
-
-    PlayerRailProgression railProgression;
+    
     private PlayerStats playerStats;
 
     void Awake()
     {
-        railProgression = GetComponent<PlayerRailProgression>();
         playerStats = GetComponent<PlayerStats>();
     }
 
@@ -98,12 +98,17 @@ public class PlayerMovement : MonoBehaviour
         if (moveDir == 0f) return;
 
         angle += moveDir * lateralSpeed * Time.deltaTime;
-
-        if (maxAngle < Mathf.PI/2) angle = Mathf.Clamp(angle, -maxAngle, maxAngle);
+        
+        // Only clamp if we have any angle restriction
+        if (tieAngleToSpeed || fixedMaxAngle < Mathf.PI * 2)
+        {
+            angle = Mathf.Clamp(angle, -maxAngle, maxAngle);
+        }
 
         UpdatePositionOnCircle();
         UpdateOrientation();
     }
+
 
     void ReadMoveInputAndUpdatePositionPushForFullLoop()
     {
@@ -223,14 +228,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateMaxAngle()
     {
-        maxAngle = railProgression.GetSpeedRatio() * Mathf.PI / 2;
+        maxAngle = tieAngleToSpeed ? 
+            playerStats.GetSpeedRatio() * Mathf.PI / 2 : 
+            fixedMaxAngle;
     }
+
 
     private void UpdateLateralSpeed()
     {
         if (lateralSpeed == maxLateralSpeed) return;
-        lateralSpeed = maxLateralSpeed * railProgression.GetSpeedRatio();
-        lateralSpeed = Mathf.Clamp(lateralSpeed * playerStats.speedMultiplier, minLateralSpeed, maxLateralSpeed);
+        float speedRatio = playerStats.GetSpeedRatio();
+        lateralSpeed = Mathf.Lerp(minLateralSpeed, maxLateralSpeed, speedRatio);
     }
 
     private void ProcessFullLoopMovement()

@@ -5,12 +5,14 @@ using UnityEngine.SceneManagement;
 public class OrbCounterManager : MonoBehaviour
 {
     public static event Action<int, int, int, int> OnSendOrbCountVisualUpdateRequest;
-
+    public static event Action<int> OnOrbCollected;
+        
     private int lowOrbCount = 0;
     private int midOrbCount = 0;
     private int highOrbCount = 0;
     
     private PlayerStats playerStats;
+    [SerializeField] private bool enableOrbSpeedScaling = true;
 
     private void Awake()
     {
@@ -60,6 +62,10 @@ public class OrbCounterManager : MonoBehaviour
                 break;
         }
 
+        if (enableOrbSpeedScaling)
+        {
+            OnOrbCollected?.Invoke(TotalOrbCount());
+        }
         OnSendOrbCountVisualUpdateRequest?.Invoke(lowOrbCount, midOrbCount, highOrbCount, TotalOrbCount());
     }
 
