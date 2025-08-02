@@ -100,9 +100,12 @@ public class PlayerMovement : MonoBehaviour
         angle += moveDir * lateralSpeed * Time.deltaTime;
         
         // Only clamp if we have any angle restriction
-        if (tieAngleToSpeed || fixedMaxAngle < Mathf.PI * 2)
+        if (tieAngleToSpeed)
         {
-            angle = Mathf.Clamp(angle, -maxAngle, maxAngle);
+            if (maxAngle < Mathf.PI / 2)
+            {
+                angle = Mathf.Clamp(angle, -maxAngle, maxAngle);
+            }
         }
 
         UpdatePositionOnCircle();

@@ -768,10 +768,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9048206834004115896, guid: 5fc5dbc66f2f14956a5fe1b408fc3bf9, type: 3}
-      propertyPath: loopStyle
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9048206834004115896, guid: 5fc5dbc66f2f14956a5fe1b408fc3bf9, type: 3}
       propertyPath: maxLateralSpeed
       value: 8
       objectReference: {fileID: 0}
