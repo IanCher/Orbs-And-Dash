@@ -19899,10 +19899,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedMultiplier: 1
-  baseSpeed: 5
-  maxSpeed: 50
+  baseSpeed: 30
+  maxSpeed: 200
   timeBasedAcceleration: 1
-  speedPerOrb: 0.5
+  speedPerOrb: 5
   activeInvulnerabilityCount: 0
   currentSpeed: 0
 --- !u!114 &8086324004293838517

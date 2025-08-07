@@ -20,6 +20,6 @@ public class PlayerRailProgression : MonoBehaviour
         {
             playerStats.UpdateSpeed();
         }
-        dollyCart.SplinePosition += playerStats.GetCurrentSpeed() * Time.deltaTime / 1000f;
+        dollyCart.SplinePosition += playerStats.GetCurrentSpeed() * Time.deltaTime;
     }
 }
