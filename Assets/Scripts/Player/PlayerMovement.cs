@@ -14,8 +14,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float fixedMaxAngle = Mathf.PI / 2; 
     [SerializeField] float maxLateralSpeed = 2f;
     [SerializeField] float minLateralSpeed = 1f;
-    [SerializeField] float movementRadius = 10f;
-    [SerializeField] float playerCenter = 0f;
+    [SerializeField] float playerOffset = 0;
+    [SerializeField] float movementRadius = 5f;
     [SerializeField] float jumpDuration = 0.5f;
     [SerializeField] float jumpControlPointOffset = 2f;
     [SerializeField] float timeBeforeFullLoop = 1.0f;
@@ -207,8 +207,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 GetPositionOnCircleFromAngle(float angle)
     {
         return new Vector3(
-            (movementRadius - playerCenter) * Mathf.Sin(angle),
-            -(movementRadius - playerCenter) * Mathf.Cos(angle) + movementRadius,
+            (movementRadius - playerOffset) * Mathf.Sin(angle),
+            -(movementRadius - playerOffset) * Mathf.Cos(angle) + playerOffset,
             0
         );
     }

@@ -19866,8 +19866,8 @@ MonoBehaviour:
   fixedMaxAngle: 1.5707964
   maxLateralSpeed: 4
   minLateralSpeed: 1
+  playerOffset: 0
   movementRadius: 5
-  playerCenter: 0.5
   jumpDuration: 0.4
   jumpControlPointOffset: 2.5
   timeBeforeFullLoop: 0.5
