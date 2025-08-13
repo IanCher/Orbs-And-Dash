@@ -11,6 +11,8 @@ public class PlayerStats : MonoBehaviour
     public float speedMultiplier = 1f;
     [SerializeField] private float baseSpeed = 5.0f;
     [SerializeField] private float maxSpeed = 50.0f;
+    public float MaxSpeed => maxSpeed;
+
     [SerializeField] private float timeBasedAcceleration = 1.0f;
     [SerializeField] private float speedPerOrb = 0.5f;
     
