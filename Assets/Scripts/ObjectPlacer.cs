@@ -10,6 +10,7 @@ public class ObjectPlacer : MonoBehaviour
     [SerializeField] PathIndexUnit splinePositionUnit = PathIndexUnit.Distance;
     [SerializeField] float distanceToCircleCenter = 5;
     [SerializeField] float angle = 0;
+    [SerializeField] bool isWall = false;
     private PathIndexUnit previousPositionUnit = PathIndexUnit.Distance;
     private float normalisedPosition = 0f;
     private Vector3 positionOnSpline;
@@ -32,8 +33,18 @@ public class ObjectPlacer : MonoBehaviour
 
     private void RotateObject()
     {
-        Vector3 orientationDir = positionOnSpline - transform.position;
-        Vector3 newDirection = Vector3.RotateTowards(upAtPosition, orientationDir, Mathf.PI * 2, 0);
+        Vector3 newDirection;
+
+        if (isWall)
+        {
+            newDirection = Quaternion.AngleAxis(angle, tangentAtPosition) * upAtPosition;
+        }
+        else
+        {
+            Vector3 orientationDir = positionOnSpline - transform.position;
+            newDirection = Vector3.RotateTowards(upAtPosition, orientationDir, Mathf.PI * 2, 0);
+        }
+
         transform.rotation = Quaternion.LookRotation(tangentAtPosition, newDirection);
     }
 

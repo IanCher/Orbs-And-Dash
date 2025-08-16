@@ -4846,6 +4846,7 @@ GameObject:
   - component: {fileID: 7424456865372426113}
   - component: {fileID: 3537676780474226992}
   - component: {fileID: 2262297848050479874}
+  - component: {fileID: 1709949632806593106}
   m_Layer: 0
   m_Name: EggOrb - Low
   m_TagString: Untagged
@@ -4961,6 +4962,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orbType: 0
   value: 1
+--- !u!114 &1709949632806593106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2282527275250501885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b833d6b2e7d4a4fa0aa42b3a2381d097, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  splineContainer: {fileID: 0}
+  splinePositionParameter: 0
+  splinePositionUnit: 0
+  distanceToCircleCenter: 5
+  angle: 0
 --- !u!1 &3410338269273321786
 GameObject:
   m_ObjectHideFlags: 0

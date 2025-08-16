@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9047772766456182620}
   - component: {fileID: 3397137533671718745}
   - component: {fileID: 8602315422458917355}
+  - component: {fileID: 5218705539815762955}
   m_Layer: 0
   m_Name: Static Wall 1
   m_TagString: Untagged
@@ -28,13 +29,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1038363097796341639}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &2998266280558642088
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -42,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1038363097796341639}
-  m_Mesh: {fileID: 8691780276856062721, guid: 715b46ac23a64304980c7fd4a92d8d15, type: 3}
+  m_Mesh: {fileID: 8691780276856062721, guid: 45c7c8ee2b1ef9d43957d386356ccb05, type: 3}
 --- !u!23 &9047772766456182620
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -121,3 +122,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aae4fc783ba13e4d9909b8688a5be67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5218705539815762955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038363097796341639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b833d6b2e7d4a4fa0aa42b3a2381d097, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  splineContainer: {fileID: 0}
+  splinePositionParameter: 50
+  splinePositionUnit: 0
+  distanceToCircleCenter: 0
+  angle: 0
+  isWall: 1
