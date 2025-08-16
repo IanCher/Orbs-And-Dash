@@ -19,6 +19,10 @@ public class ObjectPlacer : MonoBehaviour
 
     void OnValidate()
     {
+        if (splineContainer == null) {
+            Debug.LogWarning("Missing Track spline - cannot update position");
+            return;
+        }
         UpdateSplineUnit();
         NormalisePositionParam();
         UpdateLocalBasis();
