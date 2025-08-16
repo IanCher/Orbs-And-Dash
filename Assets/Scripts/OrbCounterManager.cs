@@ -108,17 +108,25 @@ public class OrbCounterManager : MonoBehaviour
             {
                 case OrbType.Low:
                     lowOrbCount -= potionData.OrbsToLose;
+                    lowOrbCount = Mathf.Max(0, lowOrbCount);
                     break;
                 case OrbType.Mid:
                     midOrbCount -= potionData.OrbsToLose;
+                    midOrbCount = Mathf.Max(0, midOrbCount);
                     break;
                 case OrbType.High:
                     highOrbCount -= potionData.OrbsToLose;
+                    highOrbCount = Mathf.Max(0, highOrbCount);
                     break;
                 case OrbType.All:
                     lowOrbCount -= potionData.OrbsToLose;
+                    lowOrbCount = Mathf.Max(0, lowOrbCount);
+
                     midOrbCount -= potionData.OrbsToLose;
+                    midOrbCount = Mathf.Max(0, midOrbCount);
+
                     highOrbCount -= potionData.OrbsToLose;
+                    highOrbCount = Mathf.Max(0, highOrbCount);
                     break;
             }
         }

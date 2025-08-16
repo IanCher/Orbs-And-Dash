@@ -9764,6 +9764,7 @@ GameObject:
   - component: {fileID: 4003269782694434730}
   - component: {fileID: 7140575582780518909}
   - component: {fileID: 4321939980370079377}
+  - component: {fileID: 8532737928383171011}
   m_Layer: 0
   m_Name: PotionBomb
   m_TagString: Untagged
@@ -9829,6 +9830,24 @@ MonoBehaviour:
     PercentToSlowBy: 0
     SlowDuration: 0
     OrbTypeToLose: 3
+--- !u!114 &8532737928383171011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6841134428837642177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b833d6b2e7d4a4fa0aa42b3a2381d097, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  splineContainer: {fileID: 0}
+  splinePositionParameter: 0
+  splinePositionUnit: 0
+  distanceToCircleCenter: 5
+  angle: 0
+  isWall: 0
 --- !u!1001 &5313782388973943550
 PrefabInstance:
   m_ObjectHideFlags: 0
