@@ -10,13 +10,12 @@ public class Orb : MonoBehaviour, ICollideable
     bool wasCollected = false;
 
     public int GetValue() => value;
-    public bool WasCollected() => wasCollected;
-    public void SetWasCollected(bool value) => wasCollected = value;
 
     public OrbType GetOrbType() => orbType;
 
     public void HandlePlayerCollision()
     {
+        if (wasCollected) return;
         OnOrbCollected?.Invoke(orbType);
         wasCollected = true;
         Destroy(gameObject);
