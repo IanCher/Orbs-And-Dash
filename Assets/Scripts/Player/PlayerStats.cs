@@ -72,11 +72,13 @@ public class PlayerStats : MonoBehaviour
             return;
         }
 
-        float reduceSpeedMultiplierBy = Mathf.Clamp01(potionData.PercentToSlowBy / 100f);
-        speedMultiplier = 1f - reduceSpeedMultiplierBy;
+        // float reduceSpeedMultiplierBy = Mathf.Clamp01(potionData.PercentToSlowBy / 100f);
 
-        StopCoroutine(nameof(ResetSpeedAfter));
-        StartCoroutine(ResetSpeedAfter(potionData.SlowDuration));
+        currentSpeed *= (100 - potionData.PercentToSlowBy) / 100f;
+        currentSpeed = Mathf.Max(currentSpeed, baseSpeed);
+        // speedMultiplier = 1f - reduceSpeedMultiplierBy;
+        // StopCoroutine(nameof(ResetSpeedAfter));
+        // StartCoroutine(ResetSpeedAfter(potionData.SlowDuration));
     }
 
     void ApplyShieldEffects(ShieldData shieldData)

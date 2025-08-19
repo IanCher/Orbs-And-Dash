@@ -22,7 +22,8 @@ public class PotionData
 {
     public float PercentOrbsToLose;
     public int OrbsToLose;
+    [Range(0f, 100f)]
     public float PercentToSlowBy;
-    public float SlowDuration;
+    // public float SlowDuration;
     public OrbType OrbTypeToLose;
 }

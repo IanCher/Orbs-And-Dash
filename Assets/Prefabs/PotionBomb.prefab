@@ -9827,7 +9827,7 @@ MonoBehaviour:
   PotionsData:
     PercentOrbsToLose: 0
     OrbsToLose: 1
-    PercentToSlowBy: 0
+    PercentToSlowBy: 30
     SlowDuration: 0
     OrbTypeToLose: 3
 --- !u!114 &8532737928383171011
