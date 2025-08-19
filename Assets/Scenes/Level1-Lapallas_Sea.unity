@@ -2948,7 +2948,7 @@ PrefabInstance:
       objectReference: {fileID: 750706619}
     - target: {fileID: 951592760004259151, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_VersionIndex
-      value: 165
+      value: 171
       objectReference: {fileID: 0}
     - target: {fileID: 1021299696687230966, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_Mesh
@@ -2964,7 +2964,7 @@ PrefabInstance:
       objectReference: {fileID: 1239677104}
     - target: {fileID: 1617213679507066056, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_VersionIndex
-      value: 201
+      value: 207
       objectReference: {fileID: 0}
     - target: {fileID: 1872730819710280165, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3048,7 +3048,11 @@ PrefabInstance:
       objectReference: {fileID: 238188766}
     - target: {fileID: 2515170144194724883, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_VersionIndex
-      value: 149
+      value: 155
+      objectReference: {fileID: 0}
+    - target: {fileID: 4170134919674740771, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: maxSpeed
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4211574019549250692, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_Mesh
@@ -3061,6 +3065,14 @@ PrefabInstance:
     - target: {fileID: 4827982506997547911, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_Name
       value: InAllScenes
+      objectReference: {fileID: 0}
+    - target: {fileID: 4859595952355867945, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: maxLateralSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4859595952355867945, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: minLateralSpeed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5057910331924978939, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3096,7 +3108,7 @@ PrefabInstance:
       objectReference: {fileID: 1412119972}
     - target: {fileID: 5470084748892772913, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_VersionIndex
-      value: 149
+      value: 155
       objectReference: {fileID: 0}
     - target: {fileID: 5485813254502749567, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_Mesh
@@ -3140,7 +3152,7 @@ PrefabInstance:
       objectReference: {fileID: 607206800}
     - target: {fileID: 6500293896224381143, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_VersionIndex
-      value: 173
+      value: 179
       objectReference: {fileID: 0}
     - target: {fileID: 6772321710236774104, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_Mesh
@@ -3152,7 +3164,7 @@ PrefabInstance:
       objectReference: {fileID: 388819153}
     - target: {fileID: 7551127873458382249, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_VersionIndex
-      value: 153
+      value: 159
       objectReference: {fileID: 0}
     - target: {fileID: 8123517527761088578, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3196,7 +3208,7 @@ PrefabInstance:
       objectReference: {fileID: 1418370679}
     - target: {fileID: 8852135412267841000, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_VersionIndex
-      value: 169
+      value: 175
       objectReference: {fileID: 0}
     - target: {fileID: 9146007258943133437, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_Mesh
@@ -3204,7 +3216,7 @@ PrefabInstance:
       objectReference: {fileID: 208635021}
     - target: {fileID: 9146007258943133437, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_VersionIndex
-      value: 153
+      value: 159
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
