@@ -4959,7 +4959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   orbType: 0
-  speedGain: 0.2
+  speedGain: 0.1
 --- !u!114 &1709949632806593106
 MonoBehaviour:
   m_ObjectHideFlags: 0
