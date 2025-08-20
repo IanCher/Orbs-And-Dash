@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2670665289249483680}
   - component: {fileID: 525691501977671721}
   - component: {fileID: 821081073894896172}
-  - component: {fileID: 7038515999519139472}
   - component: {fileID: 8376645810700524734}
+  - component: {fileID: 4322298178748190418}
   m_Layer: 0
   m_Name: Static Wall 3 quarter
   m_TagString: Untagged
@@ -132,18 +132,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.0547338, y: 11.996142, z: 1.7994232}
   m_Center: {x: 2.9707048, y: -0.00000047683716, z: -0.00000011920929}
---- !u!114 &7038515999519139472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7029273428301743582}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5aae4fc783ba13e4d9909b8688a5be67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &8376645810700524734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,3 +150,20 @@ MonoBehaviour:
   distanceToCircleCenter: 0
   angle: 0
   isWall: 1
+--- !u!114 &4322298178748190418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7029273428301743582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcd628df42bccf9478c2202e168f5e7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PotionsData:
+    PercentOrbsToLose: 20
+    OrbsToLose: 0
+    PercentToSlowBy: 30
+    OrbTypeToLose: 0
