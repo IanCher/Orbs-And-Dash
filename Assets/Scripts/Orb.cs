@@ -3,20 +3,19 @@ using UnityEngine;
 
 public class Orb : MonoBehaviour, ICollideable
 {
-    public static event Action<OrbType> OnOrbCollected;
-    [SerializeField] private OrbType orbType;
+    public static event Action<Orb> OnOrbCollected;
+    [SerializeField] OrbType orbType;
+    public OrbType OrbType => orbType;
 
-    [SerializeField] int value = 1;
+    [Range(0, 1)][SerializeField] float speedGain = 0.1f;
+    public float SpeedGain => speedGain;
+
     bool wasCollected = false;
-
-    public int GetValue() => value;
-
-    public OrbType GetOrbType() => orbType;
 
     public void HandlePlayerCollision()
     {
         if (wasCollected) return;
-        OnOrbCollected?.Invoke(orbType);
+        OnOrbCollected?.Invoke(this);
         wasCollected = true;
         Destroy(gameObject);
     }

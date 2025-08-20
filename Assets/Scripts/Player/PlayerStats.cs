@@ -36,9 +36,9 @@ public class PlayerStats : MonoBehaviour
         OrbCounterManager.OnOrbCollected += OrbCounterManagerOnOnOrbCollected;
     }
 
-    private void OrbCounterManagerOnOnOrbCollected(int orbsCollected)
+    private void OrbCounterManagerOnOnOrbCollected(float speedGain)
     {
-        UpdateOrbSpeed(orbsCollected);
+        UpdateOrbSpeed(speedGain);
     }
     
     public float GetCurrentSpeed()
@@ -59,9 +59,9 @@ public class PlayerStats : MonoBehaviour
         }
     }
     
-    private void UpdateOrbSpeed(int orbCount)
+    private void UpdateOrbSpeed(float speedGain)
     {
-        currentSpeed = Mathf.Clamp(baseSpeed + (orbCount * speedPerOrb), baseSpeed, maxSpeed);
+        currentSpeed = Mathf.Clamp(currentSpeed * (1 + speedGain), baseSpeed, maxSpeed);
     }
 
     void ApplyPotionEffects(PotionData potionData)

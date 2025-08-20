@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class OrbCounterManager : MonoBehaviour
 {
     public static event Action<int, int, int, int> OnSendOrbCountVisualUpdateRequest;
-    public static event Action<int> OnOrbCollected;
+    public static event Action<float> OnOrbCollected;
         
     private int lowOrbCount = 0;
     private int midOrbCount = 0;
@@ -45,9 +45,9 @@ public class OrbCounterManager : MonoBehaviour
         playerStats = null;
     }
 
-    private void PlayerOrbCollector_OnOrbCollected(OrbType obj)
+    private void PlayerOrbCollector_OnOrbCollected(Orb orb)
     {
-        switch (obj)
+        switch (orb.OrbType)
         {
             case OrbType.Low:
                 lowOrbCount++;
@@ -64,7 +64,7 @@ public class OrbCounterManager : MonoBehaviour
 
         if (enableOrbSpeedScaling)
         {
-            OnOrbCollected?.Invoke(TotalOrbCount());
+            OnOrbCollected?.Invoke(orb.SpeedGain);
         }
         OnSendOrbCountVisualUpdateRequest?.Invoke(lowOrbCount, midOrbCount, highOrbCount, TotalOrbCount());
     }
