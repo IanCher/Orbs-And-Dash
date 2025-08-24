@@ -16,6 +16,7 @@ public class Orb : MonoBehaviour, ICollideable
     {
         if (wasCollected) return;
         OnOrbCollected?.Invoke(this);
+        AudioManager.instance.PlaySound("OrbCollect");
         wasCollected = true;
         Destroy(gameObject);
     }
