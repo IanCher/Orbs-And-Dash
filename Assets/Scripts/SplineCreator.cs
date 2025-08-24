@@ -4,6 +4,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Splines;
 
+[RequireComponent(typeof(SplineContainer))]
 public class SplineCreator : MonoBehaviour
 {
     [SerializeField] TextAsset splineDataJSON;

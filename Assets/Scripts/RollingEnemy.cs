@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class RollingEnemy : MonoBehaviour, ICollideable
+public class RollingEnemy : MonoBehaviour
 {
     [SerializeField] private float rotationSpeed = 100;
     [SerializeField] private bool rotationClockwise = true;
@@ -14,11 +14,6 @@ public class RollingEnemy : MonoBehaviour, ICollideable
     }
     private void Update()
     {
-        transform.Rotate(rotationDirection * rotationSpeed * Time.deltaTime, Space.Self);
-    }
-
-    public void HandlePlayerCollision()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        transform.Rotate(rotationSpeed * Time.deltaTime * rotationDirection, Space.Self);
     }
 }

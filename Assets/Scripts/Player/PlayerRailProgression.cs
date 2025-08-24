@@ -2,6 +2,7 @@ using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Splines;
 
+[RequireComponent(typeof(PlayerStats))]
 public class PlayerRailProgression : MonoBehaviour
 {
     [SerializeField] CinemachineSplineCart dollyCart;

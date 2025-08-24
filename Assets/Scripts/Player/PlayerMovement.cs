@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(PlayerStats))]
 public class PlayerMovement : MonoBehaviour
 {
     enum LoopStyle { Classic, PushForFullLoop, Gravity };

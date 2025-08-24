@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using System;
 
+[RequireComponent(typeof(TMP_Text))]
 public class TimerUI : MonoBehaviour
 {
     private TMP_Text timerUIText;
