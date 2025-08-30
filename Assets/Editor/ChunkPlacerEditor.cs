@@ -3,6 +3,7 @@ using UnityEditor;
 
 
 [CustomEditor(typeof(ChunkPlacer))]
+[CanEditMultipleObjects]
 public class ChunkPlacerEditor : Editor
 {
     public override void OnInspectorGUI()

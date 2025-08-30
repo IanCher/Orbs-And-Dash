@@ -8,6 +8,7 @@ using UnityEngine.Splines;
 
 public class ChunkPlacer : MonoBehaviour
 {
+    [SerializeField] bool isActive = true;
     [SerializeField] SplineContainer trackSpline;
     [SerializeField] ObjectPlacer lowOrbPrefab;
     [SerializeField] ObjectPlacer highOrbPrefab;
@@ -30,6 +31,7 @@ public class ChunkPlacer : MonoBehaviour
 
     void OnValidate()
     {
+        if (!isActive) return;
         if (!CheckAllFieldsAreFilled()) return;
         UnityEngine.Random.InitState(randomSeed);
 
