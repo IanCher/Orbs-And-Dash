@@ -4764,6 +4764,1023 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4a7ff1729a1c4b91aa3de28513cae7b, type: 3}
+--- !u!1001 &3235380296177682465
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 30207478859497269, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 99786163180731823, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: trackSpline
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 237725481367222579, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 293921740791705240, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 328115936275907046, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 376705136059306193, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 402572051401591214, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 555853449357442777, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 580995393303760486, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 652524886679947694, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 765714688477401232, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 836795983831850216, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 847127610464356191, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 859996749097756594, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 895941271276691724, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 915660559708750794, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 1137567081528160423, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 1154011148646021897, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 1180145419118560636, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 1213628391345162717, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: trackSpline
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 1260721664127408478, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 1294024252491783325, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: trackSpline
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 1332878836771940533, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 1435627424964636829, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 1437223990274236889, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 1440446987428427188, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 1507824311337456213, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 1519642841671264015, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 1596734519310571486, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 1610757799303678545, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 1615228012435189891, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 1646613275879416559, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 1740810048866300250, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 1757450637326061290, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 1779404676094638304, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 1823891929546568644, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 1864912828539855923, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 1905430651359401126, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 1920765670331943742, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 1968887385887504154, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 1976114799660762938, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 1980506480631804309, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 1996161684340441302, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 2018178495850395552, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 2026180899254960110, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 2051425087919191059, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 2110974321196559915, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 2113431304052525800, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 2284674773551553040, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 2295061408902052011, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 2315268793901583019, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: trackSpline
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 2398989860969989957, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 2433618541063446467, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 2470238695134194226, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 2482737515252930406, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 2582534935527282554, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 2583511389103286650, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 2601088028770150981, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: m_Name
+      value: Section 08 - Final Mayhem
+      objectReference: {fileID: 0}
+    - target: {fileID: 2636111398534303299, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 2705209140449637332, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 2709828085930854663, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 2728620411583365602, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 2752937960580749526, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 2815752115402633182, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 2918911118609265497, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3009703423166862794, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3012702580565998453, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3013823259725870478, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3021631078312448963, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3022580014834342085, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3093200600312612750, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3154029150139990175, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3201292058091059368, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3258660292240610608, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3292731713396309277, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3328911948179632765, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3331236661486841666, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3338487269369210374, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3381865575331108712, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3385197950009915729, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3429022684936227205, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3531232438705287216, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3534662530864200999, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3544939154062810655, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3554467894300307801, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3583003675209918727, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3584444525015724847, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3607679617779118900, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3623833841688052894, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3632245909699015492, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3747879029986986067, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3755067374133440234, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3769367492615880757, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3782068128780197057, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3842240697180756053, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3886650302141800291, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3888423654618576985, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3924253281523024521, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3966962396373082937, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 3969009984069922501, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 4003222720105744047, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 4035014629097481094, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 4143259473486785511, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 4159273042460197834, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 4197235924353745242, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 4247636922719436609, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 4306424485882876091, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 4357208918495758486, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 4480114671003281372, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 4528398847252734169, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: trackSpline
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 4581641632853111803, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 4592371709923970405, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 4600168604280573122, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 4646220916511450560, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 4686851301688473919, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 4705628941794852314, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 4733830222054677143, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 4757464029281104646, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 4764812225294042832, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 4815201307131507206, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 4818976080450794335, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 4821679423653085161, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 4832198558890834117, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 4911530062551788489, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 5025386148193857593, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: trackSpline
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 5033648960679930801, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 5083472073476606345, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 5086807280888658940, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 5155327697894572428, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 5239578694501907331, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 5276267830785237442, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 5380599148852749752, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 5393840871598122997, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: trackSpline
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 5398914134908408649, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 5494359143448956229, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 5602798170320612768, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 5678504962475315944, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 5715398651422564385, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 5771434876447062769, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 5775391020169028836, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 5878781015403643433, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 5918898516049363358, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 5928254559415255843, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 5989058268240268701, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6072432045390665078, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6155931709615753830, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6164501676332983989, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6179986304164578272, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6246391414524804445, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6247408023028324523, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: trackSpline
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6255079512307930789, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6301907620737071327, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6425421638873565020, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6428784873169387344, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6465957038604067856, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: trackSpline
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6469370954171341445, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6489573462277295456, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6510268230804948705, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6537849303443394461, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: trackSpline
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6578426671324658670, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6613674533654635065, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6616717373004528469, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6639830296905527783, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6662121118591746316, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6681995392851630708, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6703577589057085522, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6704342962287249469, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6718942498816108146, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6723146030953531674, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6811972860640775085, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6829619927259413946, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6834168139951528367, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6887063648791950744, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6895539577223797321, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6935701370544650112, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 6979840427485570535, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 7022944744746131409, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 7024200464067881629, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 7125975660473985505, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 7132127662708726180, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 7201040042304243014, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 7208189727441370892, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 7213844272047518787, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 7248630059639525107, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 7299194125479277678, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 7345181863614891010, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 7349922288390985764, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 7358109140329429442, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 7368428914276750586, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 7404386967306022117, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 7418357514947879654, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 7465007573539045363, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 7512865284326588254, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 7513917401308469111, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 7578632948296715208, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 7627900772564326259, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 7638539573509477657, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 7716281698774194770, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 7735161028290884695, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 7882441940925280333, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: trackSpline
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 7905574212095055102, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 7959031952819422880, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: trackSpline
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8001562818206693477, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8006555052287818370, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8042077736555783646, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8047328850637913639, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047328850637913639, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047328850637913639, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047328850637913639, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047328850637913639, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047328850637913639, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047328850637913639, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047328850637913639, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047328850637913639, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047328850637913639, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8073478479831845858, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8085760491169907771, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8088951044256691209, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8098613690666069747, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8104079523015856935, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8136160634587954132, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8153091835634811275, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8169789633520292379, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8200765759007779032, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: trackSpline
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8316396725437292012, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8365735883710216999, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8445683681367080723, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8475315799867371878, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8519379074054982767, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8581340947538748594, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8611998943791313136, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8686854127144667222, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8715093021187883745, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8753429862031491649, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8783486113799253788, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8849259678464439183, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8864267853563640110, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8884810504481500825, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8889992317996781017, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8904692346384414460, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8961428792169709543, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 8993141649852217864, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 9013959811887256230, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 9045724948196310710, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 9051326184245965831, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 9052489258379425558, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 9090919779585682396, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 9103834951099430782, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 9134272926413255511, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 9144048672546881096, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: trackSpline
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: 9201398604562586141, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6e61a3f1fd3d8412c9cabf17a9c13100, type: 3}
 --- !u!1001 &3293211548658511047
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6536,3 +7553,4 @@ SceneRoots:
   - {fileID: 4351296360267028026}
   - {fileID: 5072580987616452410}
   - {fileID: 5783683405273269966}
+  - {fileID: 3235380296177682465}
