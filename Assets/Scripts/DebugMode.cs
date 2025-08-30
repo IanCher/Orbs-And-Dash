@@ -6,8 +6,9 @@ using UnityEngine.Assertions.Must;
 
 public class DebugMode : MonoBehaviour
 {
-    [SerializeField] bool setPlayerSpeedToMax = false;
+    [SerializeField] bool setPlayerSpeed = false;
     [SerializeField] bool isPlayerInvincible = false;
+    [SerializeField] float playerSpeed = 30f;
     private PlayerStats playerStats;
 
     void Awake()
@@ -22,13 +23,7 @@ public class DebugMode : MonoBehaviour
         {
             playerStats.activeInvulnerabilityCount = 1;
         }
-    }
 
-    void Update()
-    {
-        if (setPlayerSpeedToMax && (playerStats.currentSpeed < playerStats.MaxSpeed))
-        {
-            playerStats.currentSpeed = playerStats.MaxSpeed;
-        }
+        if (setPlayerSpeed) playerStats.currentSpeed = playerSpeed;
     }
 }

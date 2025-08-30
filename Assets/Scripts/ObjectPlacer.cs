@@ -5,12 +5,12 @@ using UnityEngine.Timeline;
 
 public class ObjectPlacer : MonoBehaviour
 {
-    [SerializeField] SplineContainer splineContainer;
-    [SerializeField] float splinePositionParameter = 0;
-    [SerializeField] PathIndexUnit splinePositionUnit = PathIndexUnit.Distance;
-    [SerializeField] float distanceToCircleCenter = 5;
-    [SerializeField] float angle = 0;
-    [SerializeField] bool isWall = false;
+    public SplineContainer splineContainer;
+    public float splinePositionParameter = 0;
+    public PathIndexUnit splinePositionUnit = PathIndexUnit.Distance;
+    public float distanceToCircleCenter = 5;
+    public float angle = 0;
+    public bool isWall = false;
     private PathIndexUnit previousPositionUnit = PathIndexUnit.Distance;
     private float normalisedPosition = 0f;
     private Vector3 positionOnSpline;
@@ -20,10 +20,17 @@ public class ObjectPlacer : MonoBehaviour
 
     void OnValidate()
     {
-        if (splineContainer == null) {
+        if (splineContainer == null)
+        {
             Debug.LogWarning("Missing Track spline - cannot update position");
             return;
         }
+
+        PlaceObject();
+    }
+
+    public void PlaceObject()
+    {
         UpdateSplineUnit();
         NormalisePositionParam();
         UpdateLocalBasis();

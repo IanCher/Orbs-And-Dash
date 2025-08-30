@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8049709183915464772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6655789796745736710}
+  - component: {fileID: 4298590830643527581}
+  m_Layer: 0
+  m_Name: Chunk
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6655789796745736710
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8049709183915464772}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4298590830643527581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8049709183915464772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91e8035824644c5f8939c3796d7bbaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trackSpline: {fileID: 0}
+  lowOrbPrefab: {fileID: 1709949632806593106, guid: 127bd8805379e2344898e805919ce6e7, type: 3}
+  highOrbPrefab: {fileID: 6045624765766475389, guid: 03631446559084ba4aec4310b1efbb28, type: 3}
+  potionBombPrefab: {fileID: 8532737928383171011, guid: 8e9ecae43a105a94f811fa102163794d, type: 3}
+  chunkPosition: 0
+  chunkAngle: 0
+  minDistBetweenObjects: 20
+  maxDistBetweenObjects: 100
+  fixedDistBetweenObjects: 50
+  fixedAngleBetweenObjects: 0.1
+  minAngle: -1.5
+  maxAngle: 1.5
+  isFixedDistanceBetweenObjects: 0
+  isFixedAngleBetweenObjects: 0
+  numOrbsInChunk: 1
+  proportionOfBombs: 0
+  proportionHighOrbs: 0
+  randomSeed: 12345
