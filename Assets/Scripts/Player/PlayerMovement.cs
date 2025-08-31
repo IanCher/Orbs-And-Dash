@@ -21,6 +21,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpControlPointOffset = 2f;
     [SerializeField] float timeBeforeFullLoop = 1.0f;
     [SerializeField] float fullLoopSpeed = 10f;
+    [Space]
+    [SerializeField] private bool enableSmoothing = true;
+    [SerializeField] private float smoothingSpeed = 10f;
 
     float lateralSpeed = 2f;
     float moveDir = 0f;
@@ -95,8 +98,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isJumping) return;
 
-        moveDir = movementAction.ReadValue<Vector2>().x;
-        if (moveDir == 0f) return;
+        float targetDir = movementAction.ReadValue<Vector2>().x;
+        if(enableSmoothing)
+        moveDir = Mathf.Lerp(moveDir, targetDir, Time.deltaTime * smoothingSpeed);
+        else
+            moveDir = targetDir;
+        if (Mathf.Abs(moveDir) < 0.01) return;
 
         angle += moveDir * lateralSpeed * Time.deltaTime;
         
