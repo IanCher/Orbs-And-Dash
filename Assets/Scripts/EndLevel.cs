@@ -1,11 +1,14 @@
 using System;
 using UnityEngine;
+using TMPro;
 
 public class EndLevel : MonoBehaviour
 {
     [Tooltip("Time limit in seconds")]
     [SerializeField] float timeLimit = 60f;
     [SerializeField] TimerUI timerUI;
+    [SerializeField] Canvas finishCanvas;
+    [SerializeField] TMP_Text finishText;
 
     void OnTriggerEnter(Collider other)
     {
@@ -13,14 +16,15 @@ public class EndLevel : MonoBehaviour
 
         float finishTime = timerUI.GetTime();
         timerUI.StopTrackingTime();
-        
+        finishCanvas.gameObject.SetActive(true);
+
         if (finishTime > timeLimit)
         {
-            Debug.Log("Player lost");
+            finishText.text = "You lose...";
         }
         else
         {
-            Debug.Log("Player wins");
+            finishText.text = "You win!!!";
         }
     }
 }
