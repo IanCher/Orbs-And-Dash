@@ -19815,7 +19815,7 @@ GameObject:
   - component: {fileID: 7602720299800609537}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19872,6 +19872,8 @@ MonoBehaviour:
   jumpControlPointOffset: 2.5
   timeBeforeFullLoop: 0.5
   fullLoopSpeed: 10
+  enableSmoothing: 1
+  smoothingSpeed: 10
 --- !u!114 &7867103063312864521
 MonoBehaviour:
   m_ObjectHideFlags: 0
