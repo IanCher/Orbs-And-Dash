@@ -37,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
     InputAction movementAction;
     InputAction jumpAction;
+    InputAction muteAction;
     
     private PlayerStats playerStats;
 
@@ -50,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movementAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
+        muteAction = InputSystem.actions.FindAction("Mute");
 
         UpdatePositionOnCircle();
         UpdateOrientation();
@@ -71,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
         ProcessJump();
         UpdateMaxAngle();
         UpdateLateralSpeed();
+        ReadMuteInput();
     }
 
     void ReadMoveInputAndUpdatePosition()
@@ -174,6 +177,14 @@ public class PlayerMovement : MonoBehaviour
         // by setting the angle in the range [-pi ; pi]
         SetAngleInMinusPiPiRange();
     }
+    
+    private void ReadMuteInput()
+    {
+        if (muteAction.IsPressed())
+        {
+            AudioListener.pause = !AudioListener.pause;
+        }
+    }
 
     private void SetAngleInMinusPiPiRange()
     {
@@ -183,7 +194,7 @@ public class PlayerMovement : MonoBehaviour
         }
         while (angle > Mathf.PI)
         {
-            angle -= 2*Mathf.PI;
+            angle -= 2 * Mathf.PI;
         }
     }
 
