@@ -8,13 +8,29 @@ public class PotionBomb : MonoBehaviour, ICollideable
     public PotionData PotionsData;
     private bool wasHitByPlayer = false;
 
+    [SerializeField] GameObject explosion;
+
     public void HandlePlayerCollision()
     {
         if (wasHitByPlayer) return;
 
         wasHitByPlayer = true;
         OnCollidedWithPotion?.Invoke(PotionsData);
+        PlayExplosion();
         Destroy(gameObject);
+    }
+
+    private void PlayExplosion()
+    {
+        if (explosion == null) return;
+
+        GameObject explosionInstance = Instantiate(
+            explosion,
+            transform.position,
+            transform.rotation
+        );
+
+        Destroy(explosionInstance, 1f);
     }
 }
 [Serializable]

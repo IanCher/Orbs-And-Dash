@@ -9828,8 +9828,8 @@ MonoBehaviour:
     PercentOrbsToLose: 0
     OrbsToLose: 1
     PercentToSlowBy: 30
-    SlowDuration: 0
     OrbTypeToLose: 3
+  explosion: {fileID: 3490435249757070752, guid: dd20dfcc81bed433faab1189ada89ca6, type: 3}
 --- !u!114 &8532737928383171011
 MonoBehaviour:
   m_ObjectHideFlags: 0
