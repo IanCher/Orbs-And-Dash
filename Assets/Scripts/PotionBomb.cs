@@ -29,6 +29,7 @@ public class PotionBomb : MonoBehaviour, ICollideable
             transform.position,
             transform.rotation
         );
+        FindAnyObjectByType<AudioManager>().PlaySound("PotionExplosion");
 
         Destroy(explosionInstance, 1f);
     }

@@ -1714,6 +1714,18 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 240
       objectReference: {fileID: 0}
+    - target: {fileID: 7692606639857696099, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: audioClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7692606639857696099, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: audioClips.Array.data[1].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 28b1e06b852634400bfd60baf5d68594, type: 3}
+    - target: {fileID: 7692606639857696099, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: audioClips.Array.data[1].name
+      value: PotionExplosion
+      objectReference: {fileID: 0}
     - target: {fileID: 8123517527761088578, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5137
