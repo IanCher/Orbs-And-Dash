@@ -171,6 +171,9 @@ public class PlayerMovement : MonoBehaviour
     void ReadJumpInput()
     {
         if (jumpAction.IsPressed() == isJumping) return;
+        if (!isJumping) 
+            AudioManager.instance.PlaySound("Jump");
+            
         isJumping = true;
 
         // Make sure the player won't make more flips than necessary while jumping
