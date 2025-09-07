@@ -1590,6 +1590,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 388819153}
+    - target: {fileID: 2123980866240885275, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: Lens.FarClipPlane
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 2466175476030903785, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -1654,6 +1658,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 208635021}
+    - target: {fileID: 5788364972866040186, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: far clip plane
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 5790816790735343509, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_Mesh
       value: 
