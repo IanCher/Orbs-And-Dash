@@ -17,4 +17,5 @@ public class Shield : MonoBehaviour, ICollideable
 public class ShieldData
 {
     public float DurationSeconds = 4.0f;
+    public int value = 2;
 }

@@ -15,6 +15,7 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField] private float timeBasedAcceleration = 1.0f;
     [SerializeField] private float speedPerOrb = 0.5f;
+    [SerializeField] GameObject shieldVFX;
     
     public int activeInvulnerabilityCount = 0;
 
@@ -69,6 +70,11 @@ public class PlayerStats : MonoBehaviour
         if (IsInvulnerable)
         {
             Debug.Log("Ignoring effect of slow down potion since player is invulnerable to damage and de-buffs");
+            activeInvulnerabilityCount--;
+            if (activeInvulnerabilityCount <= 0)
+            {
+                shieldVFX.SetActive(false);
+            }
             return;
         }
 
@@ -83,15 +89,16 @@ public class PlayerStats : MonoBehaviour
 
     void ApplyShieldEffects(ShieldData shieldData)
     {
-        ++activeInvulnerabilityCount;
+        activeInvulnerabilityCount += shieldData.value;
+        shieldVFX.SetActive(true);
 
-#if UNITY_EDITOR
-        Debug.Log($"Shield applied with duration: {shieldData.DurationSeconds} seconds; activeInvulnerabilityCount={activeInvulnerabilityCount}");
-#endif
+// #if UNITY_EDITOR
+//         Debug.Log($"Shield applied with duration: {shieldData.DurationSeconds} seconds; activeInvulnerabilityCount={activeInvulnerabilityCount}");
+// #endif
 
-        // Stop any existing shield coroutines to reset the timer
-        StopCoroutine(nameof(RemoveInvulnerabilityAfter));
-        StartCoroutine(RemoveInvulnerabilityAfter(shieldData.DurationSeconds));
+//         // Stop any existing shield coroutines to reset the timer
+//         StopCoroutine(nameof(RemoveInvulnerabilityAfter));
+//         StartCoroutine(RemoveInvulnerabilityAfter(shieldData.DurationSeconds));
     }
 
     IEnumerator ResetSpeedAfter(float seconds)
@@ -105,6 +112,7 @@ public class PlayerStats : MonoBehaviour
         yield return new WaitForSeconds(seconds);
 
         activeInvulnerabilityCount = Mathf.Max(0, activeInvulnerabilityCount - 1);
+        shieldVFX.SetActive(false);
 
 #if UNITY_EDITOR
         Debug.Log($"Shield effect expired: activeInvulnerabilityCount={activeInvulnerabilityCount}");
