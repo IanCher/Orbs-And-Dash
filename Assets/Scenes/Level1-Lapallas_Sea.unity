@@ -6097,7 +6097,7 @@ PrefabInstance:
       objectReference: {fileID: 1757429996}
     - target: {fileID: 1970801388589829896, guid: 8fb2b535e7d1945e1aa2247cc098ea87, type: 3}
       propertyPath: m_VersionIndex
-      value: 1552
+      value: 1642
       objectReference: {fileID: 0}
     - target: {fileID: 2078043795059084388, guid: 8fb2b535e7d1945e1aa2247cc098ea87, type: 3}
       propertyPath: splineContainer
@@ -6157,7 +6157,7 @@ PrefabInstance:
       objectReference: {fileID: 1229323347}
     - target: {fileID: 2605712407011922345, guid: 8fb2b535e7d1945e1aa2247cc098ea87, type: 3}
       propertyPath: m_VersionIndex
-      value: 1552
+      value: 1642
       objectReference: {fileID: 0}
     - target: {fileID: 2667712432031131532, guid: 8fb2b535e7d1945e1aa2247cc098ea87, type: 3}
       propertyPath: splineContainer
@@ -6917,7 +6917,7 @@ PrefabInstance:
       objectReference: {fileID: 1848699770}
     - target: {fileID: 9204842196831527779, guid: 8fb2b535e7d1945e1aa2247cc098ea87, type: 3}
       propertyPath: m_VersionIndex
-      value: 1552
+      value: 1642
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
