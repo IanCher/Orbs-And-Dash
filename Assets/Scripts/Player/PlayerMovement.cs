@@ -284,7 +284,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 movementSpherePosition = new Vector3(
             transform.position.x,
-            movementRadius,
+            0,
             transform.position.z
         );
 

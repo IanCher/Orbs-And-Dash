@@ -3564,7 +3564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b355b449eeb254a3894b38809f5680e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 1
+  timeLimit: 120
   timerUI: {fileID: 7045454912069505240}
   finishCanvas: {fileID: 4090968738425131930}
   finishText: {fileID: 6110060136576643000}
