@@ -25,12 +25,15 @@ public class OrbCounterManager : MonoBehaviour
     {        
         Orb.OnOrbCollected += PlayerOrbCollector_OnOrbCollected;
         PotionBomb.OnCollidedWithPotion += PlayerOrbCollector_OnCollidedWithPotion;
+        MysterySpell.OnCollideWithMysterySpell += PlayerOrbCollector_OnCollidedWithMysterySpell;
+
     }
 
     private void OnDestroy()
     {
         Orb.OnOrbCollected -= PlayerOrbCollector_OnOrbCollected;
         PotionBomb.OnCollidedWithPotion -= PlayerOrbCollector_OnCollidedWithPotion;
+        MysterySpell.OnCollideWithMysterySpell -= PlayerOrbCollector_OnCollidedWithMysterySpell;
     }
 
     private void OnPlayerStatsRegistered(PlayerStats stats)
@@ -43,6 +46,29 @@ public class OrbCounterManager : MonoBehaviour
     {
         Debug.Log("OrbCounterManager: PlayerStats unregistered.");
         playerStats = null;
+    }
+
+    private void PlayerOrbCollector_OnCollidedWithMysterySpell(MysterySpellEffect effect)
+    {
+        // Only orb-related side effects are handled here. Shield handling stays in PlayerStats.
+        if (effect == null)
+        {
+            Debug.LogWarning("OrbCounterManager: MysterySpellEffect is null.");
+            return;
+        }
+        switch (effect.effectType)
+        {
+            case MysterySpellEffectType.Damage:
+                if (effect.damageData != null)
+                {
+                    PlayerOrbCollector_OnCollidedWithPotion(effect.damageData); //TODO: implement a separate handler if needed
+                }
+                else
+                {
+                    Debug.LogWarning("OrbCounterManager: Damage effect has null damageData.");
+                }
+                break;
+        }
     }
 
     private void PlayerOrbCollector_OnOrbCollected(Orb orb)

@@ -35,6 +35,7 @@ public class PlayerStats : MonoBehaviour
         PotionBomb.OnCollidedWithPotion += ApplyPotionEffects;
         Shield.OnCollidedWithShield += ApplyShieldEffects;
         OrbCounterManager.OnOrbCollected += OrbCounterManagerOnOnOrbCollected;
+        MysterySpell.OnCollideWithMysterySpell += HandleMysterySpellEffect;
     }
 
     private void OrbCounterManagerOnOnOrbCollected(float speedGain)
@@ -59,7 +60,19 @@ public class PlayerStats : MonoBehaviour
             currentSpeed = Mathf.Clamp(currentSpeed, 0, maxSpeed);
         }
     }
-    
+    void HandleMysterySpellEffect(MysterySpellEffect effect)
+    {
+        switch (effect.effectType)
+        {
+            case MysterySpellEffectType.Damage:
+                ApplyPotionEffects(effect.damageData);
+                break;
+            case MysterySpellEffectType.Shield:
+                ApplyShieldEffects(effect.shieldData);
+                break;
+        }
+    }
+
     private void UpdateOrbSpeed(float speedGain)
     {
         currentSpeed = Mathf.Clamp(currentSpeed * (1 + speedGain), baseSpeed, maxSpeed);
@@ -123,6 +136,7 @@ public class PlayerStats : MonoBehaviour
     {
         PotionBomb.OnCollidedWithPotion -= ApplyPotionEffects;
         Shield.OnCollidedWithShield -= ApplyShieldEffects;
+        MysterySpell.OnCollideWithMysterySpell -= HandleMysterySpellEffect;
 
         OnPlayerStatsDestroyed?.Invoke();
     }
