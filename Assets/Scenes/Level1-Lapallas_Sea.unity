@@ -6654,25 +6654,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 724764242}
     m_Modifications:
+    - target: {fileID: 133096221995320348, guid: 65d5b449bf660ef48a7c57dbe7b082da, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 133096221995320348, guid: 65d5b449bf660ef48a7c57dbe7b082da, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 133096221995320348, guid: 65d5b449bf660ef48a7c57dbe7b082da, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 133096221995320348, guid: 65d5b449bf660ef48a7c57dbe7b082da, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4272350648644313214, guid: 65d5b449bf660ef48a7c57dbe7b082da, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.8
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 4272350648644313214, guid: 65d5b449bf660ef48a7c57dbe7b082da, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.8
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 4272350648644313214, guid: 65d5b449bf660ef48a7c57dbe7b082da, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.8
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 4272350648644313214, guid: 65d5b449bf660ef48a7c57dbe7b082da, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 379.4
+      value: 380.6
       objectReference: {fileID: 0}
     - target: {fileID: 4272350648644313214, guid: 65d5b449bf660ef48a7c57dbe7b082da, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -100.06
+      value: -100.6
       objectReference: {fileID: 0}
     - target: {fileID: 4272350648644313214, guid: 65d5b449bf660ef48a7c57dbe7b082da, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6709,6 +6725,18 @@ PrefabInstance:
     - target: {fileID: 4272350648644313214, guid: 65d5b449bf660ef48a7c57dbe7b082da, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387664645634557816, guid: 65d5b449bf660ef48a7c57dbe7b082da, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.93207544
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387664645634557816, guid: 65d5b449bf660ef48a7c57dbe7b082da, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0.27082947
+      objectReference: {fileID: 0}
+    - target: {fileID: 4387664645634557816, guid: 65d5b449bf660ef48a7c57dbe7b082da, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 0.45973346
       objectReference: {fileID: 0}
     - target: {fileID: 7234584661205116441, guid: 65d5b449bf660ef48a7c57dbe7b082da, type: 3}
       propertyPath: m_Name
