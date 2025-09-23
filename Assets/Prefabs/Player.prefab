@@ -19909,6 +19909,7 @@ MonoBehaviour:
   shieldVFX: {fileID: 3173414142899560885}
   activeInvulnerabilityCount: 0
   currentSpeed: 0
+  orbCollectedVFX: {fileID: 934925164338917723, guid: 47573bf90db394f4b811a30e34670c17, type: 3}
 --- !u!114 &8086324004293838517
 MonoBehaviour:
   m_ObjectHideFlags: 0

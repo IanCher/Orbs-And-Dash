@@ -21,6 +21,8 @@ public class PlayerStats : MonoBehaviour
 
     public bool IsInvulnerable => activeInvulnerabilityCount > 0;
     public float currentSpeed;
+
+    [SerializeField] ParticleSystem orbCollectedVFX;
     
     void Start()
     {
@@ -41,6 +43,8 @@ public class PlayerStats : MonoBehaviour
     private void OrbCounterManagerOnOnOrbCollected(float speedGain)
     {
         UpdateOrbSpeed(speedGain);
+        ParticleSystem vfxInstance = Instantiate(orbCollectedVFX, transform);
+        Destroy(vfxInstance.gameObject, 0.6f);
     }
     
     public float GetCurrentSpeed()
