@@ -4106,6 +4106,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 28b1e06b852634400bfd60baf5d68594, type: 3}
   - name: Jump
     clip: {fileID: 8300000, guid: 6b0a4a47ac4274dddbf21d0cf31f8a53, type: 3}
+  - name: Shield
+    clip: {fileID: 8300000, guid: c2b9ed2bfb2214f5fb004845c2e4d451, type: 3}
 --- !u!82 &5077189140079864583
 AudioSource:
   m_ObjectHideFlags: 0

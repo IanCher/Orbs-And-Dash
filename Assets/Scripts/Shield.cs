@@ -9,6 +9,7 @@ public class Shield : MonoBehaviour, ICollideable
     public void HandlePlayerCollision()
     {
         OnCollidedWithShield?.Invoke(ShieldData);
+        AudioManager.instance.PlaySound("Shield");
         Destroy(gameObject);
     }
 }
