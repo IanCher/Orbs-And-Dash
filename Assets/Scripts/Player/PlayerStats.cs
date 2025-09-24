@@ -7,7 +7,7 @@ public class PlayerStats : MonoBehaviour
     // Use eventing to broadcast the player state to other game objects
     public static event Action<PlayerStats> OnPlayerStatsReady;
     public static event Action OnPlayerStatsDestroyed;
-    
+
     public float speedMultiplier = 1f;
     [SerializeField] private float baseSpeed = 5.0f;
     [SerializeField] private float maxSpeed = 50.0f;
@@ -16,14 +16,14 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private float timeBasedAcceleration = 1.0f;
     [SerializeField] private float speedPerOrb = 0.5f;
     [SerializeField] GameObject shieldVFX;
-    
+
     public int activeInvulnerabilityCount = 0;
 
     public bool IsInvulnerable => activeInvulnerabilityCount > 0;
     public float currentSpeed;
 
     [SerializeField] ParticleSystem orbCollectedVFX;
-    
+
     void Start()
     {
         currentSpeed = baseSpeed;
@@ -35,6 +35,7 @@ public class PlayerStats : MonoBehaviour
         OnPlayerStatsReady?.Invoke(this);
 
         PotionBomb.OnCollidedWithPotion += ApplyPotionEffects;
+        ParalysingSpell.OnCollidedWithPotion += ApplyPotionEffects;
         Shield.OnCollidedWithShield += ApplyShieldEffects;
         OrbCounterManager.OnOrbCollected += OrbCounterManagerOnOnOrbCollected;
         MysterySpell.OnCollideWithMysterySpell += HandleMysterySpellEffect;
@@ -46,7 +47,7 @@ public class PlayerStats : MonoBehaviour
         ParticleSystem vfxInstance = Instantiate(orbCollectedVFX, transform);
         Destroy(vfxInstance.gameObject, 0.6f);
     }
-    
+
     public float GetCurrentSpeed()
     {
         return currentSpeed * speedMultiplier;
@@ -98,24 +99,48 @@ public class PlayerStats : MonoBehaviour
         // float reduceSpeedMultiplierBy = Mathf.Clamp01(potionData.PercentToSlowBy / 100f);
 
         currentSpeed *= (100 - potionData.PercentToSlowBy) / 100f;
-        currentSpeed = Mathf.Max(currentSpeed, baseSpeed);
+        if (potionData.PercentToSlowBy > 90)// or equal 100 depending on how we want to handle it
+        {
+            paralyzed = true;
+            jumpNeeded = 3;//Hardcoded for now, can be part of potion data later?
+        }
+        else
+        {
+            paralyzed = false;
+        }
+
+        //currentSpeed = Mathf.Max(currentSpeed, baseSpeed);
         // speedMultiplier = 1f - reduceSpeedMultiplierBy;
         // StopCoroutine(nameof(ResetSpeedAfter));
         // StartCoroutine(ResetSpeedAfter(potionData.SlowDuration));
     }
-
+    private bool paralyzed = false;
+    private int jumpNeeded = 0;
+    public void Jumped()
+    {
+        if (paralyzed)
+        {
+            jumpNeeded--;
+            if(jumpNeeded <= 0)
+            {
+                paralyzed = false;
+                currentSpeed = Mathf.Max(currentSpeed, baseSpeed);
+            }
+        }
+        
+    }
     void ApplyShieldEffects(ShieldData shieldData)
     {
         activeInvulnerabilityCount += shieldData.value;
         shieldVFX.SetActive(true);
 
-// #if UNITY_EDITOR
-//         Debug.Log($"Shield applied with duration: {shieldData.DurationSeconds} seconds; activeInvulnerabilityCount={activeInvulnerabilityCount}");
-// #endif
+        // #if UNITY_EDITOR
+        //         Debug.Log($"Shield applied with duration: {shieldData.DurationSeconds} seconds; activeInvulnerabilityCount={activeInvulnerabilityCount}");
+        // #endif
 
-//         // Stop any existing shield coroutines to reset the timer
-//         StopCoroutine(nameof(RemoveInvulnerabilityAfter));
-//         StartCoroutine(RemoveInvulnerabilityAfter(shieldData.DurationSeconds));
+        //         // Stop any existing shield coroutines to reset the timer
+        //         StopCoroutine(nameof(RemoveInvulnerabilityAfter));
+        //         StartCoroutine(RemoveInvulnerabilityAfter(shieldData.DurationSeconds));
     }
 
     IEnumerator ResetSpeedAfter(float seconds)
@@ -135,10 +160,11 @@ public class PlayerStats : MonoBehaviour
         Debug.Log($"Shield effect expired: activeInvulnerabilityCount={activeInvulnerabilityCount}");
 #endif
     }
-    
+
     void OnDestroy()
     {
         PotionBomb.OnCollidedWithPotion -= ApplyPotionEffects;
+        ParalysingSpell.OnCollidedWithPotion -= ApplyPotionEffects;
         Shield.OnCollidedWithShield -= ApplyShieldEffects;
         MysterySpell.OnCollideWithMysterySpell -= HandleMysterySpellEffect;
 

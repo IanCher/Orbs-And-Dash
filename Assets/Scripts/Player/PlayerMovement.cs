@@ -171,11 +171,15 @@ public class PlayerMovement : MonoBehaviour
     void ReadJumpInput()
     {
         if (jumpAction.IsPressed() == isJumping) return;
-        if (!isJumping) 
+        if (!isJumping)
+        {
             AudioManager.instance.PlaySound("Jump");
+            playerStats.Jumped();
+        }
+            
             
         isJumping = true;
-
+        
         // Make sure the player won't make more flips than necessary while jumping
         // by setting the angle in the range [-pi ; pi]
         SetAngleInMinusPiPiRange();
