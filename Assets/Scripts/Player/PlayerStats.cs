@@ -102,7 +102,7 @@ public class PlayerStats : MonoBehaviour
         if (potionData.PercentToSlowBy > 90)// or equal 100 depending on how we want to handle it
         {
             paralyzed = true;
-            jumpNeeded = 3;//Hardcoded for now, can be part of potion data later?
+            jumpNeeded = potionData.JumpNeeded;//Hardcoded for now, can be part of potion data later?
         }
         else
         {

@@ -1,7 +1,12 @@
 using System;
 using UnityEngine;
 
-public class ParalysingSpell : MonoBehaviour, ICollideable
+public class ParalysingSpell : BaseSpell
+{
+
+}
+
+public class BaseSpell : MonoBehaviour, ICollideable
 {
     public static event Action<PotionData> OnCollidedWithPotion;
     [Tooltip("For Percents, it is the value /100, so 5 is 5%")]
@@ -9,6 +14,7 @@ public class ParalysingSpell : MonoBehaviour, ICollideable
     private bool wasHitByPlayer = false;
 
     [SerializeField] GameObject vfx;
+    [SerializeField] string soundName;
 
     public void HandlePlayerCollision()
     {
@@ -16,12 +22,12 @@ public class ParalysingSpell : MonoBehaviour, ICollideable
 
         wasHitByPlayer = true;
         OnCollidedWithPotion?.Invoke(PotionsData);
-        SlowPlayerEffects();
+        SpawnEffects();
         Destroy(gameObject);
     }
-    private void SlowPlayerEffects()
+    private void SpawnEffects()
     {
-        AudioManager.instance.PlaySound("ParalyzeSound");
+        AudioManager.instance.PlaySound(soundName);
 
         if (vfx != null)
         {
