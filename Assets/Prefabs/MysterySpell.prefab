@@ -291,16 +291,26 @@ MonoBehaviour:
   - {fileID: 6208452402750835858}
   - {fileID: 4244334944691129329}
   alternatingTimeBetweenAssets: 0.1
+  dioboiler:
+    Vfx: {fileID: 0}
+    SoundName: 
   takeDamageChance: 50
   shieldChance: 50
   damageData:
     PercentOrbsToLose: 0
     OrbsToLose: 1
     PercentToSlowBy: 30
+    JumpNeeded: 0
     OrbTypeToLose: 3
   shieldData:
     DurationSeconds: 4
     value: 2
+  shieldEffects:
+    Vfx: {fileID: 0}
+    SoundName: Shield
+  damageEffects:
+    Vfx: {fileID: 0}
+    SoundName: 
 --- !u!114 &-7594833958424260191
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -48,7 +48,7 @@ public class PlayerStats : MonoBehaviour
         ParticleSystem vfxInstance = Instantiate(orbCollectedVFX, transform);
         Destroy(vfxInstance.gameObject, 0.6f);
     }
-
+    
     public float GetCurrentSpeed()
     {
         return currentSpeed * speedMultiplier;

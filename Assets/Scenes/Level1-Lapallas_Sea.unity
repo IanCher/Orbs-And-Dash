@@ -212,6 +212,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &74483423 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1363266536188517668, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+  m_PrefabInstance: {fileID: 724764241}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &114734525
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2498,6 +2503,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1978217763}
+    - target: {fileID: 1363266536188517668, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1617213679507066056, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -2772,6 +2781,14 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: 05423e28dee5c4c43afa9d7395359123, type: 3}
     - target: {fileID: 7692606639857696099, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: audioClips.Array.data[4].name
+      value: ParalyzeSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 7692606639857696099, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: audioClips.Array.data[5].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 05423e28dee5c4c43afa9d7395359123, type: 3}
+    - target: {fileID: 7692606639857696099, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: audioClips.Array.data[5].name
       value: ParalyzeSound
       objectReference: {fileID: 0}
     - target: {fileID: 8123517527761088578, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
@@ -8417,6 +8434,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1938841259445623291, guid: c2f75fdec343d6c47a34f021a337828e, type: 3}
+      propertyPath: effects.Vfx
+      value: 
+      objectReference: {fileID: 5713928374551458004, guid: 3bba13f20a438ff458e73f8132c6d37d, type: 3}
+    - target: {fileID: 1938841259445623291, guid: c2f75fdec343d6c47a34f021a337828e, type: 3}
+      propertyPath: effects.SoundName
+      value: ParalyzeSound
+      objectReference: {fileID: 0}
     - target: {fileID: 3438622390148537760, guid: c2f75fdec343d6c47a34f021a337828e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 144.51086
@@ -8781,6 +8806,99 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ea1c73c8756f9744b5c0dcb6faab26d, type: 3}
+--- !u!1001 &1810673481
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8886170741259417860, guid: 7689fc93ea7dffa499b6cc5e949ddd28, type: 3}
+      propertyPath: shieldChance
+      value: 80.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8886170741259417860, guid: 7689fc93ea7dffa499b6cc5e949ddd28, type: 3}
+      propertyPath: takeDamageChance
+      value: 82.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8886170741259417860, guid: 7689fc93ea7dffa499b6cc5e949ddd28, type: 3}
+      propertyPath: damageEffects.Vfx
+      value: 
+      objectReference: {fileID: 5713928374551458004, guid: 7d2cb4f5513b8434389aa7b9c71f0d8b, type: 3}
+    - target: {fileID: -8886170741259417860, guid: 7689fc93ea7dffa499b6cc5e949ddd28, type: 3}
+      propertyPath: shieldEffects.Vfx
+      value: 
+      objectReference: {fileID: 74483423}
+    - target: {fileID: -8886170741259417860, guid: 7689fc93ea7dffa499b6cc5e949ddd28, type: 3}
+      propertyPath: damageEffects.SoundName
+      value: ParalyzeSound
+      objectReference: {fileID: 0}
+    - target: {fileID: -8886170741259417860, guid: 7689fc93ea7dffa499b6cc5e949ddd28, type: 3}
+      propertyPath: shieldEffects.SoundName
+      value: Shield
+      objectReference: {fileID: 0}
+    - target: {fileID: -7594833958424260191, guid: 7689fc93ea7dffa499b6cc5e949ddd28, type: 3}
+      propertyPath: splineContainer
+      value: 
+      objectReference: {fileID: 1021796112}
+    - target: {fileID: -7594833958424260191, guid: 7689fc93ea7dffa499b6cc5e949ddd28, type: 3}
+      propertyPath: splinePositionParameter
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2399414018891358433, guid: 7689fc93ea7dffa499b6cc5e949ddd28, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 49.926846
+      objectReference: {fileID: 0}
+    - target: {fileID: 2399414018891358433, guid: 7689fc93ea7dffa499b6cc5e949ddd28, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2399414018891358433, guid: 7689fc93ea7dffa499b6cc5e949ddd28, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0000037998489
+      objectReference: {fileID: 0}
+    - target: {fileID: 2399414018891358433, guid: 7689fc93ea7dffa499b6cc5e949ddd28, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2399414018891358433, guid: 7689fc93ea7dffa499b6cc5e949ddd28, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2399414018891358433, guid: 7689fc93ea7dffa499b6cc5e949ddd28, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 2399414018891358433, guid: 7689fc93ea7dffa499b6cc5e949ddd28, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2399414018891358433, guid: 7689fc93ea7dffa499b6cc5e949ddd28, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2399414018891358433, guid: 7689fc93ea7dffa499b6cc5e949ddd28, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2399414018891358433, guid: 7689fc93ea7dffa499b6cc5e949ddd28, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046186996063536095, guid: 7689fc93ea7dffa499b6cc5e949ddd28, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 7f4df23059302411aa343b7466f937ac, type: 2}
+    - target: {fileID: 6677718483751198918, guid: 7689fc93ea7dffa499b6cc5e949ddd28, type: 3}
+      propertyPath: m_Name
+      value: MysterySpell (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7689fc93ea7dffa499b6cc5e949ddd28, type: 3}
 --- !u!1001 &1812352732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16177,4 +16295,5 @@ SceneRoots:
   - {fileID: 45228426}
   - {fileID: 1221567961}
   - {fileID: 540438855}
+  - {fileID: 1810673481}
   - {fileID: 1739694698}
