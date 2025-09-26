@@ -2204,6 +2204,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8886170741259417860, guid: 7689fc93ea7dffa499b6cc5e949ddd28, type: 3}
+      propertyPath: shieldChance
+      value: 80.1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8886170741259417860, guid: 7689fc93ea7dffa499b6cc5e949ddd28, type: 3}
+      propertyPath: takeDamageChance
+      value: 82.1
+      objectReference: {fileID: 0}
     - target: {fileID: -7594833958424260191, guid: 7689fc93ea7dffa499b6cc5e949ddd28, type: 3}
       propertyPath: splineContainer
       value: 
@@ -8447,6 +8455,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3438622390148537760, guid: c2f75fdec343d6c47a34f021a337828e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676654126467939759, guid: c2f75fdec343d6c47a34f021a337828e, type: 3}
+      propertyPath: angle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3676654126467939759, guid: c2f75fdec343d6c47a34f021a337828e, type: 3}
+      propertyPath: isWall
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3676654126467939759, guid: c2f75fdec343d6c47a34f021a337828e, type: 3}

@@ -8,9 +8,8 @@ public class BaseSpell : MonoBehaviour, ICollideable
     public PotionData PotionsData;
     private bool wasHitByPlayer = false;
 
-    [SerializeField] GameObject vfx;
-    [SerializeField] string soundName;
-
+    [Header("VFX And SFX")]
+    [SerializeField] EffectClass effects = new EffectClass();
     public void HandlePlayerCollision()
     {
         if (wasHitByPlayer) return;
@@ -22,21 +21,18 @@ public class BaseSpell : MonoBehaviour, ICollideable
     }
     private void SpawnEffects()
     {
-        AudioManager.instance.PlaySound(soundName);
+        AudioManager.instance.PlaySound(effects.SoundName);
 
-        if (vfx != null)
+        if (effects.Vfx != null)
         {
 
             GameObject effect = Instantiate(
-                vfx,
+                effects.Vfx,
                 transform.position,
                 transform.rotation
             );
             
             Destroy(effect, 1f);
-        }
-
-
-       
+        }       
     }
 }

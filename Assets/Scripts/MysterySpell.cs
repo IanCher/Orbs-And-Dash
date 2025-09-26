@@ -6,8 +6,12 @@ public class MysterySpell : MonoBehaviour, ICollideable
     public static event Action<MysterySpellEffect> OnCollideWithMysterySpell;
     [SerializeField] GameObject[] assetsForVisualisation;
     [SerializeField] float alternatingTimeBetweenAssets = 0.5f;
+    [SerializeField] EffectClass dioboiler = new EffectClass();
     private float timeSinceLastAssetChange = 0;
     private int currentActiveAssetIdx = 0;
+
+    
+
 
     [Header("MysterySpell Weights normalized to 100%")]
     [Min(0f)] public float takeDamageChance = 50f;
@@ -16,7 +20,11 @@ public class MysterySpell : MonoBehaviour, ICollideable
     [Header("Effect Data")]
     public PotionData damageData;
     public ShieldData shieldData;
-
+    
+    [Header("VFX And SFX")]
+    [SerializeField] EffectClass shieldEffects = new EffectClass();
+    [SerializeField] EffectClass damageEffects = new EffectClass();
+    
     private bool wasHitByPlayer = false;
 
     void Start()
@@ -70,6 +78,7 @@ public class MysterySpell : MonoBehaviour, ICollideable
                 effectType = MysterySpellEffectType.Damage,
                 damageData = damageData
             };
+            SpawnEffects(damageEffects);
         }
         else
         {
@@ -78,12 +87,28 @@ public class MysterySpell : MonoBehaviour, ICollideable
                 effectType = MysterySpellEffectType.Shield,
                 shieldData = shieldData
             };
+            SpawnEffects(shieldEffects);
         }
 
         OnCollideWithMysterySpell?.Invoke(effect);
         Destroy(gameObject);
     }
+    private void SpawnEffects(EffectClass fx)
+    {
+        AudioManager.instance.PlaySound(fx.SoundName);
 
+        if (fx.Vfx != null)
+        {
+
+            GameObject effect = Instantiate(
+                fx.Vfx,
+                transform.position,
+                transform.rotation
+            );
+
+            Destroy(effect, 1f);
+        }
+    }
     private void CalculateWeights(out float damageWeight, out float shieldWeight, out float totalWeight)
     {
         damageWeight = Mathf.Max(0f, takeDamageChance);
@@ -101,4 +126,13 @@ public class MysterySpellEffect
     public MysterySpellEffectType effectType;
     public PotionData damageData;
     public ShieldData shieldData;
+}
+
+[Serializable]
+public class EffectClass
+{
+    public GameObject Vfx;
+    public string SoundName;
+
+
 }
