@@ -21,6 +21,7 @@ public class PlayerStats : MonoBehaviour
 
     public bool IsInvulnerable => activeInvulnerabilityCount > 0;
     public float currentSpeed;
+    public bool Paralyzed { get; set; }
 
     [SerializeField] ParticleSystem orbCollectedVFX;
 
@@ -101,12 +102,12 @@ public class PlayerStats : MonoBehaviour
         currentSpeed *= (100 - potionData.PercentToSlowBy) / 100f;
         if (potionData.PercentToSlowBy > 90)// or equal 100 depending on how we want to handle it
         {
-            paralyzed = true;
+            Paralyzed = true;
             jumpNeeded = potionData.JumpNeeded;//Hardcoded for now, can be part of potion data later?
         }
         else
         {
-            paralyzed = false;
+            Paralyzed = false;
         }
 
         //currentSpeed = Mathf.Max(currentSpeed, baseSpeed);
@@ -114,20 +115,20 @@ public class PlayerStats : MonoBehaviour
         // StopCoroutine(nameof(ResetSpeedAfter));
         // StartCoroutine(ResetSpeedAfter(potionData.SlowDuration));
     }
-    private bool paralyzed = false;
+   
     private int jumpNeeded = 0;
     public void Jumped()
     {
-        if (paralyzed)
+        if (Paralyzed)
         {
             jumpNeeded--;
-            if(jumpNeeded <= 0)
+            if (jumpNeeded <= 0)
             {
-                paralyzed = false;
+                Paralyzed = false;
                 currentSpeed = Mathf.Max(currentSpeed, baseSpeed);
             }
         }
-        
+
     }
     void ApplyShieldEffects(ShieldData shieldData)
     {

@@ -108,6 +108,10 @@ public class PlayerMovement : MonoBehaviour
             moveDir = targetDir;
         if (Mathf.Abs(moveDir) < 0.01) return;
 
+        if (playerStats.Paralyzed)
+        {
+            moveDir= moveDir*0.1f;
+        }
         angle += moveDir * lateralSpeed * Time.deltaTime;
         
         // Only clamp if we have any angle restriction
