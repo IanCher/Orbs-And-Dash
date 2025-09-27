@@ -9,7 +9,17 @@ public class PotionBomb : MonoBehaviour, ICollideable
     private bool wasHitByPlayer = false;
 
     [SerializeField] GameObject explosion;
+    protected virtual void Reset()
+    {
+        if (PotionsData == null) PotionsData = new PotionData();
+        PotionsData.SetType(EffectType.PotionBomb);    
+    }
 
+    protected virtual void OnValidate()
+    {
+        if (PotionsData == null) PotionsData = new PotionData();
+        PotionsData.SetType(EffectType.PotionBomb);
+    }
     public void HandlePlayerCollision()
     {
         if (wasHitByPlayer) return;
@@ -33,15 +43,4 @@ public class PotionBomb : MonoBehaviour, ICollideable
 
         Destroy(explosionInstance, 1f);
     }
-}
-[Serializable]
-public class PotionData
-{
-    public float PercentOrbsToLose;
-    public int OrbsToLose;
-    [Range(0f, 100f)]
-    public float PercentToSlowBy;
-    public int JumpNeeded;
-    // public float SlowDuration;
-    public OrbType OrbTypeToLose;
 }

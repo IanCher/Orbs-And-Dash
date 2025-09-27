@@ -6,11 +6,21 @@ public class MysterySpell : MonoBehaviour, ICollideable
     public static event Action<MysterySpellEffect> OnCollideWithMysterySpell;
     [SerializeField] GameObject[] assetsForVisualisation;
     [SerializeField] float alternatingTimeBetweenAssets = 0.5f;
-    [SerializeField] EffectClass dioboiler = new EffectClass();
     private float timeSinceLastAssetChange = 0;
     private int currentActiveAssetIdx = 0;
 
-    
+
+    protected virtual void Reset()
+    {
+        if (damageData == null) damageData = new PotionData();
+        damageData.SetType(EffectType.MysterySpell);
+    }
+
+    protected virtual void OnValidate()
+    {
+        if (damageData == null) damageData = new PotionData();
+        damageData.SetType(EffectType.MysterySpell);
+    }
 
 
     [Header("MysterySpell Weights normalized to 100%")]

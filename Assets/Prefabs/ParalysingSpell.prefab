@@ -195,14 +195,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87e1aa6adc9447341962c9d1f5c8c4e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PotionsData:
+  CollisionEffects:
+    type: 2
+    Acceleration: 0
+    TimeOfAcceleration: 0
+    PercentToSlowBy: 94.8
+    JumpNeeded: 3
     PercentOrbsToLose: 0
     OrbsToLose: 0
-    PercentToSlowBy: 93
-    JumpNeeded: 3
     OrbTypeToLose: 0
-  vfx: {fileID: 0}
-  soundName: ParalyzeSound
+    ShieldDurationSeconds: 0
+    ShieldValue: 0
+  effects:
+    Vfx: {fileID: 0}
+    SoundName: 
 --- !u!1001 &4635292893701117155
 PrefabInstance:
   m_ObjectHideFlags: 0

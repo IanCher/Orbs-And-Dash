@@ -37,6 +37,8 @@ public class PlayerStats : MonoBehaviour
 
         PotionBomb.OnCollidedWithPotion += ApplyPotionEffects;
         ParalysingSpell.OnCollidedWithPotion += ApplyPotionEffects;
+        AccelerationPlatform.OnCollidedWithPotion += ApplyPotionEffects;
+
         Shield.OnCollidedWithShield += ApplyShieldEffects;
         OrbCounterManager.OnOrbCollected += OrbCounterManagerOnOnOrbCollected;
         MysterySpell.OnCollideWithMysterySpell += HandleMysterySpellEffect;
@@ -48,7 +50,7 @@ public class PlayerStats : MonoBehaviour
         ParticleSystem vfxInstance = Instantiate(orbCollectedVFX, transform);
         Destroy(vfxInstance.gameObject, 0.6f);
     }
-    
+
     public float GetCurrentSpeed()
     {
         return currentSpeed * speedMultiplier;
@@ -86,6 +88,15 @@ public class PlayerStats : MonoBehaviour
 
     void ApplyPotionEffects(PotionData potionData)
     {
+
+        if (potionData != null && potionData.Type == EffectType.AccelerationPlatform)
+        {
+            speedMultiplier = potionData.Acceleration;
+            StartCoroutine(ResetSpeedAfter(potionData.TimeOfAcceleration));
+            return;
+        }
+
+
         if (IsInvulnerable)
         {
             Debug.Log("Ignoring effect of slow down potion since player is invulnerable to damage and de-buffs");
@@ -115,7 +126,7 @@ public class PlayerStats : MonoBehaviour
         // StopCoroutine(nameof(ResetSpeedAfter));
         // StartCoroutine(ResetSpeedAfter(potionData.SlowDuration));
     }
-   
+
     private int jumpNeeded = 0;
     public void Jumped()
     {

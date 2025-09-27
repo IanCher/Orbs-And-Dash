@@ -1,4 +1,4 @@
-public class ParalysingSpell : BaseSpell
-{
-
+public class ParalysingSpell : BaseSpell<EffectType>
+{   
+    protected override EffectType EffectKind => EffectType.ParalyzeSpell;
 }
