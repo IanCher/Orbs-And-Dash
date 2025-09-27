@@ -5,12 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Prototype.unity
-    guid: 31d3f374020bf4af98b7980af0702a0a
   - enabled: 1
-    path: Assets/Scenes/prototypecopytotestskybox.unity
-    guid: 5d3ba4214a7648347880b1f41c2176f9
+    path: Assets/Scenes/Menu.unity
+    guid: 29e6473261333b646a60a659b6e3a2f9
+  - enabled: 1
+    path: Assets/Scenes/Level1-Lapallas_Sea.unity
+    guid: cddc479e226494124b84b7277a6cbc3c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
