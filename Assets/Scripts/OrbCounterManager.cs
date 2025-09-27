@@ -26,7 +26,13 @@ public class OrbCounterManager : MonoBehaviour
         Orb.OnOrbCollected += PlayerOrbCollector_OnOrbCollected;
         PotionBomb.OnCollidedWithPotion += PlayerOrbCollector_OnCollidedWithPotion;
         MysterySpell.OnCollideWithMysterySpell += PlayerOrbCollector_OnCollidedWithMysterySpell;
+        EndLevel.OnPlayerWon += EndLevel_OnPlayerWon;
 
+    }
+
+    private void EndLevel_OnPlayerWon()
+    {
+        PlayerData.NormalOrbs += lowOrbCount;
     }
 
     private void OnDestroy()
@@ -34,6 +40,7 @@ public class OrbCounterManager : MonoBehaviour
         Orb.OnOrbCollected -= PlayerOrbCollector_OnOrbCollected;
         PotionBomb.OnCollidedWithPotion -= PlayerOrbCollector_OnCollidedWithPotion;
         MysterySpell.OnCollideWithMysterySpell -= PlayerOrbCollector_OnCollidedWithMysterySpell;
+        EndLevel.OnPlayerWon -= EndLevel_OnPlayerWon;
     }
 
     private void OnPlayerStatsRegistered(PlayerStats stats)

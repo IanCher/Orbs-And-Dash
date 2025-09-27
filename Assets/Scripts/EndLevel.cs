@@ -4,6 +4,8 @@ using TMPro;
 
 public class EndLevel : MonoBehaviour
 {
+    public static event Action OnPlayerWon;
+
     [Tooltip("Time limit in seconds")]
     [SerializeField] float timeLimit = 60f;
     [SerializeField] TimerUI timerUI;
@@ -25,6 +27,7 @@ public class EndLevel : MonoBehaviour
         else
         {
             finishText.text = "You win!!!";
+            OnPlayerWon?.Invoke();
         }
     }
 }

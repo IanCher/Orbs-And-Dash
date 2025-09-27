@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,6 +8,7 @@ public class MainMenuUI : MonoBehaviour
 {
     [SerializeField] private Button startButton;
     [SerializeField] private Button quitButton;
+    [SerializeField] private TextMeshProUGUI normalOrbCountText;
 
     private void Awake()
     {
@@ -23,6 +25,8 @@ public class MainMenuUI : MonoBehaviour
             Application.Quit();
 #endif
         });
+
+        normalOrbCountText.text = "NORMAL ORBS : " + PlayerData.NormalOrbs;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

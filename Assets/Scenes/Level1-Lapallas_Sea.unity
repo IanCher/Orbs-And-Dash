@@ -2627,6 +2627,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2720279252217752660, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: timeLimit
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 3545899615555520310, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_Mesh
       value: 
