@@ -142,11 +142,7 @@ public class ShowIfEnumDrawer : PropertyDrawer
         var result = (names != null && names.Length > 0) ? names[idx] : string.Empty;
         return result.Replace(" ", "");
     }
-
-    /// <summary>
-    /// Sostituisce l'ultimo segmento del propertyPath con "siblingName".
-    /// Esempio:  "data.Array.data[0].campo" -> "data.Array.data[0].siblingName"
-    /// </summary>
+      
     private static SerializedProperty FindRelativeSibling(SerializedProperty property, string siblingName)
     {
         string path = property.propertyPath;
@@ -159,3 +155,70 @@ public class ShowIfEnumDrawer : PropertyDrawer
 }
 
 
+/// <summary>
+/// Allow (false,false) e (true,false)/(false,true).
+/// </summary>
+public class AtMostOneTrueWithAttribute : PropertyAttribute
+{
+    public readonly string OtherField;
+    public AtMostOneTrueWithAttribute(string otherField)
+    {
+        OtherField = otherField;
+    }
+}
+[CustomPropertyDrawer(typeof(AtMostOneTrueWithAttribute))]
+public class AtMostOneTrueWithDrawer : PropertyDrawer
+{
+    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+    {
+        var attr = (AtMostOneTrueWithAttribute)attribute;
+        var other = FindSibling(property, attr.OtherField);
+
+        var lineH = EditorGUIUtility.singleLineHeight;
+        var v = EditorGUIUtility.standardVerticalSpacing;
+        var fieldRect = new Rect(position.x, position.y, position.width, lineH);
+        EditorGUI.PropertyField(fieldRect, property, label);
+
+        if (other == null || other.propertyType != SerializedPropertyType.Boolean)
+        {
+            var warn = new Rect(position.x, position.y + lineH + v, position.width, lineH * 2f);
+            EditorGUI.HelpBox(warn, $"[AtMostOneTrueWith] '{attr.OtherField}' non trovato o non è bool.", MessageType.Warning);
+            return;
+        }
+
+        bool a = property.boolValue;
+        bool b = other.boolValue;
+
+        if (a && b)
+        {
+            var err = new Rect(position.x, position.y + lineH + v, position.width, lineH * 2f);
+            EditorGUI.HelpBox(err, $"Only One '{property.displayName}' e '{other.displayName}' Can be TRUE.", MessageType.Error);
+        }
+    }
+
+    public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
+    {
+        var attr = (AtMostOneTrueWithAttribute)attribute;
+        var other = FindSibling(property, attr.OtherField);
+
+        float h = EditorGUIUtility.singleLineHeight;
+        if (other == null || other.propertyType != SerializedPropertyType.Boolean)
+            return h + EditorGUIUtility.singleLineHeight * 2f + EditorGUIUtility.standardVerticalSpacing;
+
+        bool a = property.boolValue;
+        bool b = other.boolValue;
+
+        if (a && b)
+            return h + EditorGUIUtility.singleLineHeight * 2f + EditorGUIUtility.standardVerticalSpacing;
+
+        return h;
+    }
+
+    private static SerializedProperty FindSibling(SerializedProperty property, string siblingName)
+    {
+        string path = property.propertyPath;
+        int lastDot = path.LastIndexOf('.');
+        string newPath = lastDot >= 0 ? path.Substring(0, lastDot + 1) + siblingName : siblingName;
+        return property.serializedObject.FindProperty(newPath);
+    }
+}

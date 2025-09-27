@@ -30,11 +30,11 @@ public class MysterySpell : MonoBehaviour, ICollideable
     [Header("Effect Data")]
     public PotionData damageData;
     public ShieldData shieldData;
-    
+
     [Header("VFX And SFX")]
     [SerializeField] EffectClass shieldEffects = new EffectClass();
     [SerializeField] EffectClass damageEffects = new EffectClass();
-    
+
     private bool wasHitByPlayer = false;
 
     void Start()
@@ -103,20 +103,61 @@ public class MysterySpell : MonoBehaviour, ICollideable
         OnCollideWithMysterySpell?.Invoke(effect);
         Destroy(gameObject);
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        GameObject hitter = other.gameObject;
+
+        Debug.Log($"Hitted: {hitter.name}");
+
+        if (hitter.CompareTag("Player"))
+        {
+            playerStats = hitter.GetComponent<PlayerStats>();
+        }
+    }
+    PlayerStats playerStats;
     private void SpawnEffects(EffectClass fx)
     {
         AudioManager.instance.PlaySound(fx.SoundName);
 
         if (fx.Vfx != null)
         {
+            if (fx.AttachToPlayer)
+            {
+                GameObject effect = Instantiate(
+                  fx.Vfx,
+                  transform.position,
+                  transform.rotation
+                );
+                if (playerStats != null)
+                {
 
-            GameObject effect = Instantiate(
-                fx.Vfx,
-                transform.position,
-                transform.rotation
-            );
+                    effect.transform.SetParent(playerStats.transform);   // attacco all'oggetto Player
+                    effect.transform.localPosition = Vector3.zero;  // opzionale: posizionalo relativo al centro del player
+                    effect.transform.localRotation = Quaternion.identity;
+                }
+                else
+                {
+                    Debug.LogWarning("Player non trovato!");
+                }
 
-            Destroy(effect, 1f);
+
+                Destroy(effect, 1f);
+            }
+            else if (fx.EnableOnPlayer)
+            {
+                fx.Vfx.SetActive(true);
+            }
+            else
+            {
+                GameObject effect = Instantiate(
+                    fx.Vfx,
+                    transform.position,
+                    transform.rotation
+                );
+                Destroy(effect, 1f);
+            }
+
+
         }
     }
     private void CalculateWeights(out float damageWeight, out float shieldWeight, out float totalWeight)
@@ -142,6 +183,11 @@ public class MysterySpellEffect
 public class EffectClass
 {
     public GameObject Vfx;
+
+    public bool AttachToPlayer;
+    [AtMostOneTrueWith(nameof(AttachToPlayer))]
+    public bool EnableOnPlayer;
+
     public string SoundName;
 
 

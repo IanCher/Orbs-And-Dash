@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -2505642851634945670, guid: 715b46ac23a64304980c7fd4a92d8d15, type: 3}
+  - {fileID: 2100000, guid: 0290877cc1605403cbd052a2561e6b73, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -149,8 +149,6 @@ MonoBehaviour:
     PercentOrbsToLose: 0
     OrbsToLose: 0
     OrbTypeToLose: 0
-    ShieldDurationSeconds: 0
-    ShieldValue: 0
   effects:
     Vfx: {fileID: 5713928374551458004, guid: 8565d5ecdebd34c10b1cdeaedb947278, type: 3}
     SoundName: AccelerationSound

@@ -37,7 +37,7 @@ public class PlayerStats : MonoBehaviour
 
         PotionBomb.OnCollidedWithPotion += ApplyPotionEffects;
         ParalysingSpell.OnCollidedWithPotion += ApplyPotionEffects;
-        AccelerationPlatform.OnCollidedWithPotion += ApplyPotionEffects;
+        //AccelerationPlatform.OnCollidedWithPotion += ApplyPotionEffects;
 
         Shield.OnCollidedWithShield += ApplyShieldEffects;
         OrbCounterManager.OnOrbCollected += OrbCounterManagerOnOnOrbCollected;
