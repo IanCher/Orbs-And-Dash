@@ -19782,7 +19782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d22484419b446c0a935018fde9cc55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loopStyle: 0
+  loopStyle: 2
   tieAngleToSpeed: 0
   fixedMaxAngle: 1.5707964
   maxLateralSpeed: 4
@@ -19794,7 +19794,8 @@ MonoBehaviour:
   timeBeforeFullLoop: 0.5
   fullLoopSpeed: 10
   enableSmoothing: 1
-  smoothingSpeed: 10
+  smoothingSpeed: 5
+  fallingAcceleration: 0.5
 --- !u!114 &7867103063312864521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19825,7 +19826,6 @@ MonoBehaviour:
   baseSpeed: 30
   maxSpeed: 200
   timeBasedAcceleration: 1
-  speedPerOrb: 5
   shieldVFX: {fileID: 3173414142899560885}
   activeInvulnerabilityCount: 0
   currentSpeed: 0

@@ -14,7 +14,7 @@ public class PlayerStats : MonoBehaviour
     public float MaxSpeed => maxSpeed;
 
     [SerializeField] private float timeBasedAcceleration = 1.0f;
-    [SerializeField] private float speedPerOrb = 0.5f;
+    // [SerializeField] private float speedPerOrb = 0.5f;
     [SerializeField] GameObject shieldVFX;
 
     public int activeInvulnerabilityCount = 0;

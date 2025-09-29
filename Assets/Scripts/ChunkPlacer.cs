@@ -93,21 +93,11 @@ public class ChunkPlacer : MonoBehaviour
 
     private bool CheckAllFieldsAreFilled()
     {
-        if (trackSpline == null)
-        {
-            Debug.LogWarning("Track spline is missing, cannot place chunk");
-            return false;
-        }
-        if (lowOrbPrefab == null)
-        {
-            Debug.LogWarning("Orb prefab is missing, cannot place chunk");
-            return false;
-        }
-        if (potionBombPrefab == null)
-        {
-            Debug.LogWarning("Potion Bomb prefab is missing, cannot place chunk");
-            return false;
-        }
+        if (trackSpline == null) return false;
+
+        if (lowOrbPrefab == null) return false;
+
+        if (potionBombPrefab == null) return false;
 
         return true;
     }

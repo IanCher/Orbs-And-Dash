@@ -1,9 +1,8 @@
-using System;
-using System.Diagnostics;
-using NUnit.Framework;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 [RequireComponent(typeof(PlayerStats))]
 public class PlayerMovement : MonoBehaviour
@@ -34,6 +33,11 @@ public class PlayerMovement : MonoBehaviour
     float timeSincePlayerPushesAtTheTop = 0f;
     bool isPushingAtTheTop = false;
     bool isGoingFullLoop = false;
+
+    [SerializeField] float fallingAcceleration = 10f;
+    bool isFalling = false;
+    float targetAngle;
+    float timeSinceFalling = 0f;
 
     InputAction movementAction;
     InputAction jumpAction;
@@ -68,7 +72,42 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
+        if (isFalling)
+        {
+            timeSinceFalling += Time.deltaTime;
+
+            if (targetAngle > 0)
+            {
+                angle -= fallingAcceleration * timeSinceFalling * timeSinceFalling;
+                angle = Mathf.Clamp(angle, targetAngle, angle);
+            }
+            else
+            {
+                angle += fallingAcceleration * timeSinceFalling * timeSinceFalling;
+                angle = Mathf.Clamp(angle, angle, targetAngle);
+            }
+
+            transform.localPosition = new(
+                transform.localPosition.x,
+                GetPositionOnCircleFromAngle(angle).y,
+                0
+            );
+            UpdateOrientation();
+
+            if (Mathf.Abs(angle - targetAngle) < 1e-6)
+            {
+                isFalling = false;
+                angle = targetAngle;
+                UpdatePositionOnCircle();
+                UpdateOrientation();
+            }
+            return;
+        }
+
         ReadMoveInputAndUpdatePosition();
+
+        if (isFalling) return;
+
         ReadJumpInput();
         ProcessJump();
         UpdateMaxAngle();
@@ -89,7 +128,7 @@ public class PlayerMovement : MonoBehaviour
                 break;
 
             case LoopStyle.Gravity:
-                print("aie");
+                ReadMoveInputAndUpdatePositionClassic();
                 break;
 
             default:
@@ -106,7 +145,12 @@ public class PlayerMovement : MonoBehaviour
         moveDir = Mathf.Lerp(moveDir, targetDir, Time.deltaTime * smoothingSpeed);
         else
             moveDir = targetDir;
-        if (Mathf.Abs(moveDir) < 0.01) return;
+            
+        if (Mathf.Abs(moveDir) < 0.01)
+        {
+            if (loopStyle == LoopStyle.Gravity) FallDownIfTooHigh();
+            return;
+        }
 
         if (playerStats.Paralyzed)
         {
@@ -125,6 +169,17 @@ public class PlayerMovement : MonoBehaviour
 
         UpdatePositionOnCircle();
         UpdateOrientation();
+    }
+
+    void FallDownIfTooHigh()
+    {
+        SetAngleInMinusPiPiRange();
+        if (Mathf.Abs(angle) > Mathf.PI / 2)
+        {
+            targetAngle = Mathf.Sign(angle) * Mathf.PI - angle;
+            timeSinceFalling = 0f;
+            isFalling = true;
+        }
     }
 
 
