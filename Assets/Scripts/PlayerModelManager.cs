@@ -108,33 +108,45 @@ public sealed class PlayerModelManager : MonoBehaviour
         }
         RefreshSlot(slot);
     }
-    private void ApplyEntry(SkinManager.SlotType slot, SkinManager.SkinOptionEntry entry)
+    private void ApplyEntry(SkinManager.SlotType slotType, SkinManager.SkinOptionEntry skinEntry)
     {
-        if (!groups.TryGetValue(slot, out var group) || group == null) return;
-        var opt = entry?.option;
-        if (opt == null) return;
+        if (!groups.TryGetValue(slotType, out var slotGroup) || slotGroup == null) return;
 
-        var mesh = opt.Mesh;
-        var material = opt.Material;
+        var skinOption = skinEntry?.option;
+        if (skinOption == null) return;
 
-        foreach (var target in group.targets)
+        Mesh desiredMesh = skinOption.Mesh;
+        Material desiredMaterial = skinOption.Material;
+
+        var renderTargets = slotGroup.targets;
+        if (renderTargets == null || renderTargets.Count == 0) return;
+
+        for (int i = 0; i < renderTargets.Count; i++)
         {
-            if (target == null || target.renderer == null) continue;
-
-            if (target.renderer is SkinnedMeshRenderer skinned)
-            {
-                if (target.applyMesh && mesh != null && skinned.sharedMesh != mesh)
-                    skinned.sharedMesh = mesh;
-                if (target.applyMaterial && material != null && skinned.sharedMaterial != material)
-                    skinned.sharedMaterial = material;
-            }
-            else
-            {
-                if (target.applyMesh && target.meshFilter != null && mesh != null && target.meshFilter.sharedMesh != mesh)
-                    target.meshFilter.sharedMesh = mesh;
-                if (target.applyMaterial && material != null && target.renderer.sharedMaterial != material)
-                    target.renderer.sharedMaterial = material;
-            }
+            var renderTarget = renderTargets[i];
+            if (renderTarget == null || renderTarget.renderer == null) continue;
+            ApplyToRenderTarget(renderTarget, desiredMesh, desiredMaterial);
         }
+    }
+    private static void ApplyToRenderTarget(SlotRenderTarget target, Mesh mesh, Material material)
+    {
+        var targetRenderer = target.renderer;
+
+        if (targetRenderer is SkinnedMeshRenderer skinnedRenderer)
+        {
+            if (target.applyMesh && mesh != null && skinnedRenderer.sharedMesh != mesh)
+                skinnedRenderer.sharedMesh = mesh;
+
+            if (target.applyMaterial && material != null && skinnedRenderer.sharedMaterial != material)
+                skinnedRenderer.sharedMaterial = material;
+
+            return;
+        }
+
+        if (target.applyMesh && target.meshFilter != null && mesh != null && target.meshFilter.sharedMesh != mesh)
+            target.meshFilter.sharedMesh = mesh;
+
+        if (target.applyMaterial && material != null && targetRenderer.sharedMaterial != material)
+            targetRenderer.sharedMaterial = material;
     }
 }
