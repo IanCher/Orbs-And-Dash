@@ -17,18 +17,22 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float playerOffset = 0;
     [SerializeField] float movementRadius = 5f;
     [SerializeField] float jumpDuration = 0.5f;
+    [SerializeField] float jumpDurationAtBottom = 1f;
     [SerializeField] float jumpControlPointOffset = 2f;
+    [SerializeField] float bottomAngleLimit = 25f;
     [SerializeField] float timeBeforeFullLoop = 1.0f;
     [SerializeField] float fullLoopSpeed = 10f;
     [Space]
     [SerializeField] private bool enableSmoothing = true;
     [SerializeField] private float smoothingSpeed = 10f;
+    [SerializeField] ParticleSystem[] broomVFX;
 
     float lateralSpeed = 2f;
     float moveDir = 0f;
     float maxAngle = 0f;
     float angle = 0;
-    bool isJumping = false;
+    bool isJumpingToOtherSide = false;
+    bool isJumpingAtBottom = false;
     float timeSincePlayerJumped = 0f;
     float timeSincePlayerPushesAtTheTop = 0f;
     bool isPushingAtTheTop = false;
@@ -45,6 +49,9 @@ public class PlayerMovement : MonoBehaviour
     
     private PlayerStats playerStats;
 
+    public float defaultMovementRadius;
+    [SerializeField] float bottomJumpHeight = 0.75f;
+
     void Awake()
     {
         playerStats = GetComponent<PlayerStats>();
@@ -56,6 +63,8 @@ public class PlayerMovement : MonoBehaviour
         movementAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
         muteAction = InputSystem.actions.FindAction("Mute");
+
+        defaultMovementRadius = movementRadius;
 
         UpdatePositionOnCircle();
         UpdateOrientation();
@@ -74,33 +83,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (isFalling)
         {
-            timeSinceFalling += Time.deltaTime;
-
-            if (targetAngle > 0)
-            {
-                angle -= fallingAcceleration * timeSinceFalling * timeSinceFalling;
-                angle = Mathf.Clamp(angle, targetAngle, angle);
-            }
-            else
-            {
-                angle += fallingAcceleration * timeSinceFalling * timeSinceFalling;
-                angle = Mathf.Clamp(angle, angle, targetAngle);
-            }
-
-            transform.localPosition = new(
-                transform.localPosition.x,
-                GetPositionOnCircleFromAngle(angle).y,
-                0
-            );
-            UpdateOrientation();
-
-            if (Mathf.Abs(angle - targetAngle) < 1e-6)
-            {
-                isFalling = false;
-                angle = targetAngle;
-                UpdatePositionOnCircle();
-                UpdateOrientation();
-            }
+            ProcessFall();
             return;
         }
 
@@ -113,6 +96,37 @@ public class PlayerMovement : MonoBehaviour
         UpdateMaxAngle();
         UpdateLateralSpeed();
         ReadMuteInput();
+    }
+
+    private void ProcessFall()
+    {
+        timeSinceFalling += Time.deltaTime;
+
+        if (targetAngle > 0)
+        {
+            angle -= fallingAcceleration * timeSinceFalling * timeSinceFalling;
+            angle = Mathf.Clamp(angle, targetAngle, angle);
+        }
+        else
+        {
+            angle += fallingAcceleration * timeSinceFalling * timeSinceFalling;
+            angle = Mathf.Clamp(angle, angle, targetAngle);
+        }
+
+        transform.localPosition = new(
+            transform.localPosition.x,
+            GetPositionOnCircleFromAngle(angle).y,
+            0
+        );
+        UpdateOrientation();
+
+        if (Mathf.Abs(angle - targetAngle) < 1e-6)
+        {
+            isFalling = false;
+            angle = targetAngle;
+            UpdatePositionOnCircle();
+            UpdateOrientation();
+        }
     }
 
     void ReadMoveInputAndUpdatePosition()
@@ -138,15 +152,15 @@ public class PlayerMovement : MonoBehaviour
 
     void ReadMoveInputAndUpdatePositionClassic()
     {
-        if (isJumping) return;
+        if (isJumpingToOtherSide) return;
 
         float targetDir = movementAction.ReadValue<Vector2>().x;
-        if(enableSmoothing)
+        if(enableSmoothing & !isJumpingAtBottom)
         moveDir = Mathf.Lerp(moveDir, targetDir, Time.deltaTime * smoothingSpeed);
         else
             moveDir = targetDir;
             
-        if (Mathf.Abs(moveDir) < 0.01)
+        if (Mathf.Abs(moveDir) < 0.01 & !isJumpingAtBottom)
         {
             if (loopStyle == LoopStyle.Gravity) FallDownIfTooHigh();
             return;
@@ -185,7 +199,7 @@ public class PlayerMovement : MonoBehaviour
 
     void ReadMoveInputAndUpdatePositionPushForFullLoop()
     {
-        if (isJumping) return;
+        if (isJumpingToOtherSide) return;
 
         moveDir = movementAction.ReadValue<Vector2>().x;
         if (moveDir == 0f) {
@@ -229,19 +243,21 @@ public class PlayerMovement : MonoBehaviour
 
     void ReadJumpInput()
     {
-        if (jumpAction.IsPressed() == isJumping) return;
-        if (!isJumping)
-        {
-            AudioManager.instance.PlaySound("Jump");
-            playerStats.Jumped();
-        }
-            
-            
-        isJumping = true;
-        
+        if (jumpAction.IsPressed() == IsJumping) return;
+        if (IsJumping) return;
+    
+        AudioManager.instance.PlaySound("Jump");
+        playerStats.Jumped();
+        moveDir = 0f;
+
         // Make sure the player won't make more flips than necessary while jumping
         // by setting the angle in the range [-pi ; pi]
         SetAngleInMinusPiPiRange();
+
+        foreach (ParticleSystem ps in broomVFX) ps.Stop();
+
+        isJumpingAtBottom = IsAtBottomOfTrack();
+        isJumpingToOtherSide = !isJumpingAtBottom;
     }
     
     private void ReadMuteInput()
@@ -266,16 +282,28 @@ public class PlayerMovement : MonoBehaviour
 
     void ProcessJump()
     {
-        if (!isJumping) return;
+        if (!IsJumping) return;
 
         timeSincePlayerJumped += Time.deltaTime;
-        if (timeSincePlayerJumped > jumpDuration)
+        if (IsJumpOver())
         {
-            isJumping = false;
-            angle = -angle;
+            if (isJumpingToOtherSide)
+            {
+                angle = -angle;
+                isJumpingToOtherSide = false;
+            }
+            else if (isJumpingAtBottom) isJumpingAtBottom = false;
+
             timeSincePlayerJumped = 0f;
             UpdatePositionOnCircle();
             UpdateOrientation();
+
+            foreach (ParticleSystem ps in broomVFX) ps.Play();
+        }
+        else if (isJumpingAtBottom)
+        {
+            float param = timeSincePlayerJumped / jumpDurationAtBottom;
+            movementRadius = defaultMovementRadius * (1 - bottomJumpHeight + bottomJumpHeight * Mathf.Abs(Mathf.Cos(Mathf.Lerp(0, Mathf.PI, param))));
         }
         else
         {
@@ -341,6 +369,22 @@ public class PlayerMovement : MonoBehaviour
 
         UpdatePositionOnCircle();
         UpdateOrientation();
+    }
+
+    private bool IsAtBottomOfTrack()
+    {
+        return Mathf.Abs(angle * Mathf.Rad2Deg) < bottomAngleLimit;
+    }
+
+    private bool IsJumpOver()
+    {
+        if (isJumpingAtBottom) return timeSincePlayerJumped > jumpDurationAtBottom;
+        return timeSincePlayerJumped > jumpDuration;
+    }
+
+    public bool IsJumping
+    {
+        get { return isJumpingAtBottom || isJumpingToOtherSide;}
     }
 
     private void OnDrawGizmos()

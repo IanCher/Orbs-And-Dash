@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!198 &29703002 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2061905899229936301, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+  m_PrefabInstance: {fileID: 724764241}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &45228423
 GameObject:
   m_ObjectHideFlags: 0
@@ -2544,7 +2549,7 @@ PrefabInstance:
       objectReference: {fileID: 1978217763}
     - target: {fileID: 951592760004259151, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_VersionIndex
-      value: 1101
+      value: 1122
       objectReference: {fileID: 0}
     - target: {fileID: 1021299696687230966, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_Mesh
@@ -2564,7 +2569,7 @@ PrefabInstance:
       objectReference: {fileID: 1580171519}
     - target: {fileID: 1617213679507066056, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_VersionIndex
-      value: 1137
+      value: 1158
       objectReference: {fileID: 0}
     - target: {fileID: 1872730819710280165, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2660,7 +2665,7 @@ PrefabInstance:
       objectReference: {fileID: 2105713642}
     - target: {fileID: 2515170144194724883, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_VersionIndex
-      value: 1085
+      value: 1106
       objectReference: {fileID: 0}
     - target: {fileID: 2539867530026093341, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: rotmagnitudeX
@@ -2712,7 +2717,7 @@ PrefabInstance:
       objectReference: {fileID: 1198324943}
     - target: {fileID: 4661745387495711498, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_VersionIndex
-      value: 1657
+      value: 1678
       objectReference: {fileID: 0}
     - target: {fileID: 4661745387495711498, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_SelectedEdges.Array.size
@@ -2734,6 +2739,46 @@ PrefabInstance:
       propertyPath: fallingSpeed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4859595952355867945, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: maxLateralSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4859595952355867945, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: minLateralSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4859595952355867945, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: bottomAngleLimit
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4859595952355867945, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: bottomJumpHeight
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4859595952355867945, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: bottomJumpDuration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4859595952355867945, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: broomVFX.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4859595952355867945, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: jumpDurationAtBottom
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4859595952355867945, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: 'broomVFX.Array.data[0]'
+      value: 
+      objectReference: {fileID: 810091071}
+    - target: {fileID: 4859595952355867945, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: 'broomVFX.Array.data[1]'
+      value: 
+      objectReference: {fileID: 29703002}
+    - target: {fileID: 4859595952355867945, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: 'broomVFX.Array.data[2]'
+      value: 
+      objectReference: {fileID: 29703002}
     - target: {fileID: 5057910331924978939, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2768,7 +2813,7 @@ PrefabInstance:
       objectReference: {fileID: 1098826068}
     - target: {fileID: 5470084748892772913, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_VersionIndex
-      value: 1085
+      value: 1106
       objectReference: {fileID: 0}
     - target: {fileID: 5485813254502749567, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_Mesh
@@ -2820,7 +2865,7 @@ PrefabInstance:
       objectReference: {fileID: 676678631}
     - target: {fileID: 6500293896224381143, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_VersionIndex
-      value: 1109
+      value: 1130
       objectReference: {fileID: 0}
     - target: {fileID: 6772321710236774104, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_Mesh
@@ -2836,7 +2881,7 @@ PrefabInstance:
       objectReference: {fileID: 1212428492}
     - target: {fileID: 7551127873458382249, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_VersionIndex
-      value: 1089
+      value: 1110
       objectReference: {fileID: 0}
     - target: {fileID: 7692606639857696099, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: audioClips.Array.size
@@ -2904,7 +2949,7 @@ PrefabInstance:
       objectReference: {fileID: 920320061}
     - target: {fileID: 8852135412267841000, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_VersionIndex
-      value: 1105
+      value: 1126
       objectReference: {fileID: 0}
     - target: {fileID: 9146007258943133437, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_Mesh
@@ -2912,7 +2957,7 @@ PrefabInstance:
       objectReference: {fileID: 1323966327}
     - target: {fileID: 9146007258943133437, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: m_VersionIndex
-      value: 1089
+      value: 1110
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3454,6 +3499,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c024937c85dce804c81fab70b8680b58, type: 3}
   m_PrefabInstance: {fileID: 799417693}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &810091071 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 3420180752025479356, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+  m_PrefabInstance: {fileID: 724764241}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &819037085
 PrefabInstance:
