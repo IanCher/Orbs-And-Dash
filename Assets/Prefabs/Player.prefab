@@ -19787,16 +19787,23 @@ MonoBehaviour:
   tieAngleToSpeed: 0
   fixedMaxAngle: 1.5707964
   maxLateralSpeed: 4
-  minLateralSpeed: 1
+  minLateralSpeed: 4
   playerOffset: 0
   movementRadius: 5
   jumpDuration: 0.4
+  jumpDurationAtBottom: 0.4
   jumpControlPointOffset: 2.5
+  bottomAngleLimit: 45
   timeBeforeFullLoop: 0.5
   fullLoopSpeed: 10
   enableSmoothing: 1
   smoothingSpeed: 5
+  broomVFX:
+  - {fileID: 1267654089237353517}
+  - {fileID: 2484910116167140924}
   fallingAcceleration: 0.5
+  defaultMovementRadius: 0
+  bottomJumpHeight: 0.9
 --- !u!114 &7867103063312864521
 MonoBehaviour:
   m_ObjectHideFlags: 0
