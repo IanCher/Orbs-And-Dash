@@ -183,6 +183,7 @@ public class MysterySpellEffect
 public class EffectClass
 {
     public GameObject Vfx;
+    public DisappearingUi UIToSpawn;
 
     public bool AttachToPlayer;
     [AtMostOneTrueWith(nameof(AttachToPlayer))]

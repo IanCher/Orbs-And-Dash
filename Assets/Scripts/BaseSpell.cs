@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using static AccelerationPlatform;
 
@@ -8,7 +9,6 @@ public abstract class BaseSpell<TEnum> : MonoBehaviour, ICollideable where TEnum
     [Tooltip("For Percents, it is the value /100, so 5 is 5%")]
     [SerializeField()] protected PotionData CollisionEffects;
     private bool wasHitByPlayer = false;
-
 
     protected abstract TEnum EffectKind { get; }
     protected virtual void Reset()
@@ -54,6 +54,7 @@ public abstract class BaseSpell<TEnum> : MonoBehaviour, ICollideable where TEnum
         wasHitByPlayer = true;
         OnCollidedWithPotion?.Invoke(CollisionEffects);
         SpawnEffects();
+        //this.SetActive(false);
         Destroy(gameObject);
     }
     private void SpawnEffects()
@@ -100,5 +101,13 @@ public abstract class BaseSpell<TEnum> : MonoBehaviour, ICollideable where TEnum
 
 
         }
+        if (effects.UIToSpawn != null)
+        {
+            effects.UIToSpawn.Enable();
+                
+                
+            //Destroy(uiEffect, 1f);
+        }
     }
+  
 }
