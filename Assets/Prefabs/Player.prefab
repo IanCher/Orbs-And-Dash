@@ -19791,7 +19791,7 @@ MonoBehaviour:
   playerOffset: 0
   movementRadius: 5
   jumpDuration: 0.4
-  jumpDurationAtBottom: 0.4
+  jumpDurationAtBottom: 0.3
   jumpControlPointOffset: 2.5
   bottomAngleLimit: 45
   timeBeforeFullLoop: 0.5
@@ -19803,7 +19803,7 @@ MonoBehaviour:
   - {fileID: 2484910116167140924}
   fallingAcceleration: 0.5
   defaultMovementRadius: 0
-  bottomJumpHeight: 0.9
+  bottomJumpHeight: 0.75
 --- !u!114 &7867103063312864521
 MonoBehaviour:
   m_ObjectHideFlags: 0

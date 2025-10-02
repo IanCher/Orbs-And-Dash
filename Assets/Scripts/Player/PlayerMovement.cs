@@ -303,7 +303,10 @@ public class PlayerMovement : MonoBehaviour
         else if (isJumpingAtBottom)
         {
             float param = timeSincePlayerJumped / jumpDurationAtBottom;
-            movementRadius = defaultMovementRadius * (1 - bottomJumpHeight + bottomJumpHeight * Mathf.Abs(Mathf.Cos(Mathf.Lerp(0, Mathf.PI, param))));
+            movementRadius = defaultMovementRadius * (
+                1 - bottomJumpHeight +
+                bottomJumpHeight * (4 * param * param - 4 * param + 1)
+            );
         }
         else
         {
