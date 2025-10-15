@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4761483199484236031
 Transform:
@@ -109,6 +109,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock_d
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: da5ee07c2b4bd0546bf9039ef8e79862, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -190,6 +194,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c024937c85dce804c81fab70b8680b58, type: 3}
       propertyPath: m_Name
       value: rock_e
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c024937c85dce804c81fab70b8680b58, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -273,6 +281,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock_f
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b562a9c2c0b02324eb4cca0eafeb9e47, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -354,6 +366,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 4a09fc2d9794226409e4bdb7cb38665b, type: 3}
       propertyPath: m_Name
       value: rock_a
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4a09fc2d9794226409e4bdb7cb38665b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -437,6 +453,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rock_b
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d253f175d72a1c947b31833dc4bdad0c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -518,6 +538,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 5a37bc25b68a40841b83371aa26fedf3, type: 3}
       propertyPath: m_Name
       value: rock_c
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5a37bc25b68a40841b83371aa26fedf3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
