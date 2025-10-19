@@ -44,7 +44,7 @@ public class PlayerStats : MonoBehaviour
         MysterySpell.OnCollideWithMysterySpell += HandleMysterySpellEffect;
     }
 
-    private void OrbCounterManagerOnOnOrbCollected(float speedGain)
+    private void OrbCounterManagerOnOnOrbCollected(float speedGain,float lowOrbCount)
     {
         UpdateOrbSpeed(speedGain);
         ParticleSystem vfxInstance = Instantiate(orbCollectedVFX, transform);

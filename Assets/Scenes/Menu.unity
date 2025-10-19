@@ -3547,6 +3547,7 @@ MonoBehaviour:
   startButton: {fileID: 1111868261}
   quitButton: {fileID: 1382195750}
   normalOrbCountText: {fileID: 3430319521770584700}
+  rareOrbsCountText: {fileID: 1882155610}
 --- !u!1 &1348111832
 GameObject:
   m_ObjectHideFlags: 0
@@ -5241,7 +5242,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3150985490151470321, guid: 1e4d9291c4b346749aabd9775fb794c5, type: 3}
       propertyPath: m_text
-      value: 'Rare Orbs : 0/50'
+      value: 'Rare Orbs : 0/4'
       objectReference: {fileID: 0}
     - target: {fileID: 7047662257208844242, guid: 1e4d9291c4b346749aabd9775fb794c5, type: 3}
       propertyPath: m_Pivot.x
@@ -5337,6 +5338,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7047662257208844242, guid: 1e4d9291c4b346749aabd9775fb794c5, type: 3}
   m_PrefabInstance: {fileID: 1882155608}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1882155610 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3150985490151470321, guid: 1e4d9291c4b346749aabd9775fb794c5, type: 3}
+  m_PrefabInstance: {fileID: 1882155608}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1882372595
 PrefabInstance:
   m_ObjectHideFlags: 0

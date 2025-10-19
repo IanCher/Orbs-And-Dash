@@ -6,7 +6,7 @@ using System;
 public class TimerUI : MonoBehaviour
 {
     private TMP_Text timerUIText;
-    private float time;
+    public static float time;
     bool stopTrackingTime = false;
 
     void Awake()

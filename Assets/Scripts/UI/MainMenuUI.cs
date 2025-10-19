@@ -9,6 +9,7 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private Button startButton;
     [SerializeField] private Button quitButton;
     [SerializeField] private TextMeshProUGUI normalOrbCountText;
+    [SerializeField] private TextMeshProUGUI rareOrbsCountText;
 
     private void Awake()
     {
@@ -27,6 +28,7 @@ public class MainMenuUI : MonoBehaviour
         });
 
         normalOrbCountText.text = "NORMAL ORBS : " + PlayerData.NormalOrbs;
+        rareOrbsCountText.text = "RARE ORBS : " + PlayerData.RareOrbs +"/4";
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
