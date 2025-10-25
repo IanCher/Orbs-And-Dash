@@ -81,9 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lowOrbCountText: {fileID: 3451123970267511831}
-  midOrbCountText: {fileID: 7776650446363241344}
-  highOrbCountText: {fileID: 5815120945111300475}
-  totalOrbCountText: {fileID: 0}
+  highOrbCountText: {fileID: 7776650446363241344}
 --- !u!1 &3495421612711929273
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,7 +525,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4147175582986862327, guid: a55da3d9cb871604eb457592f3188d6b, type: 3}
       propertyPath: m_Name
-      value: OrbCountSingleUI-Mid
+      value: OrbCountSingleUI-High
       objectReference: {fileID: 0}
     - target: {fileID: 9104707172833009985, guid: a55da3d9cb871604eb457592f3188d6b, type: 3}
       propertyPath: m_Color.g
@@ -660,14 +658,3 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2321562125269369964, guid: a55da3d9cb871604eb457592f3188d6b, type: 3}
   m_PrefabInstance: {fileID: 7034109031217086300}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5815120945111300475 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3543586707012404775, guid: a55da3d9cb871604eb457592f3188d6b, type: 3}
-  m_PrefabInstance: {fileID: 7034109031217086300}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
