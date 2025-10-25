@@ -366,11 +366,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PotionsData:
+    type: 1
+    Acceleration: 0
+    TimeOfAcceleration: 0
+    PercentToSlowBy: 25
+    JumpNeeded: 0
     PercentOrbsToLose: 25
     OrbsToLose: 0
-    PercentToSlowBy: 75
-    SlowDuration: 3
     OrbTypeToLose: 3
+  explosion: {fileID: 0}
 --- !u!1 &8736633737009400987
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ public class PotionData
     [ShowIfEnum(nameof(type), nameof(EffectType.AccelerationPlatform))]
     public float TimeOfAcceleration;
 
-    [ShowIfEnum(nameof(type), nameof(EffectType.ParalyzeSpell))]
+    [ShowIfEnum(nameof(type), nameof(EffectType.ParalyzeSpell), nameof(EffectType.PotionBomb))]
     [Range(0f, 100f)] public float PercentToSlowBy;
     [ShowIfEnum(nameof(type), nameof(EffectType.ParalyzeSpell))]
     public int JumpNeeded;
