@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using TMPro;
 
 public class RareOrbHandler : MonoBehaviour
 {
@@ -6,13 +8,25 @@ public class RareOrbHandler : MonoBehaviour
 
     [SerializeField] private float timeLimit;
     [SerializeField] private int orbCountRequired;
+    [SerializeField] private TextMeshProUGUI rareOrbInstructionUI;
+
+    [SerializeField] private TextMeshProUGUI timerInstructionUI;
 
 
 
     private void Start()
     {
         OrbCounterManager.OnOrbCollected += OrbCounterManager_OnOrbCollected;
+
+        rareOrbInstructionUI.text = "Collect " + orbCountRequired.ToString() + " orbs";
         rareOrb.gameObject.SetActive(false);
+
+        int timeLimitMinute = TimeSpan.FromSeconds(timeLimit).Minutes;
+        int timeLimitSecond = TimeSpan.FromSeconds(timeLimit).Seconds;
+
+        string text = "Complete Level under ";
+        text += timeLimitMinute.ToString() + ":" + timeLimitSecond.ToString("D2");
+        timerInstructionUI.text = text;
     }
 
     private void OnDestroy()
@@ -30,7 +44,12 @@ public class RareOrbHandler : MonoBehaviour
 
     private void Update()
     {
-        if(TimerUI.time >= timeLimit && rareOrb.gameObject.activeInHierarchy)
-            rareOrb.gameObject. SetActive(false);
+        if (TimerUI.time >= timeLimit && rareOrb.gameObject.activeInHierarchy)
+            rareOrb.gameObject.SetActive(false);
+    }
+    
+    public float GetTimeLimit()
+    {
+        return timeLimit;
     }
 }

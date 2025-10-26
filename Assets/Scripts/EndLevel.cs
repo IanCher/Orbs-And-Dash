@@ -1,16 +1,16 @@
 using System;
 using UnityEngine;
 using TMPro;
+using NUnit.Framework.Internal;
 
 public class EndLevel : MonoBehaviour
 {
     public static event Action OnPlayerWon;
 
-    [Tooltip("Time limit in seconds")]
-    [SerializeField] float timeLimit = 60f;
     [SerializeField] TimerUI timerUI;
     [SerializeField] Canvas finishCanvas;
     [SerializeField] TMP_Text finishText;
+    [SerializeField] RareOrbHandler rareOrbHandler;
 
     void OnTriggerEnter(Collider other)
     {
@@ -19,6 +19,8 @@ public class EndLevel : MonoBehaviour
         float finishTime = timerUI.GetTime();
         timerUI.StopTrackingTime();
         finishCanvas.gameObject.SetActive(true);
+
+        float timeLimit = rareOrbHandler.GetTimeLimit();
 
         if (finishTime > timeLimit)
         {
