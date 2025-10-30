@@ -41,6 +41,9 @@ public class OrbCounterManager : MonoBehaviour
         PotionBomb.OnCollidedWithPotion -= PlayerOrbCollector_OnCollidedWithPotion;
         MysterySpell.OnCollideWithMysterySpell -= PlayerOrbCollector_OnCollidedWithMysterySpell;
         EndLevel.OnPlayerWon -= EndLevel_OnPlayerWon;
+        // unsubscribe to stop unity error when switching scenes
+        PlayerStats.OnPlayerStatsReady -= OnPlayerStatsRegistered;
+        PlayerStats.OnPlayerStatsDestroyed -= OnPlayerStatsDestroyed;
     }
 
     private void OnPlayerStatsRegistered(PlayerStats stats)

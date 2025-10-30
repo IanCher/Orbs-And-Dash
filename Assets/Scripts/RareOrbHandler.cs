@@ -18,15 +18,15 @@ public class RareOrbHandler : MonoBehaviour
     {
         OrbCounterManager.OnOrbCollected += OrbCounterManager_OnOrbCollected;
 
-        rareOrbInstructionUI.text = "Collect " + orbCountRequired.ToString() + " orbs";
-        rareOrb.gameObject.SetActive(false);
+        if (rareOrbInstructionUI) rareOrbInstructionUI.text = "Collect " + orbCountRequired.ToString() + " orbs";
+        if (rareOrb) rareOrb.gameObject.SetActive(false);
 
         int timeLimitMinute = TimeSpan.FromSeconds(timeLimit).Minutes;
         int timeLimitSecond = TimeSpan.FromSeconds(timeLimit).Seconds;
 
         string text = "Complete Level under ";
         text += timeLimitMinute.ToString() + ":" + timeLimitSecond.ToString("D2");
-        timerInstructionUI.text = text;
+        if (timerInstructionUI) timerInstructionUI.text = text;
     }
 
     private void OnDestroy()

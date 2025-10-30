@@ -179,6 +179,9 @@ public class PlayerStats : MonoBehaviour
         ParalysingSpell.OnCollidedWithPotion -= ApplyPotionEffects;
         Shield.OnCollidedWithShield -= ApplyShieldEffects;
         MysterySpell.OnCollideWithMysterySpell -= HandleMysterySpellEffect;
+        //AccelerationPlatform.OnCollidedWithPotion -= ApplyPotionEffects;
+        OrbCounterManager.OnOrbCollected -= OrbCounterManagerOnOnOrbCollected;
+        MysterySpell.OnCollideWithMysterySpell -= HandleMysterySpellEffect;
 
         OnPlayerStatsDestroyed?.Invoke();
     }
