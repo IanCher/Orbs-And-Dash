@@ -8,6 +8,7 @@ public class PlayerRailProgression : MonoBehaviour
 {
     [SerializeField] CinemachineSplineCart dollyCart;
     [SerializeField] FadeInOut fadeInOut;
+    [SerializeField] TimerUI timerUI;
 
     private PlayerStats playerStats;
 
@@ -23,6 +24,7 @@ public class PlayerRailProgression : MonoBehaviour
         isMoving = false;
         yield return new WaitForSeconds(fadeInOut.GetFadeInTime() + 0.1f);
         isMoving = true;
+        timerUI.StartTrackingTime();
     }
 
     // Update is called once per frame

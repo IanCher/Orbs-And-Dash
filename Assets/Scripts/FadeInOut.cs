@@ -32,8 +32,10 @@ public class FadeInOut : MonoBehaviour
         if (isFadingIn)
         {
             Color currentColor = fadeImage.color;
-            if (currentColor.a == 0)
+            if (currentColor.a <= 0)
             {
+                currentColor.a = 0;
+                fadeImage.color = currentColor;
                 isFadingIn = false;
                 return;
             }
@@ -49,8 +51,10 @@ public class FadeInOut : MonoBehaviour
         if (isFadingOut)
         {
             Color currentColor = fadeImage.color;
-            if (currentColor.a == 1)
+            if (currentColor.a >= 1)
             {
+                currentColor.a = 1;
+                fadeImage.color = currentColor;
                 isFadingOut = false;
                 return;
             }

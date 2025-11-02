@@ -7,11 +7,17 @@ public class TimerUI : MonoBehaviour
 {
     private TMP_Text timerUIText;
     public static float time;
-    bool stopTrackingTime = false;
+    bool stopTrackingTime = true;
 
     void Awake()
     {
         timerUIText = GetComponent<TMP_Text>();
+    }
+
+    void Start()
+    {
+        time = 0;
+        stopTrackingTime = true;
     }
 
     void Update()
@@ -31,5 +37,10 @@ public class TimerUI : MonoBehaviour
     public void StopTrackingTime()
     {
         stopTrackingTime = true;
+    }
+
+    public void StartTrackingTime()
+    {
+        stopTrackingTime = false;
     }
 }
