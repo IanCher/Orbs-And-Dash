@@ -102,11 +102,16 @@ public class ChunkPlacer : MonoBehaviour
         return true;
     }
 
-    public void ResetChunk()
+    public void ClearChunk()
     {
         for (int i = transform.childCount-1; i>=0; i--)
         {
             DestroyImmediate(transform.GetChild(i).gameObject);
         }
+    }
+    public void ResetChunk()
+    {
+        ClearChunk();
+        OnValidate();
     }
 }

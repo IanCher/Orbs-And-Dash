@@ -20,5 +20,11 @@ public class ChunkPlacerEditor : Editor
             // Call the GenerateCube method when the button is pressed
             ChunkPlacer.ResetChunk();
         }
+        // Add a button to the inspector
+        if (GUILayout.Button("Clear Chunk"))
+        {
+            // Call the GenerateCube method when the button is pressed
+            ChunkPlacer.ClearChunk();
+        }
     }
 }
