@@ -25,7 +25,7 @@ public abstract class BaseSpell<TEnum> : MonoBehaviour, ICollideable where TEnum
     {
         if (typeof(TEnum) == typeof(EffectType))
         {
-            var value = (EffectType)(object)EffectKind;  // cast “boxing-safe” 
+            var value = (EffectType)(object)EffectKind;  // cast ï¿½boxing-safeï¿½ 
             CollisionEffects.SetType(value);
         }
         else
