@@ -14,6 +14,14 @@ public class FadeInOut : MonoBehaviour
     void Start()
     {
         fadeImage = GetComponent<Image>();
+        Color currentColor = fadeImage.color;
+        fadeImage.color = new Color(
+            currentColor.r,
+            currentColor.g,
+            currentColor.b,
+            1
+        );
+        StartFadeIn();
     }
 
     // Update is called once per frame
@@ -51,7 +59,7 @@ public class FadeInOut : MonoBehaviour
                 currentColor.r,
                 currentColor.g,
                 currentColor.b,
-                currentColor.a + 1 / fadeInTime * Time.deltaTime
+                currentColor.a + 1 / fadeOutTime * Time.deltaTime
             );
         }
     }
@@ -71,5 +79,9 @@ public class FadeInOut : MonoBehaviour
     public float GetFadeOutTime()
     {
         return fadeOutTime;
+    }
+    public float GetFadeInTime()
+    {
+        return fadeInTime;
     }
 }

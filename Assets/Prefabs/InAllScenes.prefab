@@ -3786,6 +3786,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 731812069974117386}
     - target: {fileID: 7867103063312864521, guid: 5fc5dbc66f2f14956a5fe1b408fc3bf9, type: 3}
+      propertyPath: fadeInOut
+      value: 
+      objectReference: {fileID: 8761673791857530782}
+    - target: {fileID: 7867103063312864521, guid: 5fc5dbc66f2f14956a5fe1b408fc3bf9, type: 3}
       propertyPath: enableLinearSpeedScaling
       value: 0
       objectReference: {fileID: 0}
