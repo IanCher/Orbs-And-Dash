@@ -186,7 +186,9 @@ public class EffectClass
     public DisappearingUi UIToSpawn;
 
     public bool AttachToPlayer;
+#if UNITY_EDITOR
     [AtMostOneTrueWith(nameof(AttachToPlayer))]
+#endif
     public bool EnableOnPlayer;
 
     public string SoundName;

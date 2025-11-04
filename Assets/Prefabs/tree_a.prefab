@@ -27,13 +27,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5275661413075424588}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.17579621, z: 0, w: 0.9844266}
-  m_LocalPosition: {x: 0, y: 0, z: -63}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.50775415, y: 0.50775415, z: 0.50775415}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -20.25, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2020390939385531106
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -65,8 +65,8 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e9b54ad58dfef4bfd9a336025aff0ee5, type: 2}
-  - {fileID: 2100000, guid: b7afeea23d07143a7a9997d4b2b421e8, type: 2}
+  - {fileID: 2100000, guid: b03b2abbea4129a448856f8e95bf9741, type: 2}
+  - {fileID: 2100000, guid: 7a63245a1e1693d4784711d589bb2395, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -10465,7 +10465,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 26
+  m_VersionIndex: 50
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []

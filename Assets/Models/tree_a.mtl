@@ -1,0 +1,8 @@
+newmtl Tree-Leaves
+Kd 0 1 0.1176603
+d 1
+
+newmtl Tree-Trunk
+Kd 0.2201257 0.1505269 0.08791179
+d 1
+

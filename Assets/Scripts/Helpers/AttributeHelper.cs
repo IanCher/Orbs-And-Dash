@@ -1,3 +1,5 @@
+#if UNITY_EDITOR
+
 using System;
 using System.Linq;
 using UnityEditor;
@@ -41,7 +43,7 @@ public class ShowIfDrawer : PropertyDrawer
 
     private bool ShouldShow(SerializedProperty property, ShowIfAttribute showIf)
     {
-        // Trovo la proprietà booleana che fa da condizione
+        // Trovo la proprietï¿½ booleana che fa da condizione
         SerializedProperty condition = property.serializedObject.FindProperty(
             property.propertyPath.Replace(property.name, showIf.ConditionField));
 
@@ -57,7 +59,7 @@ public class ShowIfDrawer : PropertyDrawer
             return showIf.Invert ? !value : value;
         }
 
-        Debug.LogWarning($"ShowIf: '{showIf.ConditionField}' non è un bool!");
+        Debug.LogWarning($"ShowIf: '{showIf.ConditionField}' non ï¿½ un bool!");
         return true;
     }
 }
@@ -117,7 +119,7 @@ public class ShowIfEnumDrawer : PropertyDrawer
 
         if (cond.propertyType != SerializedPropertyType.Enum)
         {
-            Debug.LogWarning($"[ShowIfEnum] '{attr.ConditionField}' non è un Enum (tipo: {cond.propertyType}).");
+            Debug.LogWarning($"[ShowIfEnum] '{attr.ConditionField}' non ï¿½ un Enum (tipo: {cond.propertyType}).");
             return true;
         }
 
@@ -182,7 +184,7 @@ public class AtMostOneTrueWithDrawer : PropertyDrawer
         if (other == null || other.propertyType != SerializedPropertyType.Boolean)
         {
             var warn = new Rect(position.x, position.y + lineH + v, position.width, lineH * 2f);
-            EditorGUI.HelpBox(warn, $"[AtMostOneTrueWith] '{attr.OtherField}' non trovato o non è bool.", MessageType.Warning);
+            EditorGUI.HelpBox(warn, $"[AtMostOneTrueWith] '{attr.OtherField}' non trovato o non ï¿½ bool.", MessageType.Warning);
             return;
         }
 
@@ -222,3 +224,5 @@ public class AtMostOneTrueWithDrawer : PropertyDrawer
         return property.serializedObject.FindProperty(newPath);
     }
 }
+
+#endif

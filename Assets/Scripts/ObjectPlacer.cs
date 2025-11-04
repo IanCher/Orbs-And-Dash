@@ -1,7 +1,10 @@
+#if UNITY_EDITOR
+
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Splines;
 using UnityEngine.Timeline;
+
 
 public class ObjectPlacer : MonoBehaviour
 {
@@ -112,3 +115,4 @@ public class ObjectPlacer : MonoBehaviour
         Gizmos.color = defaultColor;
     }
 }
+#endif

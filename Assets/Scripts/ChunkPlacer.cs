@@ -1,3 +1,5 @@
+#if UNITY_EDITOR
+
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Mathematics;
@@ -104,7 +106,7 @@ public class ChunkPlacer : MonoBehaviour
 
     public void ClearChunk()
     {
-        for (int i = transform.childCount-1; i>=0; i--)
+        for (int i = transform.childCount - 1; i >= 0; i--)
         {
             DestroyImmediate(transform.GetChild(i).gameObject);
         }
@@ -115,3 +117,5 @@ public class ChunkPlacer : MonoBehaviour
         OnValidate();
     }
 }
+
+#endif
