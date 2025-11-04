@@ -41,7 +41,7 @@ public sealed class SkinManager : MonoBehaviour
 
     private readonly Dictionary<SlotType, List<SkinOptionEntry>> skinEntries = new Dictionary<SlotType, List<SkinOptionEntry>>();
     private readonly Dictionary<SlotType, int> currentIndices = new Dictionary<SlotType, int>();
-    private readonly Dictionary<SlotType, TMP_Text> nameTexts = new Dictionary<SlotType, TMP_Text>();
+    public Dictionary<SlotType, TMP_Text> nameTexts = new Dictionary<SlotType, TMP_Text>();
 
     private static readonly SlotType[] AllSlots = (SlotType[])Enum.GetValues(typeof(SlotType));
 
@@ -83,10 +83,10 @@ public sealed class SkinManager : MonoBehaviour
         currentIndices[SlotType.Clothes] = currentClothesIndex;
         currentIndices[SlotType.Broom] = currentBroomIndex;
 
-        nameTexts[SlotType.Hat] = hatNameText;
-        nameTexts[SlotType.Hair] = hairNameText;
-        nameTexts[SlotType.Clothes] = clothesNameText;
-        nameTexts[SlotType.Broom] = broomNameText;
+        // nameTexts[SlotType.Hat] = hatNameText;
+        // nameTexts[SlotType.Hair] = hairNameText;
+        // nameTexts[SlotType.Clothes] = clothesNameText;
+        // nameTexts[SlotType.Broom] = broomNameText;
     }
     private void SyncIndexField(SlotType slot, int value)
     {
@@ -162,9 +162,16 @@ public sealed class SkinManager : MonoBehaviour
         if (nameTexts.TryGetValue(slot, out txt) && txt != null)
             txt.text = display;
     }
-    private void UpdateAllUIText()
+    public void UpdateAllUIText()
     {
         foreach (var slot in AllSlots)
             UpdateUIText(slot);
+    }
+
+    public string GetSlotName(SlotType slot)
+    {
+        var entry = GetCurrentEntry(slot);
+        string display = (entry != null && entry.option != null) ? entry.option.OptionName : "-";
+        return display;
     }
 }
