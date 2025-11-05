@@ -111,6 +111,8 @@ public class PlayerStats : MonoBehaviour
         // float reduceSpeedMultiplierBy = Mathf.Clamp01(potionData.PercentToSlowBy / 100f);
 
         currentSpeed *= (100 - potionData.PercentToSlowBy) / 100f;
+        currentSpeed = Mathf.Max(currentSpeed, baseSpeed);
+
         if (potionData.PercentToSlowBy > 90)// or equal 100 depending on how we want to handle it
         {
             Paralyzed = true;
