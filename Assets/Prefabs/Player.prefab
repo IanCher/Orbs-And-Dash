@@ -19855,6 +19855,7 @@ GameObject:
   - component: {fileID: 5439522863874856850}
   - component: {fileID: 7602720299800609537}
   - component: {fileID: 226148357349353441}
+  - component: {fileID: 9014615130361320004}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -19974,6 +19975,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loseOrbsAnimator: {fileID: 2546069766628214555, guid: 507963820e35440dbbe155c534aabd51, type: 3}
+  timeProtectedAfterBeingHit: 1.5
+  isTemporarilyProtected: 0
 --- !u!136 &5439522863874856850
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -20078,6 +20081,28 @@ MonoBehaviour:
       applyMesh: 0
       applyMaterial: 1
   retrySubscribeIfMissing: 1
+--- !u!95 &9014615130361320004
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6963217438158432805}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 68059ec15ff064c8a81ad78e0b95b0b2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7079272099225433479
 GameObject:
   m_ObjectHideFlags: 0
