@@ -19939,7 +19939,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dollyCart: {fileID: 0}
-  enableLinearSpeedScaling: 1
+  fadeInOut: {fileID: 0}
+  timerUI: {fileID: 0}
 --- !u!114 &521919980915227826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19972,6 +19973,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8282103db21e1142ad460329816ff6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loseOrbsAnimator: {fileID: 2546069766628214555, guid: 507963820e35440dbbe155c534aabd51, type: 3}
 --- !u!136 &5439522863874856850
 CapsuleCollider:
   m_ObjectHideFlags: 0
