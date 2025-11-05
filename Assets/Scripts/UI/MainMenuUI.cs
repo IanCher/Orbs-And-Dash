@@ -21,25 +21,18 @@ public class MainMenuUI : MonoBehaviour
         quitButton.onClick.AddListener(() =>
         {
 #if UNITY_EDITOR
-             EditorApplication.isPlaying = false;
+            EditorApplication.isPlaying = false;
 #else
             Application.Quit();
 #endif
         });
 
+        SetProgressionText();
+    }
+
+    public void SetProgressionText()
+    {
         normalOrbCountText.text = "NORMAL ORBS : " + PlayerData.NormalOrbs;
         rareOrbsCountText.text = "RARE ORBS : " + PlayerData.RareOrbs +"/4";
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

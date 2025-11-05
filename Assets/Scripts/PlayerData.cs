@@ -2,9 +2,9 @@ using UnityEngine;
 
 public static class PlayerData
 {
-    private const string NORMAL_ORBS = "NormalOrbs";
-    private const string RARE_ORBS = "RareOrbs";
-    private const string RARE_ORBS_Track = "RareOrbsTrack";
+    public const string NORMAL_ORBS = "NormalOrbs";
+    public const string RARE_ORBS = "RareOrbs";
+    public const string RARE_ORBS_Track = "RareOrbsTrack";
     public static int NormalOrbs
     {
         get
