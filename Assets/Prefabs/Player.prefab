@@ -19958,7 +19958,7 @@ MonoBehaviour:
   baseSpeed: 30
   maxSpeed: 200
   timeBasedAcceleration: 1
-  shieldVFX: {fileID: 3173414142899560885}
+  shieldVFX: {fileID: 2467997530658784210}
   activeInvulnerabilityCount: 0
   currentSpeed: 0
   orbCollectedVFX: {fileID: 934925164338917723, guid: 47573bf90db394f4b811a30e34670c17, type: 3}
@@ -35781,22 +35781,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShieldVFX
       objectReference: {fileID: 0}
-    - target: {fileID: 5713928374551458004, guid: 8565d5ecdebd34c10b1cdeaedb947278, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8565d5ecdebd34c10b1cdeaedb947278, type: 3}
+--- !u!114 &2467997530658784210 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4684269599341269683, guid: 8565d5ecdebd34c10b1cdeaedb947278, type: 3}
+  m_PrefabInstance: {fileID: 7152218462907044193}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f19b95a095f434a448fd540a1d2cfae5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &2563403342559481499 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4671008031371042810, guid: 8565d5ecdebd34c10b1cdeaedb947278, type: 3}
-  m_PrefabInstance: {fileID: 7152218462907044193}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &3173414142899560885 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5713928374551458004, guid: 8565d5ecdebd34c10b1cdeaedb947278, type: 3}
   m_PrefabInstance: {fileID: 7152218462907044193}
   m_PrefabAsset: {fileID: 0}

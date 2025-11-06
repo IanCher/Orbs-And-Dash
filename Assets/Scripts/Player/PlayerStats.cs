@@ -15,7 +15,7 @@ public class PlayerStats : MonoBehaviour
 
     [SerializeField] private float timeBasedAcceleration = 1.0f;
     // [SerializeField] private float speedPerOrb = 0.5f;
-    [SerializeField] GameObject shieldVFX;
+    [SerializeField] ShieldVFX shieldVFX;
 
     public int activeInvulnerabilityCount = 0;
 
@@ -99,11 +99,12 @@ public class PlayerStats : MonoBehaviour
 
         if (IsInvulnerable)
         {
-            Debug.Log("Ignoring effect of slow down potion since player is invulnerable to damage and de-buffs");
             activeInvulnerabilityCount--;
+            shieldVFX.DeactivateOneParticleSystem();
+
             if (activeInvulnerabilityCount <= 0)
             {
-                shieldVFX.SetActive(false);
+                shieldVFX.gameObject.SetActive(false);
             }
             return;
         }
@@ -145,26 +146,21 @@ public class PlayerStats : MonoBehaviour
     }
     void ApplyShieldEffects(ShieldData shieldData)
     {
-        activeInvulnerabilityCount += shieldData.value;
-        shieldVFX.SetActive(true);
+        activeInvulnerabilityCount = shieldData.value;
+        if (!shieldVFX.gameObject.activeInHierarchy)
+        {
+            shieldVFX.gameObject.SetActive(true);
+        }
+        else
+        {
+            shieldVFX.ActivateAllParticle();
+        }
     }
 
     IEnumerator ResetSpeedAfter(float seconds)
     {
         yield return new WaitForSeconds(seconds);
         speedMultiplier = 1f;
-    }
-
-    IEnumerator RemoveInvulnerabilityAfter(float seconds)
-    {
-        yield return new WaitForSeconds(seconds);
-
-        activeInvulnerabilityCount = Mathf.Max(0, activeInvulnerabilityCount - 1);
-        shieldVFX.SetActive(false);
-
-#if UNITY_EDITOR
-        Debug.Log($"Shield effect expired: activeInvulnerabilityCount={activeInvulnerabilityCount}");
-#endif
     }
 
     void OnDestroy()
