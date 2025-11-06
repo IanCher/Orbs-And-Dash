@@ -13,13 +13,13 @@ public class MysterySpell : MonoBehaviour, ICollideable
     protected virtual void Reset()
     {
         if (damageData == null) damageData = new PotionData();
-        damageData.SetType(EffectType.MysterySpell);
+        damageData.SetType(EffectType.PotionBomb);
     }
 
     protected virtual void OnValidate()
     {
         if (damageData == null) damageData = new PotionData();
-        damageData.SetType(EffectType.MysterySpell);
+        damageData.SetType(EffectType.PotionBomb);
     }
 
 
