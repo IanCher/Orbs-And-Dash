@@ -42,16 +42,6 @@ public class PotionData
 # endif
     public OrbType OrbTypeToLose;
 
-    //Uncomment AND implement if we decide to implement shield potion here instead of separate shield class (ShieldData)
-    //[ShowIfEnum(nameof(type), nameof(EffectType.MysterySpell))]
-    //public float ShieldDurationSeconds;
-    //[ShowIfEnum(nameof(type),  nameof(EffectType.MysterySpell))]
-    //public int ShieldValue;
-
-
-
-
-
     public EffectType Type => type;
     public void SetType(EffectType value) => type = value;
 }

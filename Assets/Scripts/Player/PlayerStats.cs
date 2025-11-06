@@ -147,14 +147,6 @@ public class PlayerStats : MonoBehaviour
     {
         activeInvulnerabilityCount += shieldData.value;
         shieldVFX.SetActive(true);
-
-        // #if UNITY_EDITOR
-        //         Debug.Log($"Shield applied with duration: {shieldData.DurationSeconds} seconds; activeInvulnerabilityCount={activeInvulnerabilityCount}");
-        // #endif
-
-        //         // Stop any existing shield coroutines to reset the timer
-        //         StopCoroutine(nameof(RemoveInvulnerabilityAfter));
-        //         StartCoroutine(RemoveInvulnerabilityAfter(shieldData.DurationSeconds));
     }
 
     IEnumerator ResetSpeedAfter(float seconds)
