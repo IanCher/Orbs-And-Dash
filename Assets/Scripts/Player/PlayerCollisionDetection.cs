@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(PlayerStats))]
 public class PlayerCollisionDetection : MonoBehaviour
 {
     [SerializeField] GameObject loseOrbsAnimator;
@@ -13,9 +14,12 @@ public class PlayerCollisionDetection : MonoBehaviour
     [SerializeField] float timeProtectedAfterBeingHit = 1.5f;
     public bool isTemporarilyProtected = false;
 
+    PlayerStats playerStats;
+
     void Awake()
     {
         animator = GetComponent<Animator>();
+        playerStats = GetComponent<PlayerStats>();
     }
 
     void OnTriggerEnter(Collider other)
@@ -23,16 +27,21 @@ public class PlayerCollisionDetection : MonoBehaviour
         if (other.TryGetComponent<ICollideable>(out ICollideable collidable))
         {
             if (isTemporarilyProtected && IsOtherObstacle(other)) return;
-            if (other.GetComponent<PotionBomb>() || other.GetComponent<StaticWall>())
+            if (MakesPlayerLoseOrbs(other))
             {
-                var loseOrbAnim = Instantiate(
-                    loseOrbsAnimator,
-                    transform.position,
-                    transform.rotation
-                );
-                Destroy(loseOrbAnim, 3f);
                 StartCoroutine(SetProtectionForLimitedTime());
-                animator.SetTrigger("GotHit");
+                
+                if(!playerStats.IsInvulnerable)
+                {
+                    var loseOrbAnim = Instantiate(
+                        loseOrbsAnimator,
+                        transform.position,
+                        transform.rotation
+                    );
+
+                    animator.SetTrigger("GotHit");
+                    Destroy(loseOrbAnim, 3f);
+                }
             }
 
             collidable.HandlePlayerCollision();
@@ -47,7 +56,14 @@ public class PlayerCollisionDetection : MonoBehaviour
 
         return false;
     }
-    
+
+    bool MakesPlayerLoseOrbs(Collider other)
+    {
+        if (other.GetComponent<PotionBomb>()) return true;
+        if (other.GetComponent<StaticWall>()) return true;
+
+        return false;
+    }
     IEnumerator SetProtectionForLimitedTime()
     {
         isTemporarilyProtected = true;
