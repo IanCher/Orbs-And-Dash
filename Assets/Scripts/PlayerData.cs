@@ -5,6 +5,7 @@ public static class PlayerData
     public const string NORMAL_ORBS = "NormalOrbs";
     public const string RARE_ORBS = "RareOrbs";
     public const string RARE_ORBS_Track = "RareOrbsTrack";
+    public const string TUTORIAL_COMPLETED = "TUTORIAL_COMPLETED";
     public static int NormalOrbs
     {
         get
@@ -39,6 +40,17 @@ public static class PlayerData
         set
         {
             PlayerPrefs.SetString(RARE_ORBS_Track, value);
+        }
+    }
+    public static int TutorialCompleted
+    {
+        get
+        {
+            return PlayerPrefs.GetInt(TUTORIAL_COMPLETED, 0);
+        }
+        set
+        {
+            PlayerPrefs.SetInt(TUTORIAL_COMPLETED, value);
         }
     }
 }
