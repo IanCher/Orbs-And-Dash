@@ -27,6 +27,16 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
+
+    public void SetVolume(float volume)
+    {
+        audioSource.volume = volume;
+    }
+
+    public float GetVolume()
+    {
+        return audioSource.volume;
+    }
 }
 
 [System.Serializable]

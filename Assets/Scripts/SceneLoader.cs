@@ -13,6 +13,11 @@ public class SceneLoader : MonoBehaviour
 
     public void BackToMenu()
     {
+        if (Time.timeScale < 1e-8)
+        {
+            Time.timeScale = 1;
+            SceneManager.LoadScene(0);
+        }
         StartCoroutine(LoadSceneAfterFadeOutTime(0));
     }
 

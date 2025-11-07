@@ -8,6 +8,8 @@ public class PauseMenu : MonoBehaviour
 
     [Header("Input Actions")]
     [SerializeField] private InputActionReference pauseActionRef;
+    [SerializeField] GameObject soundMenu;
+    [SerializeField] GameObject pauseButtons;
 
     private bool isPaused = false;
 
@@ -35,10 +37,10 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = isPaused ? 0f : 1f;
         canvasForPauseMenu.SetActive(isPaused);
 
-        Cursor.visible = isPaused;
-        Cursor.lockState = isPaused
-            ? CursorLockMode.None
-            : CursorLockMode.Locked;
+        // Cursor.visible = isPaused;
+        // Cursor.lockState = isPaused
+        //     ? CursorLockMode.None
+        //     : CursorLockMode.Locked;
     }
 
     public void ResumeGame()
@@ -46,4 +48,18 @@ public class PauseMenu : MonoBehaviour
         if (isPaused)
             TogglePause();
     }
+
+    public void ShowSoundMenu()
+    {
+        pauseButtons.SetActive(false);
+        soundMenu.SetActive(true);
+    }
+
+    public void ShowPauseButtons()
+    {
+        pauseButtons.SetActive(true);
+        soundMenu.SetActive(false);
+    }
+    
+    
 }
