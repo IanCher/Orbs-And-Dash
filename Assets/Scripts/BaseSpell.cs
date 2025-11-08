@@ -37,8 +37,6 @@ public abstract class BaseSpell<TEnum> : MonoBehaviour, ICollideable where TEnum
     {
         GameObject hitter = other.gameObject;
 
-        Debug.Log($"Hitted: {hitter.name}");
-
         if (hitter.CompareTag("Player"))
         {
             playerStats = hitter.GetComponent<PlayerStats>();

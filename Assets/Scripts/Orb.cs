@@ -6,9 +6,9 @@ public class Orb : MonoBehaviour, ICollideable
     public static event Action<Orb> OnOrbCollected;
     [SerializeField] OrbType orbType;
     public OrbType OrbType => orbType;
-
-    [Range(0, 1)][SerializeField] float speedGain = 0.1f;
-    public float SpeedGain => speedGain;
+    
+    [SerializeField] OrbData data;
+    public float SpeedGain => data.speedGain;
 
     bool wasCollected = false;
 

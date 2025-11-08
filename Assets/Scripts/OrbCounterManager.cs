@@ -4,15 +4,16 @@ using UnityEngine.SceneManagement;
 
 public class OrbCounterManager : MonoBehaviour
 {
-    public static event Action<int, int, int, int> OnSendOrbCountVisualUpdateRequest;
+    public static event Action<int, int> OnSendOrbCountVisualUpdateRequest;
     public static event Action<float,float> OnOrbCollected;
         
     private int lowOrbCount = 0;
-    private int midOrbCount = 0;
     private int highOrbCount = 0;
     
     private PlayerStats playerStats;
     [SerializeField] private bool enableOrbSpeedScaling = true;
+    [SerializeField] OrbData lowOrbData;
+    [SerializeField] OrbData highOrbData;
 
     private void Awake()
     {
@@ -88,9 +89,6 @@ public class OrbCounterManager : MonoBehaviour
             case OrbType.Low:
                 lowOrbCount++;
                 break;
-            case OrbType.Mid:
-                midOrbCount++;
-                break;
             case OrbType.High:
                 highOrbCount++;
                 break;
@@ -102,7 +100,7 @@ public class OrbCounterManager : MonoBehaviour
         {
             OnOrbCollected?.Invoke(orb.SpeedGain,lowOrbCount);
         }
-        OnSendOrbCountVisualUpdateRequest?.Invoke(lowOrbCount, midOrbCount, highOrbCount, TotalOrbCount());
+        OnSendOrbCountVisualUpdateRequest?.Invoke(lowOrbCount, highOrbCount);
     }
 
     private void PlayerOrbCollector_OnCollidedWithPotion(PotionData potionData)
@@ -122,13 +120,6 @@ public class OrbCounterManager : MonoBehaviour
             }
 
             LoseOrbs(potionData);
-
-            if (lowOrbCount < 0 || midOrbCount < 0 || highOrbCount < 0)
-            {
-                //game over here
-                //temporary reload scene
-                SceneManager.LoadScene(0);
-            }
         }
         else
         {
@@ -146,10 +137,6 @@ public class OrbCounterManager : MonoBehaviour
                     lowOrbCount -= potionData.OrbsToLose;
                     lowOrbCount = Mathf.Max(0, lowOrbCount);
                     break;
-                case OrbType.Mid:
-                    midOrbCount -= potionData.OrbsToLose;
-                    midOrbCount = Mathf.Max(0, midOrbCount);
-                    break;
                 case OrbType.High:
                     highOrbCount -= potionData.OrbsToLose;
                     highOrbCount = Mathf.Max(0, highOrbCount);
@@ -157,9 +144,6 @@ public class OrbCounterManager : MonoBehaviour
                 case OrbType.All:
                     lowOrbCount -= potionData.OrbsToLose;
                     lowOrbCount = Mathf.Max(0, lowOrbCount);
-
-                    midOrbCount -= potionData.OrbsToLose;
-                    midOrbCount = Mathf.Max(0, midOrbCount);
 
                     highOrbCount -= potionData.OrbsToLose;
                     highOrbCount = Mathf.Max(0, highOrbCount);
@@ -174,26 +158,21 @@ public class OrbCounterManager : MonoBehaviour
                 case OrbType.Low:
                     lowOrbCount -= Mathf.CeilToInt(lowOrbCount * percentToLose);
                     break;
-                case OrbType.Mid:
-                    midOrbCount -= Mathf.CeilToInt(midOrbCount * percentToLose);
-                    break;
                 case OrbType.High:
                     highOrbCount -= Mathf.CeilToInt(highOrbCount * percentToLose);
                     break;
                 case OrbType.All:
                     lowOrbCount -= Mathf.CeilToInt(lowOrbCount * percentToLose);
-                    midOrbCount -= Mathf.CeilToInt(midOrbCount * percentToLose);
                     highOrbCount -= Mathf.CeilToInt(highOrbCount * percentToLose);
                     break;
             }
         }
 
-        OnSendOrbCountVisualUpdateRequest?.Invoke(lowOrbCount, midOrbCount, highOrbCount, TotalOrbCount());
+        OnSendOrbCountVisualUpdateRequest?.Invoke(lowOrbCount, highOrbCount);
     }
 
-    private int TotalOrbCount()
+    public int GetTotalOrbCount()
     {
-        int totalCount = lowOrbCount + midOrbCount + highOrbCount;
-        return totalCount;
+        return lowOrbCount * lowOrbData.value + highOrbCount * highOrbData.value;
     }
 }

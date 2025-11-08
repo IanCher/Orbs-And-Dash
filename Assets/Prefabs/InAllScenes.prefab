@@ -707,6 +707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b355b449eeb254a3894b38809f5680e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  orbCounterManager: {fileID: 2004129686066956944}
   timerUI: {fileID: 7045454912069505240}
   finishCanvas: {fileID: 4090968738425131930}
   finishText: {fileID: 6110060136576643000}
@@ -2956,6 +2957,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a7e49a3312bbae4b8a2bb973b3eb4c6, type: 3}
+--- !u!114 &2004129686066956944 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3602532411984848458, guid: 5a7e49a3312bbae4b8a2bb973b3eb4c6, type: 3}
+  m_PrefabInstance: {fileID: 3039610273807084762}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7077fd3b31ef3c40a7566aaa9b2ee52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4930858617016079272 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7945247739024834418, guid: 5a7e49a3312bbae4b8a2bb973b3eb4c6, type: 3}

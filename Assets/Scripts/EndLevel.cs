@@ -7,6 +7,7 @@ public class EndLevel : MonoBehaviour
 {
     public static event Action OnPlayerWon;
 
+    [SerializeField] OrbCounterManager orbCounterManager;
     [SerializeField] TimerUI timerUI;
     [SerializeField] Canvas finishCanvas;
     [SerializeField] TMP_Text finishText;
@@ -16,20 +17,26 @@ public class EndLevel : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
 
-        float finishTime = timerUI.GetTime();
         timerUI.StopTrackingTime();
         finishCanvas.gameObject.SetActive(true);
 
-        float timeLimit = rareOrbHandler.GetTimeLimit();
-
-        if (finishTime > timeLimit)
-        {
-            finishText.text = "You lose...";
-        }
-        else
+        if (HasPlayerWon())
         {
             finishText.text = "You win!!!";
             OnPlayerWon?.Invoke();
         }
+        else
+        {
+            finishText.text = "You lose...";
+        }
+    }
+
+    bool HasPlayerWon()
+    {
+        float finishTime = timerUI.GetTime();
+        int totalOrbCount = orbCounterManager.GetTotalOrbCount();
+        float timeLimit = rareOrbHandler.GetTimeLimit();
+
+        return (finishTime <= timeLimit) && (totalOrbCount > rareOrbHandler.GetRareOrbCountRequired());
     }
 }

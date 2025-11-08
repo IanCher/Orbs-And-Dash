@@ -47,9 +47,14 @@ public class RareOrbHandler : MonoBehaviour
         if (TimerUI.time >= timeLimit && rareOrb.gameObject.activeInHierarchy)
             rareOrb.gameObject.SetActive(false);
     }
-    
+
     public float GetTimeLimit()
     {
         return timeLimit;
+    }
+    
+    public int GetRareOrbCountRequired()
+    {
+        return orbCountRequired;
     }
 }
