@@ -9,6 +9,7 @@ public class PauseMenu : MonoBehaviour
     [Header("Input Actions")]
     [SerializeField] private InputActionReference pauseActionRef;
     [SerializeField] GameObject soundMenu;
+    [SerializeField] GameObject commandMenu;
     [SerializeField] GameObject pauseButtons;
 
     private bool isPaused = false;
@@ -51,17 +52,22 @@ public class PauseMenu : MonoBehaviour
             TogglePause();
     }
 
+    public void ShowPauseButtons()
+    {
+        pauseButtons.SetActive(true);
+        soundMenu.SetActive(false);
+        commandMenu.SetActive(false);
+    }
+
     public void ShowSoundMenu()
     {
         pauseButtons.SetActive(false);
         soundMenu.SetActive(true);
     }
 
-    public void ShowPauseButtons()
+    public void ShowCommandMenu()
     {
-        pauseButtons.SetActive(true);
-        soundMenu.SetActive(false);
+        commandMenu.SetActive(true);
+        pauseButtons.SetActive(false);
     }
-    
-    
 }
