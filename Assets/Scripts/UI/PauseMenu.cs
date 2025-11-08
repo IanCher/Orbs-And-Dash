@@ -34,6 +34,8 @@ public class PauseMenu : MonoBehaviour
     {
         isPaused = !isPaused;
 
+        if (isPaused) ShowPauseButtons();
+
         Time.timeScale = isPaused ? 0f : 1f;
         canvasForPauseMenu.SetActive(isPaused);
 
