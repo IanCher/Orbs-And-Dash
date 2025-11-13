@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Threading.Tasks;
 using UnityEngine;
 
@@ -21,17 +22,22 @@ public class TutorialManager : MonoBehaviour
         TutorialTrigger.OnTutorialTrigger -= TutorialTrigger_OnTutorialTrigger;
     }
 
-    private async void TutorialTrigger_OnTutorialTrigger()
+    private void TutorialTrigger_OnTutorialTrigger()
     {
         if (!enableTutorial) return;
 
-        Pause();
-        tutorialUI.EnableVisual();
-        await Task.Delay(3000);
-        UnPause();
-        tutorialUI.DisableVisual();
+        StartCoroutine(ShowTutorialForFixedTime());
 
         PlayerData.TutorialCompleted = 1;
+    }
+
+    private IEnumerator ShowTutorialForFixedTime()
+    {
+        Pause();
+        tutorialUI.EnableVisual();
+        yield return new WaitForSecondsRealtime(3f);
+        UnPause();
+        tutorialUI.DisableVisual();
     }
 
     public void Pause()

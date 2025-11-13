@@ -1,5 +1,3 @@
-#if UNITY_EDITOR
-
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Splines;
@@ -23,9 +21,12 @@ public class ObjectPlacer : MonoBehaviour
 
     void OnValidate()
     {
+
+#if UNITY_EDITOR
         if (splineContainer == null) return;
 
         PlaceObject();
+#endif
     }
 
     public void PlaceObject()
@@ -115,4 +116,3 @@ public class ObjectPlacer : MonoBehaviour
         Gizmos.color = defaultColor;
     }
 }
-#endif

@@ -1,5 +1,3 @@
-#if UNITY_EDITOR
-
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Mathematics;
@@ -31,8 +29,11 @@ public class ChunkPlacer : MonoBehaviour
 
     [SerializeField] int randomSeed = 12345;
 
+
     void OnValidate()
     {
+#if UNITY_EDITOR
+
         if (!isActive) return;
         if (!CheckAllFieldsAreFilled()) return;
         UnityEngine.Random.InitState(randomSeed);
@@ -40,7 +41,9 @@ public class ChunkPlacer : MonoBehaviour
         ClampNumAndPosition();
         InstantiateChunk();
         PlaceObjectsInChunk();
+#endif
     }
+    
 
     private void ClampNumAndPosition()
     {
@@ -117,5 +120,3 @@ public class ChunkPlacer : MonoBehaviour
         OnValidate();
     }
 }
-
-#endif
