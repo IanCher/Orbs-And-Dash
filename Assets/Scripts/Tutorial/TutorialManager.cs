@@ -1,43 +1,104 @@
 using System.Collections;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class TutorialManager : MonoBehaviour
 {
+
     [SerializeField] private TutorialUI tutorialUI;
     [SerializeField] private bool enableTutorial = false;
-    private void Start()
+
+
+    private void Awake()
     {
+
+    }
+
+    private void Update()
+    {
+     
+
+    }
+
+    public void DisableAllActions()
+    {
+        InputSystem.actions.FindAction("Move").Disable();
+        InputSystem.actions.FindAction("Jump").Disable();
+    }
+
+    private async Task Start()
+    {
+        InputSystem.actions.FindAction("Jump").performed += TutorialManager_performed; 
+
         TutorialTrigger.OnTutorialTrigger += TutorialTrigger_OnTutorialTrigger;
         transform.position = Vector3.zero;
 
-        if(PlayerData.TutorialCompleted == 1)
+        if (PlayerData.TutorialCompleted == 1)
         {
             enableTutorial = false;
+            return;
+        }
+
+        await Task.Delay(500);
+        DisableAllActions();
+    }
+    
+
+    private void TutorialManager_performed(InputAction.CallbackContext obj)
+    {
+        if (enableTutorial)
+        {
+            UnPause();
+            tutorialUI.DisableVisual(4);
+
         }
     }
 
     private void OnDestroy()
     {
         TutorialTrigger.OnTutorialTrigger -= TutorialTrigger_OnTutorialTrigger;
+        InputSystem.actions.FindAction("Jump").performed -= TutorialManager_performed; ;
+
     }
 
-    private void TutorialTrigger_OnTutorialTrigger()
+    private void TutorialTrigger_OnTutorialTrigger(int id)
     {
         if (!enableTutorial) return;
 
-        StartCoroutine(ShowTutorialForFixedTime());
+        switch (id)
+        {
+            case 0:
+        InputSystem.actions.FindAction("Move").Enable();
+                StartCoroutine(ShowTutorialForFixedTime(id));
 
-        PlayerData.TutorialCompleted = 1;
+                break;
+            case 4:
+                InputSystem.actions.FindAction("Jump").Enable();
+                tutorialUI.EnableVisual(id);
+                Pause();
+                break;
+
+                case 5:
+                PlayerData.TutorialCompleted = 1;
+                StartCoroutine(ShowTutorialForFixedTime(id));
+
+                break;
+            default:
+                StartCoroutine(ShowTutorialForFixedTime(id));
+
+                break;
+        }
+
+
+        // PlayerData.TutorialCompleted = 1;
     }
 
-    private IEnumerator ShowTutorialForFixedTime()
+    private IEnumerator ShowTutorialForFixedTime(int id)
     {
-        Pause();
-        tutorialUI.EnableVisual();
+        tutorialUI.EnableVisual(id);
         yield return new WaitForSecondsRealtime(3f);
-        UnPause();
-        tutorialUI.DisableVisual();
+        tutorialUI.DisableVisual(id);
     }
 
     public void Pause()

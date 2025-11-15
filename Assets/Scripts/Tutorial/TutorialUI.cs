@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class TutorialUI : MonoBehaviour
 {
-    [SerializeField] private GameObject tutorialVisual;
+    [SerializeField] private GameObject[] tutorialVisuals;
 
-    public void EnableVisual()
+    public void EnableVisual(int id)
     {
-        tutorialVisual.SetActive(true);
+        tutorialVisuals[id].SetActive(true);
     }
-    public void DisableVisual()
+    public void DisableVisual(int id)
     {
-        tutorialVisual.SetActive(false);
+        tutorialVisuals[id].SetActive(false);
     }
 }
