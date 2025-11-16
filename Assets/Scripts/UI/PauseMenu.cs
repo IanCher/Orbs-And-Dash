@@ -11,8 +11,14 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] GameObject soundMenu;
     [SerializeField] GameObject commandMenu;
     [SerializeField] GameObject pauseButtons;
+    [SerializeField] SceneLoader sceneLoader;
 
     private bool isPaused = false;
+
+    void Start()
+    {
+        Time.timeScale = 1.0f;
+    }
 
     private void OnEnable()
     {
@@ -50,6 +56,18 @@ public class PauseMenu : MonoBehaviour
     {
         if (isPaused)
             TogglePause();
+    }
+
+    public void RestartLevel()
+    {
+        ResumeGame();
+        sceneLoader.ReloadCurrentScene();
+    }
+
+    public void LoadMainMenu()
+    {
+        ResumeGame();
+        sceneLoader.BackToMenu();
     }
 
     public void ShowPauseButtons()

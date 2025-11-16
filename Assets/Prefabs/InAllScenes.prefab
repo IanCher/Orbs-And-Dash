@@ -4044,6 +4044,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6072770707606221664, guid: f0ffae0e1f3fc764c832d48e4f76c3f6, type: 3}
+      propertyPath: sceneLoader
+      value: 
+      objectReference: {fileID: 1565546545704149174}
     - target: {fileID: 6114771759424337103, guid: f0ffae0e1f3fc764c832d48e4f76c3f6, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -4059,18 +4063,6 @@ PrefabInstance:
     - target: {fileID: 6114771759424337103, guid: f0ffae0e1f3fc764c832d48e4f76c3f6, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -86.101585
-      objectReference: {fileID: 0}
-    - target: {fileID: 8979441957024954816, guid: f0ffae0e1f3fc764c832d48e4f76c3f6, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1565546545704149174}
-    - target: {fileID: 8979441957024954816, guid: f0ffae0e1f3fc764c832d48e4f76c3f6, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: BackToMenu
-      objectReference: {fileID: 0}
-    - target: {fileID: 8979441957024954816, guid: f0ffae0e1f3fc764c832d48e4f76c3f6, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: SceneLoader, Assembly-CSharp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

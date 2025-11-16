@@ -6,18 +6,15 @@ using UnityEngine.UI;
 public class SceneLoader : MonoBehaviour
 {
     [SerializeField] FadeInOut fadeInOut;
+    
     public void ReloadCurrentScene()
     {
-        StartCoroutine(LoadSceneAfterFadeOutTime(GetActiveSceneIdx()));
+        int activeScene = GetActiveSceneIdx();
+        StartCoroutine(LoadSceneAfterFadeOutTime(activeScene));
     }
 
     public void BackToMenu()
     {
-        if (Time.timeScale < 1e-8)
-        {
-            Time.timeScale = 1;
-            SceneManager.LoadScene(0);
-        }
         StartCoroutine(LoadSceneAfterFadeOutTime(0));
     }
 
@@ -29,7 +26,7 @@ public class SceneLoader : MonoBehaviour
     private IEnumerator LoadSceneAfterFadeOutTime(int sceneIdx)
     {
         fadeInOut.StartFadeOut();
-        yield return new WaitForSeconds(fadeInOut.GetFadeOutTime());
+        yield return new WaitForSecondsRealtime(fadeInOut.GetFadeOutTime());
         SceneManager.LoadScene(sceneIdx);
     }
 
