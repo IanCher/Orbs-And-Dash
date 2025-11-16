@@ -6,7 +6,12 @@ using UnityEngine.UI;
 public class SceneLoader : MonoBehaviour
 {
     [SerializeField] FadeInOut fadeInOut;
-    
+
+    public void LoadSceneByIndex(int index)
+    {
+        SceneManager.LoadScene(index);
+    }
+
     public void ReloadCurrentScene()
     {
         int activeScene = GetActiveSceneIdx();
