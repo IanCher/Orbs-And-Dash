@@ -24,6 +24,7 @@ public class PlayerStats : MonoBehaviour
     public bool Paralyzed { get; set; }
 
     [SerializeField] ParticleSystem orbCollectedVFX;
+    [SerializeField] GameObject paralyseSpellAnnotation;
 
     void Start()
     {
@@ -42,6 +43,8 @@ public class PlayerStats : MonoBehaviour
         Shield.OnCollidedWithShield += ApplyShieldEffects;
         OrbCounterManager.OnOrbCollected += OrbCounterManagerOnOnOrbCollected;
         MysterySpell.OnCollideWithMysterySpell += HandleMysterySpellEffect;
+
+        paralyseSpellAnnotation.SetActive(false);
     }
 
     private void OrbCounterManagerOnOnOrbCollected(float speedGain,float lowOrbCount)
@@ -112,16 +115,17 @@ public class PlayerStats : MonoBehaviour
         // float reduceSpeedMultiplierBy = Mathf.Clamp01(potionData.PercentToSlowBy / 100f);
 
         currentSpeed *= (100 - potionData.PercentToSlowBy) / 100f;
-        currentSpeed = Mathf.Max(currentSpeed, baseSpeed);
 
         if (potionData.PercentToSlowBy > 90)// or equal 100 depending on how we want to handle it
         {
             Paralyzed = true;
+            paralyseSpellAnnotation.SetActive(true);
             jumpNeeded = potionData.JumpNeeded;//Hardcoded for now, can be part of potion data later?
         }
         else
         {
             Paralyzed = false;
+            currentSpeed = Mathf.Max(currentSpeed, baseSpeed);
         }
 
         //currentSpeed = Mathf.Max(currentSpeed, baseSpeed);
@@ -139,6 +143,7 @@ public class PlayerStats : MonoBehaviour
             if (jumpNeeded <= 0)
             {
                 Paralyzed = false;
+                paralyseSpellAnnotation.SetActive(false);
                 currentSpeed = Mathf.Max(currentSpeed, baseSpeed);
             }
         }

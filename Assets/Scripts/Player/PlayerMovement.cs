@@ -256,7 +256,7 @@ public class PlayerMovement : MonoBehaviour
 
         foreach (ParticleSystem ps in broomVFX) ps.Stop();
 
-        isJumpingAtBottom = IsAtBottomOfTrack();
+        isJumpingAtBottom = IsAtBottomOfTrack() || playerStats.Paralyzed;
         isJumpingToOtherSide = !isJumpingAtBottom;
     }
     
@@ -303,9 +303,12 @@ public class PlayerMovement : MonoBehaviour
         else if (isJumpingAtBottom)
         {
             float param = timeSincePlayerJumped / jumpDurationAtBottom;
+
+            float jumpHeight = playerStats.Paralyzed ? 0.1f * bottomJumpHeight : bottomJumpHeight;
+
             movementRadius = defaultMovementRadius * (
-                1 - bottomJumpHeight +
-                bottomJumpHeight * (4 * param * param - 4 * param + 1)
+                1 - jumpHeight +
+                jumpHeight * (4 * param * param - 4 * param + 1)
             );
         }
         else

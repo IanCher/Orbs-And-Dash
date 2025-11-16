@@ -99,13 +99,11 @@ public abstract class BaseSpell<TEnum> : MonoBehaviour, ICollideable where TEnum
 
 
         }
-        if (effects.UIToSpawn != null)
-        {
-            effects.UIToSpawn.Enable();
-                
-                
-            //Destroy(uiEffect, 1f);
-        }
+        // if (effects.UIToSpawn != null)
+        // {
+        //     effects.UIToSpawn.Enable();
+        //     //Destroy(uiEffect, 1f);
+        // }
     }
   
 }
