@@ -21,11 +21,7 @@ public class TutorialManager : MonoBehaviour
 
     }
 
-    public void DisableAllActions()
-    {
-        InputSystem.actions.FindAction("Move").Disable();
-        InputSystem.actions.FindAction("Jump").Disable();
-    }
+    
 
     private async Task Start()
     {
@@ -39,9 +35,6 @@ public class TutorialManager : MonoBehaviour
             enableTutorial = false;
             return;
         }
-
-        await Task.Delay(500);
-        DisableAllActions();
     }
     
 
@@ -69,12 +62,10 @@ public class TutorialManager : MonoBehaviour
         switch (id)
         {
             case 0:
-        InputSystem.actions.FindAction("Move").Enable();
                 StartCoroutine(ShowTutorialForFixedTime(id));
 
                 break;
             case 4:
-                InputSystem.actions.FindAction("Jump").Enable();
                 tutorialUI.EnableVisual(id);
                 Pause();
                 break;
