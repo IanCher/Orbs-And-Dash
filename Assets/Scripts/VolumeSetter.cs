@@ -3,6 +3,8 @@ using UnityEngine.UI;
 
 public class VolumeSetter : MonoBehaviour
 {
+    [SerializeField] AudioSource soundSource;
+
     Slider slider;
 
     void Awake()
@@ -12,10 +14,11 @@ public class VolumeSetter : MonoBehaviour
 
     void OnEnable()
     {
-        slider.value = AudioManager.instance.GetVolume();
+        slider.value = soundSource.volume;
     }
+
     public void SetVolume(float volume)
     {
-        AudioManager.instance.SetVolume(volume);
+        soundSource.volume = volume;
     }
 }
