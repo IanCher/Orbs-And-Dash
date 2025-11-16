@@ -6,13 +6,14 @@ public class OrbCounterUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI lowOrbCountText;
     // [SerializeField] private TextMeshProUGUI midOrbCountText;
     [SerializeField] private TextMeshProUGUI highOrbCountText;
-    // [SerializeField] private TextMeshProUGUI totalOrbCountText;
+    [SerializeField] private TextMeshProUGUI totalOrbCountText;
 
 
     private void Start()
     {
-        lowOrbCountText.text = "x0";
-        highOrbCountText.text = "x0";
+        lowOrbCountText.text = "0";
+        highOrbCountText.text = "0";
+        totalOrbCountText.text = "x0";
         OrbCounterManager.OnSendOrbCountVisualUpdateRequest += OrbCounterManager_OnSendOrbCountVisualUpdateRequest;
     }
 
@@ -21,9 +22,10 @@ public class OrbCounterUI : MonoBehaviour
         OrbCounterManager.OnSendOrbCountVisualUpdateRequest -= OrbCounterManager_OnSendOrbCountVisualUpdateRequest;
     }
 
-    private void OrbCounterManager_OnSendOrbCountVisualUpdateRequest(int arg1, int arg3)
+    private void OrbCounterManager_OnSendOrbCountVisualUpdateRequest(int arg1, int arg2, int arg3)
     {
-        lowOrbCountText.text = "x" + arg1.ToString();
-        highOrbCountText.text = "x" + arg3.ToString();
+        lowOrbCountText.text = arg1.ToString();
+        highOrbCountText.text = arg2.ToString();
+        totalOrbCountText.text = "x" + arg3.ToString();
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class OrbCounterManager : MonoBehaviour
 {
-    public static event Action<int, int> OnSendOrbCountVisualUpdateRequest;
+    public static event Action<int, int, int> OnSendOrbCountVisualUpdateRequest;
     public static event Action<float,float> OnOrbCollected;
         
     private int lowOrbCount = 0;
@@ -100,7 +100,7 @@ public class OrbCounterManager : MonoBehaviour
         {
             OnOrbCollected?.Invoke(orb.SpeedGain,lowOrbCount);
         }
-        OnSendOrbCountVisualUpdateRequest?.Invoke(lowOrbCount, highOrbCount);
+        OnSendOrbCountVisualUpdateRequest?.Invoke(lowOrbCount, highOrbCount, GetTotalOrbCount());
     }
 
     private void PlayerOrbCollector_OnCollidedWithPotion(PotionData potionData)
@@ -168,7 +168,7 @@ public class OrbCounterManager : MonoBehaviour
             }
         }
 
-        OnSendOrbCountVisualUpdateRequest?.Invoke(lowOrbCount, highOrbCount);
+        OnSendOrbCountVisualUpdateRequest?.Invoke(lowOrbCount, highOrbCount, GetTotalOrbCount());
     }
 
     public int GetTotalOrbCount()
