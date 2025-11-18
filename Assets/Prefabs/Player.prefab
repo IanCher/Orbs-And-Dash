@@ -19555,7 +19555,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d22484419b446c0a935018fde9cc55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loopStyle: 2
+  moveStyle: 1
+  loopStyle: 0
   tieAngleToSpeed: 0
   fixedMaxAngle: 1.5707964
   maxLateralSpeed: 4
@@ -19611,6 +19612,7 @@ MonoBehaviour:
   activeInvulnerabilityCount: 0
   currentSpeed: 0
   orbCollectedVFX: {fileID: 934925164338917723, guid: 47573bf90db394f4b811a30e34670c17, type: 3}
+  paralyseSpellAnnotation: {fileID: 0}
 --- !u!114 &8086324004293838517
 MonoBehaviour:
   m_ObjectHideFlags: 0
