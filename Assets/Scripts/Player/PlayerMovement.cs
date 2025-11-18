@@ -1,3 +1,5 @@
+using System;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Experimental.GlobalIllumination;
@@ -7,6 +9,11 @@ using UnityEngine.UIElements;
 [RequireComponent(typeof(PlayerStats))]
 public class PlayerMovement : MonoBehaviour
 {
+    enum MoveStyle { Rotational, Directional }; 
+    // rotational = classic: [A] rotate clockwise, [D] rotate ccw
+    // directional = new: [A] always go left, [D] always go right
+    [SerializeField] MoveStyle moveStyle = MoveStyle.Rotational;
+
     enum LoopStyle { Classic, PushForFullLoop, Gravity };
 
     [SerializeField] LoopStyle loopStyle = LoopStyle.Classic;
@@ -155,10 +162,62 @@ public class PlayerMovement : MonoBehaviour
         if (isJumpingToOtherSide) return;
 
         float targetDir = movementAction.ReadValue<Vector2>().x;
+
+        // force angle to stay inside +- PI
+        // otherwise we are dealing with >1 spin ie angles like 1080 degrees
+        if (angle>Math.PI) angle -= Mathf.PI*2;
+        if (angle<-Math.PI) angle += Mathf.PI*2;
+
+        // new alternate movement: 
+        // W moves to the top
+        // A moves to left side
+        // S moves to the bottom
+        // D moves to right side
+        if (moveStyle == MoveStyle.Directional)
+        {
+            bool aboveHalfway = ((angle <= -Math.PI/2) || (angle >= Math.PI/2));
+            bool belowHalfway = !aboveHalfway;
+            bool onLeftSide = (angle<0f);
+            bool onRightSide = (angle>0f);
+            bool goUp = movementAction.ReadValue<Vector2>().y>0f;
+            bool goDown = movementAction.ReadValue<Vector2>().y<0f;
+            bool goLeft = movementAction.ReadValue<Vector2>().x>0f;
+            bool goRight = movementAction.ReadValue<Vector2>().x<0f;
+            float cw = 1f;
+            float ccw = -1f;
+            if (goLeft && onLeftSide && aboveHalfway) targetDir = ccw;
+            if (goLeft && onLeftSide && belowHalfway) targetDir = cw;
+            if (goLeft && onRightSide && aboveHalfway) targetDir = ccw;
+            if (goLeft && onRightSide && belowHalfway) targetDir = cw;
+            if (goRight && onRightSide && aboveHalfway) targetDir = cw;
+            if (goRight && onRightSide && belowHalfway) targetDir = ccw;
+            if (goRight && onLeftSide && aboveHalfway) targetDir = cw;
+            if (goRight && onLeftSide && belowHalfway) targetDir = ccw;
+            if (goUp && onLeftSide) targetDir = ccw;
+            if (goUp && onRightSide) targetDir = cw;
+            if (goDown && onLeftSide) targetDir = cw;
+            if (goDown && onRightSide) targetDir = ccw;
+            /* Debug.Log("directional movement: "+
+                (goLeft?"<":"-")+
+                (goRight?">":"-")+
+                (goUp?"^":"-")+
+                (goDown?"v":"-")+
+                (onLeftSide?"L":"-")+
+                (onRightSide?"R":"-")+
+                (aboveHalfway?"A":"-")+
+                (belowHalfway?"B":"-")+
+                " angle="+angle+
+                " targetDir="+targetDir); */
+        }  // end of new MoveStyle.Directional movement code
+
         if(enableSmoothing & !isJumpingAtBottom)
-        moveDir = Mathf.Lerp(moveDir, targetDir, Time.deltaTime * smoothingSpeed);
+        {
+            moveDir = Mathf.Lerp(moveDir, targetDir, Time.deltaTime * smoothingSpeed);
+        }
         else
+        {
             moveDir = targetDir;
+        }
             
         if (Mathf.Abs(moveDir) < 0.01 & !isJumpingAtBottom)
         {
@@ -170,6 +229,7 @@ public class PlayerMovement : MonoBehaviour
         {
             moveDir= moveDir*0.1f;
         }
+
         angle += moveDir * lateralSpeed * Time.deltaTime;
         
         // Only clamp if we have any angle restriction
