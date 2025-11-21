@@ -84,6 +84,12 @@ public class OrbCounterManager : MonoBehaviour
 
     private void PlayerOrbCollector_OnOrbCollected(Orb orb)
     {
+        if(playerStats != null && playerStats.Paralyzed)
+        {
+            Debug.Log("OrbCounterManager: Player is paralyzed - ignoring orb collection");
+            return;
+        }
+
         switch (orb.OrbType)
         {
             case OrbType.Low:

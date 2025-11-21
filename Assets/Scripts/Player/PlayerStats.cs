@@ -49,9 +49,12 @@ public class PlayerStats : MonoBehaviour
 
     private void OrbCounterManagerOnOnOrbCollected(float speedGain,float lowOrbCount)
     {
-        UpdateOrbSpeed(speedGain);
-        ParticleSystem vfxInstance = Instantiate(orbCollectedVFX, transform);
-        Destroy(vfxInstance.gameObject, 0.6f);
+        if (!Paralyzed)
+        {
+            UpdateOrbSpeed(speedGain);
+            ParticleSystem vfxInstance = Instantiate(orbCollectedVFX, transform);
+            Destroy(vfxInstance.gameObject, 0.6f);
+        }
     }
 
     public float GetCurrentSpeed()
@@ -62,7 +65,6 @@ public class PlayerStats : MonoBehaviour
     {
         return currentSpeed / maxSpeed;
     }
-
     public void UpdateSpeed()
     {
         if (currentSpeed < maxSpeed)
@@ -83,7 +85,6 @@ public class PlayerStats : MonoBehaviour
                 break;
         }
     }
-
     private void UpdateOrbSpeed(float speedGain)
     {
         currentSpeed = Mathf.Clamp(currentSpeed * (1 + speedGain), baseSpeed, maxSpeed);
