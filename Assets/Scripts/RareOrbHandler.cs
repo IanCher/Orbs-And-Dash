@@ -4,6 +4,8 @@ using TMPro;
 
 public class RareOrbHandler : MonoBehaviour
 {
+    public static event Action<string> OnRequirementSet;
+
     [SerializeField] private RareOrb rareOrb;
 
     [SerializeField] private float timeLimit;
@@ -27,6 +29,8 @@ public class RareOrbHandler : MonoBehaviour
         string text = "Complete Level under ";
         text += timeLimitMinute.ToString() + ":" + timeLimitSecond.ToString("D2");
         if (timerInstructionUI) timerInstructionUI.text = text;
+
+        OnRequirementSet?.Invoke(rareOrbInstructionUI.text + " under " + timeLimitMinute.ToString() + ":" + timeLimitSecond.ToString("D2") + " minutes");
     }
 
     private void OnDestroy()
