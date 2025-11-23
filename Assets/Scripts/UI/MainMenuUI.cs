@@ -32,7 +32,7 @@ public class MainMenuUI : MonoBehaviour
 
     public void SetProgressionText()
     {
-        normalOrbCountText.text = "NORMAL ORBS : " + PlayerData.NormalOrbs;
-        rareOrbsCountText.text = "RARE ORBS : " + PlayerData.RareOrbs +"/4";
+        normalOrbCountText.text = "ORBS : " + PlayerData.NormalOrbs;
+        rareOrbsCountText.text = "Magical ORBS : " + PlayerData.RareOrbs +"/3";
     }
 }

@@ -26,7 +26,7 @@ public class TimerUI : MonoBehaviour
         
         time += Time.deltaTime;
         TimeSpan timeSpan = TimeSpan.FromSeconds(time);
-        timerUIText.text = timeSpan.ToString(@"mm\:ss\:ff");
+        timerUIText.text = timeSpan.ToString(@"mm\:ss");
     }
 
     public float GetTime()
