@@ -5,6 +5,7 @@ using NUnit.Framework.Internal;
 
 public class EndLevel : MonoBehaviour
 {
+    public static event Action OnEndLevelTriggerd;
     public static event Action OnPlayerWon;
 
     [SerializeField] OrbCounterManager orbCounterManager;
@@ -29,6 +30,8 @@ public class EndLevel : MonoBehaviour
         {
             finishText.text = "You lose...";
         }
+
+        OnEndLevelTriggerd?.Invoke();
     }
 
     bool HasPlayerWon()

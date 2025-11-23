@@ -7,7 +7,7 @@ public class OrbCounterManager : MonoBehaviour
     public static event Action<int, int, int> OnSendOrbCountVisualUpdateRequest;
     public static event Action<float,float> OnOrbCollected;
         
-    private int lowOrbCount = 0;
+    public static int lowOrbCount = 0;
     private int highOrbCount = 0;
     
     private PlayerStats playerStats;

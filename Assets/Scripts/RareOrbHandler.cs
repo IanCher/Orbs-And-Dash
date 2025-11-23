@@ -10,6 +10,7 @@ public class RareOrbHandler : MonoBehaviour
 
     [SerializeField] private float timeLimit;
     [SerializeField] private int orbCountRequired;
+    public static int OrbCountRequired;
     [SerializeField] private TextMeshProUGUI rareOrbInstructionUI;
 
     [SerializeField] private TextMeshProUGUI timerInstructionUI;
@@ -31,7 +32,9 @@ public class RareOrbHandler : MonoBehaviour
         if (timerInstructionUI) timerInstructionUI.text = text;
 
         OnRequirementSet?.Invoke(rareOrbInstructionUI.text + " under " + timeLimitMinute.ToString() + ":" + timeLimitSecond.ToString("D2") + " minutes");
+        OrbCountRequired = orbCountRequired;
     }
+
 
     private void OnDestroy()
     {

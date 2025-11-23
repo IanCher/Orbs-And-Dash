@@ -34,6 +34,12 @@ public class TimerUI : MonoBehaviour
         return time;
     }
 
+    public static string GetTimeString()
+    {
+        TimeSpan timeSpan = TimeSpan.FromSeconds(time);
+        return timeSpan.ToString(@"mm\:ss");
+    }
+
     public void StopTrackingTime()
     {
         stopTrackingTime = true;
