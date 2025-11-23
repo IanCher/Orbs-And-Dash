@@ -39,8 +39,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -181.45502, y: 0}
-  m_SizeDelta: {x: 620.3281, y: 100}
+  m_AnchoredPosition: {x: -402.8559, y: 0}
+  m_SizeDelta: {x: 177.5263, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3993955941940786953
 MonoBehaviour:
@@ -74,7 +74,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6724751737335890778
 RectTransform:
   m_ObjectHideFlags: 0
@@ -306,7 +306,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1077360678245060288
 RectTransform:
   m_ObjectHideFlags: 0
@@ -638,6 +638,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: OrbCountSingleUI-High
       objectReference: {fileID: 0}
+    - target: {fileID: 4147175582986862327, guid: a55da3d9cb871604eb457592f3188d6b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9104707172833009985, guid: a55da3d9cb871604eb457592f3188d6b, type: 3}
       propertyPath: m_Color.g
       value: 0.14509805
@@ -754,6 +758,10 @@ PrefabInstance:
     - target: {fileID: 4147175582986862327, guid: a55da3d9cb871604eb457592f3188d6b, type: 3}
       propertyPath: m_Name
       value: OrbCountSingleUI-High
+      objectReference: {fileID: 0}
+    - target: {fileID: 4147175582986862327, guid: a55da3d9cb871604eb457592f3188d6b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9104707172833009985, guid: a55da3d9cb871604eb457592f3188d6b, type: 3}
       propertyPath: m_Color.r

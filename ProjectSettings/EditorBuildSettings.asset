@@ -10,13 +10,10 @@ EditorBuildSettings:
     guid: 29e6473261333b646a60a659b6e3a2f9
   - enabled: 1
     path: Assets/Scenes/Level1-Lapallas_Sea.unity
-    guid: cddc479e226494124b84b7277a6cbc3c
+    guid: 6fe3a7cd2bbaee34eba8eb01f5a38a28
   - enabled: 1
     path: Assets/Scenes/Level2-Forest.unity
     guid: 41ae1bcfbea607a41b134ebcc56dbd49
-  - enabled: 1
-    path: Assets/Scenes/Level3-Space.unity
-    guid: 72672bbecaec7e14f91d478da31e663b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
