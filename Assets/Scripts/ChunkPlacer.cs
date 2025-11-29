@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.Mathematics;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Splines;
@@ -80,15 +81,15 @@ public class ChunkPlacer : MonoBehaviour
 
             if (UnityEngine.Random.Range(0f, 1f) < proportionOfBombs)
             {
-                objectPlacer = Instantiate(potionBombPrefab, transform);
+                objectPlacer = PrefabUtility.InstantiatePrefab(potionBombPrefab, transform) as ObjectPlacer;
             }
             else if (UnityEngine.Random.Range(0f, 1f) < proportionHighOrbs)
             {
-                objectPlacer = Instantiate(highOrbPrefab, transform);
+                objectPlacer = PrefabUtility.InstantiatePrefab(highOrbPrefab, transform) as ObjectPlacer;
             }
             else
             {
-                objectPlacer = Instantiate(lowOrbPrefab, transform);
+                objectPlacer = PrefabUtility.InstantiatePrefab(lowOrbPrefab, transform) as ObjectPlacer;
             }
 
             objectPlacer.splineContainer = trackSpline;
