@@ -9,7 +9,7 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadSceneByIndex(int index)
     {
-        SceneManager.LoadScene(index);
+        StartCoroutine(LoadSceneAfterFadeOutTime(index));
     }
 
     public void ReloadCurrentScene()

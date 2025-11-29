@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;   
 
 public class MenuManager : MonoBehaviour
 {
+    [SerializeField] private SceneLoader sceneLoader;
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject shopMenu;
     [SerializeField] private GameObject resetGameMenu;
@@ -16,6 +18,21 @@ public class MenuManager : MonoBehaviour
         selectLevelMenu.SetActive(false);
     }
 
+    private void Start()
+    {
+        InputSystem.actions.FindAction("Enter").performed += MainMenuUI_performed; ;
+
+    }
+    private void OnDestroy()
+    {
+        InputSystem.actions.FindAction("Enter").performed += MainMenuUI_performed; ;
+    }
+
+    private void MainMenuUI_performed(InputAction.CallbackContext obj)
+    {
+        sceneLoader.LoadNextScene();
+
+    }
     public void ShowShopMenu()
     {
         mainMenu.SetActive(false);

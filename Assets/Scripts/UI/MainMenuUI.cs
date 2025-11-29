@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class MainMenuUI : MonoBehaviour
 {
+    [SerializeField] private SceneLoader loader;
     [SerializeField] private Button startButton;
     [SerializeField] private Button quitButton;
     [SerializeField] private TextMeshProUGUI normalOrbCountText;
@@ -15,7 +16,7 @@ public class MainMenuUI : MonoBehaviour
     {
         startButton.onClick.AddListener(() =>
         {
-            SceneManager.LoadScene(1);
+            loader.LoadNextScene();
         });
 
         quitButton.onClick.AddListener(() =>
