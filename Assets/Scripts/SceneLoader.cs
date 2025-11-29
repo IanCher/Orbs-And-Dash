@@ -25,7 +25,9 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadNextScene()
     {
-        StartCoroutine(LoadSceneAfterFadeOutTime(GetActiveSceneIdx() + 1));
+        int sceneIdx = GetActiveSceneIdx();
+        int nextSceneIdx = sceneIdx + 1 == SceneManager.sceneCountInBuildSettings ? 0 : sceneIdx + 1;
+        StartCoroutine(LoadSceneAfterFadeOutTime(nextSceneIdx));
     }
 
     private IEnumerator LoadSceneAfterFadeOutTime(int sceneIdx)
