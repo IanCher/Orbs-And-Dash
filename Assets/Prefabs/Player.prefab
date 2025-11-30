@@ -19555,7 +19555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d22484419b446c0a935018fde9cc55, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveStyle: 0
+  moveStyle: 1
   loopStyle: 0
   tieAngleToSpeed: 0
   fixedMaxAngle: 1.5707964
