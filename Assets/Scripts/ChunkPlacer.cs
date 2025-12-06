@@ -75,6 +75,7 @@ public class ChunkPlacer : MonoBehaviour
 
     private void InstantiateChunk()
     {
+#if UNITY_EDITOR
         while (transform.childCount < numOrbsInChunk)
         {
             ObjectPlacer objectPlacer;
@@ -95,6 +96,7 @@ public class ChunkPlacer : MonoBehaviour
             objectPlacer.splineContainer = trackSpline;
             objectPlacer.PlaceObject();
         }
+#endif
     }
 
     private bool CheckAllFieldsAreFilled()
