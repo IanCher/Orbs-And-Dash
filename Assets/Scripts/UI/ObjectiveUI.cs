@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine;
 public class ObjectiveUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI objectiveText;
+    [SerializeField] private float duration = 5;
+    public static event Action OnHide;
 
     private void Awake()
     {
@@ -19,8 +22,9 @@ public class ObjectiveUI : MonoBehaviour
 
     private IEnumerator Hide()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(duration);
         gameObject.SetActive(false);
+        OnHide?.Invoke();
     }
 
     private void OnDestroy()

@@ -17,14 +17,23 @@ public class PlayerRailProgression : MonoBehaviour
     private void Awake()
     {
         playerStats = GetComponent<PlayerStats>();
+        StartCounter.OnGo += StartCounter_OnGo;
     }
 
-    IEnumerator Start()
+    private void OnDestroy()
     {
-        isMoving = false;
-        yield return new WaitForSeconds(fadeInOut.GetFadeInTime() + 0.1f);
+        StartCounter.OnGo -= StartCounter_OnGo;
+    }
+
+    private void StartCounter_OnGo()
+    {
         isMoving = true;
         timerUI.StartTrackingTime();
+    }
+
+    void Start()
+    {
+        isMoving = false;
     }
 
     // Update is called once per frame
