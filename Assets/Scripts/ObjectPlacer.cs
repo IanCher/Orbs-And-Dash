@@ -31,6 +31,7 @@ public class ObjectPlacer : MonoBehaviour
 
     public void PlaceObject()
     {
+        if (splineContainer == null) return;
         UpdateSplineUnit();
         NormalisePositionParam();
         UpdateLocalBasis();
