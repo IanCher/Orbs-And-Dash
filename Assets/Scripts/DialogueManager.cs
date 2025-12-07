@@ -8,7 +8,8 @@ public class DialogueManager : MonoBehaviour
     [TextArea(2, 15)]
     string[] dialogueBoxes;
 
-    [SerializeField] TextMeshProUGUI text;
+    [SerializeField] TextMeshProUGUI dialogueText;
+    [SerializeField] TextMeshProUGUI nextText;
     [SerializeField] SceneLoader sceneLoader;
     [SerializeField] float typingSpeed = 0.05f;
 
@@ -31,9 +32,9 @@ public class DialogueManager : MonoBehaviour
     {
         if (nextDialogue.WasPressedThisFrame())
         {
-            if (currentLetterIdx <= text.text.Length)
+            if (currentLetterIdx <= dialogueText.text.Length)
             {
-               currentLetterIdx = text.text.Length;
+               currentLetterIdx = dialogueText.text.Length;
                ShowNextCharacter();
             }
             else
@@ -42,7 +43,7 @@ public class DialogueManager : MonoBehaviour
             }
         }
 
-        if (currentLetterIdx <= text.text.Length)
+        if (currentLetterIdx <= dialogueText.text.Length)
         {
             timeSinceLastLetter += Time.deltaTime;
 
@@ -55,9 +56,14 @@ public class DialogueManager : MonoBehaviour
 
     private void ShowNextCharacter()
     {
-        text.maxVisibleCharacters = currentLetterIdx;
+        dialogueText.maxVisibleCharacters = currentLetterIdx;
         timeSinceLastLetter = 0;
         currentLetterIdx++;
+
+        if (currentLetterIdx > dialogueText.text.Length)
+        {
+            nextText.maxVisibleCharacters = nextText.text.Length;
+        }
     }
 
     public void UpdateTextBox()
@@ -67,8 +73,10 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        text.text = dialogueBoxes[currentDialogueBox];
-        text.maxVisibleCharacters = 1;
+        dialogueText.text = dialogueBoxes[currentDialogueBox];
+        dialogueText.maxVisibleCharacters = 1;
+
+        nextText.maxVisibleCharacters = 0;
     
         currentLetterIdx = 1;
         timeSinceLastLetter = 0;
