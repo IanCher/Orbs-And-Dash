@@ -120,6 +120,7 @@ MonoBehaviour:
     OrbsToLose: 0
     OrbTypeToLose: 0
   explosion: {fileID: 0}
+  soundToPlay: HitWall
 --- !u!1001 &606219127982814578
 PrefabInstance:
   m_ObjectHideFlags: 0

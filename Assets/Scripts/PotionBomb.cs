@@ -9,6 +9,7 @@ public class PotionBomb : MonoBehaviour, ICollideable
     private bool wasHitByPlayer = false;
 
     [SerializeField] GameObject explosion;
+    [SerializeField] string soundToPlay = "PotionExplosion";
     protected virtual void Reset()
     {
         if (PotionsData == null) PotionsData = new PotionData();
@@ -26,6 +27,7 @@ public class PotionBomb : MonoBehaviour, ICollideable
 
         wasHitByPlayer = true;
         OnCollidedWithPotion?.Invoke(PotionsData);
+        AudioManager.instance.PlaySound(soundToPlay);
         PlayExplosion();
         Destroy(gameObject);
     }
@@ -33,13 +35,11 @@ public class PotionBomb : MonoBehaviour, ICollideable
     private void PlayExplosion()
     {
         if (explosion == null) return;
-
         GameObject explosionInstance = Instantiate(
             explosion,
             transform.position,
             transform.rotation
         );
-        AudioManager.instance.PlaySound("PotionExplosion");
 
         Destroy(explosionInstance, 1f);
     }
