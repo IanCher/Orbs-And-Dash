@@ -31,7 +31,15 @@ public class DialogueManager : MonoBehaviour
     {
         if (nextDialogue.WasPressedThisFrame())
         {
-            UpdateTextBox();
+            if (currentLetterIdx <= text.text.Length)
+            {
+               currentLetterIdx = text.text.Length;
+               ShowNextCharacter();
+            }
+            else
+            { 
+                UpdateTextBox();
+            }
         }
 
         if (currentLetterIdx <= text.text.Length)
@@ -40,11 +48,16 @@ public class DialogueManager : MonoBehaviour
 
             if (timeSinceLastLetter >= typingSpeed)
             {
-                text.maxVisibleCharacters = currentLetterIdx;
-                timeSinceLastLetter = 0;
-                currentLetterIdx++;
+                ShowNextCharacter();
             }
         }
+    }
+
+    private void ShowNextCharacter()
+    {
+        text.maxVisibleCharacters = currentLetterIdx;
+        timeSinceLastLetter = 0;
+        currentLetterIdx++;
     }
 
     public void UpdateTextBox()
