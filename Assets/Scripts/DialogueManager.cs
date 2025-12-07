@@ -10,10 +10,15 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI text;
     [SerializeField] SceneLoader sceneLoader;
+    [SerializeField] float typingSpeed = 0.05f;
 
     int currentDialogueBox = 0;
 
     InputAction nextDialogue;
+
+    string targetText;
+    int currentLetterIdx;
+    float timeSinceLastLetter;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -30,6 +35,18 @@ public class DialogueManager : MonoBehaviour
         {
             UpdateTextBox();
         }
+
+        if (currentLetterIdx < targetText.Length)
+        {
+            timeSinceLastLetter += Time.deltaTime;
+
+            if (timeSinceLastLetter >= typingSpeed)
+            {
+                text.text += targetText[currentLetterIdx];
+                timeSinceLastLetter = 0;
+                currentLetterIdx++;
+            }
+        }
     }
 
     public void UpdateTextBox()
@@ -39,7 +56,11 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        text.text = dialogueBoxes[currentDialogueBox];
+        targetText = dialogueBoxes[currentDialogueBox];
+        text.text = targetText[0].ToString();
+    
+        currentLetterIdx = 1;
+        timeSinceLastLetter = 0;
         currentDialogueBox++;
     }
 }

@@ -377,6 +377,7 @@ MonoBehaviour:
     life!!"
   text: {fileID: 1170573171}
   sceneLoader: {fileID: 1565546544858125293}
+  typingSpeed: 0.03
 --- !u!4 &1607555243
 Transform:
   m_ObjectHideFlags: 0
