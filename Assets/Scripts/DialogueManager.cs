@@ -15,8 +15,6 @@ public class DialogueManager : MonoBehaviour
     int currentDialogueBox = 0;
 
     InputAction nextDialogue;
-
-    string targetText;
     int currentLetterIdx;
     float timeSinceLastLetter;
 
@@ -36,13 +34,13 @@ public class DialogueManager : MonoBehaviour
             UpdateTextBox();
         }
 
-        if (currentLetterIdx < targetText.Length)
+        if (currentLetterIdx <= text.text.Length)
         {
             timeSinceLastLetter += Time.deltaTime;
 
             if (timeSinceLastLetter >= typingSpeed)
             {
-                text.text += targetText[currentLetterIdx];
+                text.maxVisibleCharacters = currentLetterIdx;
                 timeSinceLastLetter = 0;
                 currentLetterIdx++;
             }
@@ -56,8 +54,8 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        targetText = dialogueBoxes[currentDialogueBox];
-        text.text = targetText[0].ToString();
+        text.text = dialogueBoxes[currentDialogueBox];
+        text.maxVisibleCharacters = 1;
     
         currentLetterIdx = 1;
         timeSinceLastLetter = 0;
