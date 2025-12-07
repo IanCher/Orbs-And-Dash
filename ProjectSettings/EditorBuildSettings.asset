@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 29e6473261333b646a60a659b6e3a2f9
   - enabled: 1
+    path: Assets/Scenes/IntroScene2D.unity
+    guid: d9ea8d444d54345ce9c33313b7bbdfce
+  - enabled: 1
     path: Assets/Scenes/Level1-Lapallas_Sea.unity
     guid: 6fe3a7cd2bbaee34eba8eb01f5a38a28
   - enabled: 1
