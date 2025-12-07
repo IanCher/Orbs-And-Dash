@@ -4909,7 +4909,7 @@ MonoBehaviour:
     PercentToSlowBy: 30
     JumpNeeded: 0
     PercentOrbsToLose: 0
-    OrbsToLose: 1
+    OrbsToLose: 3
     OrbTypeToLose: 3
   explosion: {fileID: 3490435249757070752, guid: dd20dfcc81bed433faab1189ada89ca6, type: 3}
 --- !u!114 &8532737928383171011
