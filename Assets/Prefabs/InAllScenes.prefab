@@ -1765,6 +1765,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 05423e28dee5c4c43afa9d7395359123, type: 3}
   - name: AccelerationSound
     clip: {fileID: 8300000, guid: 99d3ed163fdfc494497281146913e084, type: 3}
+  - name: HitWall
+    clip: {fileID: 8300000, guid: d9833a3df075a400aae42f4d8aa5077d, type: 3}
 --- !u!82 &5077189140079864583
 AudioSource:
   m_ObjectHideFlags: 0
