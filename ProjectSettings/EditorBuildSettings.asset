@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level4-LavaLand.unity
     guid: e62db1f672e314c4eb8f647f12e52b2d
+  - enabled: 1
+    path: Assets/Scenes/OutroScene2D.unity
+    guid: f0846a1a7bebb40089b5f0e64445ae5b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
