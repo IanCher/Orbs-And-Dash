@@ -196,7 +196,7 @@ MonoBehaviour:
     OrbsToLose: 0
     OrbTypeToLose: 3
   explosion: {fileID: 0}
-  soundToPlay: HitWall
+  soundToPlay: hit_spinning_blade
 --- !u!65 &2144480251556600758
 BoxCollider:
   m_ObjectHideFlags: 0
