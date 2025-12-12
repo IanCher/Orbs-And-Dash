@@ -37,7 +37,10 @@ public class StartCounter : MonoBehaviour
         foreach (string step in steps)
         {
             OnStep?.Invoke(step);
-            AudioManager.instance.PlaySound("Jump");
+            
+            //AudioManager.instance.PlaySound("Jump");
+            AudioManager.instance.PlaySound("countdown_"+step);
+            
             if(step == "GO")
                 OnGo?.Invoke();
             yield return new WaitForSeconds(1);

@@ -1768,6 +1768,14 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: d9833a3df075a400aae42f4d8aa5077d, type: 3}
   - name: hit_spinning_blade
     clip: {fileID: 8300000, guid: 2433a9dcf054441de8f40fb119399b9c, type: 3}
+  - name: countdown_3
+    clip: {fileID: 8300000, guid: 53c7ddad1d5cc164fac675f4874c5fb5, type: 3}
+  - name: countdown_2
+    clip: {fileID: 8300000, guid: 9f73db44b4e9d7e4895086e15283f6ca, type: 3}
+  - name: countdown_1
+    clip: {fileID: 8300000, guid: 4a5224e7313e81049bcb4725c63020e7, type: 3}
+  - name: countdown_GO
+    clip: {fileID: 8300000, guid: 23d618cb097538f4d9cb020ef3cc6d02, type: 3}
 --- !u!82 &5077189140079864583
 AudioSource:
   m_ObjectHideFlags: 0
