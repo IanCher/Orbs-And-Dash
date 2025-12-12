@@ -11769,6 +11769,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -95.35276
       objectReference: {fileID: 0}
+    - target: {fileID: 3207367308759358492, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackToMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 3467474898955383658, guid: 58edcebffbaed4ad5ad5410c864a2f56, type: 3}
       propertyPath: splineContainer
       value: 
