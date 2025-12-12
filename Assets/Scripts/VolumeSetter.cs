@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class VolumeSetter : MonoBehaviour
 {
-    [SerializeField] AudioSource soundSource;
+    MusicManager musicManager;
 
     Slider slider;
 
@@ -12,13 +12,25 @@ public class VolumeSetter : MonoBehaviour
         slider = GetComponent<Slider>();
     }
 
+    void GetMusicManager()
+    {
+        foreach(MusicManager mm in FindObjectsByType<MusicManager>(FindObjectsSortMode.None))
+        {
+            if (mm.IsTheOne())
+            {
+                musicManager = mm;
+            }
+        }
+    }
+
     void OnEnable()
     {
-        slider.value = soundSource.volume;
+        if (musicManager == null) GetMusicManager();
+        slider.value = musicManager.GetCurrentVolume();
     }
 
     public void SetVolume(float volume)
     {
-        soundSource.volume = volume;
+        musicManager.SetCurrentVolume(volume);
     }
 }

@@ -14,7 +14,6 @@ public class SceneLoader : MonoBehaviour
         {
             if (mm.IsTheOne())
             {
-                print(mm);
                 musicManager = mm;
                 musicManager.SelectSong(GetActiveSceneIdx());
                 musicManager.FadeIn();

@@ -48,11 +48,15 @@ public class MusicManager : MonoBehaviour
         audioSource.clip = tracks[idx];
     }
 
-    public void SetVolume(float volume)
+    public void SetCurrentVolume(float volume)
     {
         currentVolume = volume;
 
         if (!isFadingOut && !isFadingIn) audioSource.volume = volume;
+    }
+    public float GetCurrentVolume()
+    {
+        return currentVolume;
     }
 
     public void FadeIn()
