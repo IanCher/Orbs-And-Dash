@@ -6,6 +6,21 @@ using UnityEngine.UI;
 public class SceneLoader : MonoBehaviour
 {
     [SerializeField] FadeInOut fadeInOut;
+    MusicManager musicManager;
+
+    void Start()
+    {
+        foreach(MusicManager mm in FindObjectsByType<MusicManager>(FindObjectsSortMode.None))
+        {
+            if (mm.IsTheOne())
+            {
+                print(mm);
+                musicManager = mm;
+                musicManager.SelectSong(GetActiveSceneIdx());
+                musicManager.FadeIn();
+            }
+        }
+    }
 
     public void LoadSceneByIndex(int index)
     {
@@ -33,6 +48,7 @@ public class SceneLoader : MonoBehaviour
     private IEnumerator LoadSceneAfterFadeOutTime(int sceneIdx)
     {
         fadeInOut.StartFadeOut();
+        musicManager.FadeOut();
         yield return new WaitForSecondsRealtime(fadeInOut.GetFadeOutTime());
         SceneManager.LoadScene(sceneIdx);
     }
