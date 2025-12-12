@@ -6,6 +6,8 @@ public static class PlayerData
     public const string RARE_ORBS = "RareOrbs";
     public const string RARE_ORBS_Track = "RareOrbsTrack";
     public const string TUTORIAL_COMPLETED = "TUTORIAL_COMPLETED";
+    public const string OUTRO_COMPLETED = "OUTRO_COMPLETED";
+    public const string INTRO_COMPLETED = "INTRO_COMPLETED";
     public static int NormalOrbs
     {
         get
@@ -26,6 +28,29 @@ public static class PlayerData
         set
         {
             PlayerPrefs.SetInt(RARE_ORBS, value);
+        }
+    }
+
+    public static int IsOutroComplete
+    {
+        get
+        {
+            return PlayerPrefs.GetInt(OUTRO_COMPLETED, 0);
+        }
+        set
+        {
+            PlayerPrefs.SetInt(OUTRO_COMPLETED, value);
+        }
+    }
+    public static int IsIntroComplete
+    {
+        get
+        {
+            return PlayerPrefs.GetInt(INTRO_COMPLETED, 0);
+        }
+        set
+        {
+            PlayerPrefs.SetInt(INTRO_COMPLETED, value);
         }
     }
 

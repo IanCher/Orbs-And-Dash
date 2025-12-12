@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -69,6 +70,10 @@ public class DialogueManager : MonoBehaviour
     public void UpdateTextBox()
     {
         if (currentDialogueBox == dialogueBoxes.Length){
+            if(SceneManager.GetActiveScene().buildIndex == 5)
+            PlayerData.IsOutroComplete = 1;
+            if (SceneManager.GetActiveScene().buildIndex == 1)
+                PlayerData.IsIntroComplete = 1;
             sceneLoader.LoadNextScene();
             return;
         }

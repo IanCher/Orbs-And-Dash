@@ -10,6 +10,8 @@ public class ResetGameProgession : MonoBehaviour
         PlayerPrefs.DeleteKey(PlayerData.RARE_ORBS);
         PlayerPrefs.DeleteKey(PlayerData.RARE_ORBS_Track);
         PlayerPrefs.DeleteKey(PlayerData.TUTORIAL_COMPLETED);
+        PlayerPrefs.DeleteKey(PlayerData.INTRO_COMPLETED);
+        PlayerPrefs.DeleteKey(PlayerData.OUTRO_COMPLETED);
 
         mainMenuUI.SetProgressionText();
     }
