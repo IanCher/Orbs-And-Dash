@@ -8,6 +8,7 @@ public class TutorialManager : MonoBehaviour
 
     [SerializeField] private TutorialUI tutorialUI;
     [SerializeField] private bool enableTutorial = false;
+    [SerializeField] private RectTransform wasdUI;
 
 
     private void Awake()
@@ -65,6 +66,11 @@ public class TutorialManager : MonoBehaviour
                 StartCoroutine(ShowTutorialForFixedTime(id));
 
                 break;
+
+                case 2:
+                wasdUI.gameObject.SetActive(true);
+                StartCoroutine(ShowTutorialForFixedTime(id));
+                break;
             case 4:
                 tutorialUI.EnableVisual(id);
                 Pause();
@@ -72,6 +78,7 @@ public class TutorialManager : MonoBehaviour
 
                 case 5:
                 PlayerData.TutorialCompleted = 1;
+                wasdUI.gameObject.SetActive(false);
                 StartCoroutine(ShowTutorialForFixedTime(id));
 
                 break;
