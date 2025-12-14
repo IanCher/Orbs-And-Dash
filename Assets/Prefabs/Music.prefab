@@ -149,4 +149,5 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 3ea0912d844dd481894954d4d40b06bd, type: 3}
   - {fileID: 8300000, guid: b090ef55ab27e4a16bdbaa5f02875b93, type: 3}
   - {fileID: 8300000, guid: a40044049c0894886846c4657680a6d0, type: 3}
+  - {fileID: 8300000, guid: b090ef55ab27e4a16bdbaa5f02875b93, type: 3}
   timeToFade: 1.5
