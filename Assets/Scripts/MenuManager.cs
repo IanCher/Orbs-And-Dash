@@ -9,6 +9,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject shopMenu;
     [SerializeField] private GameObject resetGameMenu;
     [SerializeField] private GameObject selectLevelMenu;
+    [SerializeField] private GameObject creditsMenu;
 
     public void ShowMainMenu()
     {
@@ -16,6 +17,7 @@ public class MenuManager : MonoBehaviour
         shopMenu.SetActive(false);
         resetGameMenu.SetActive(false);
         selectLevelMenu.SetActive(false);
+        creditsMenu.SetActive(false);
     }
 
     private void Start()
@@ -49,5 +51,11 @@ public class MenuManager : MonoBehaviour
     {
         mainMenu.SetActive(false);
         selectLevelMenu.SetActive(true);
+    }
+
+    public void ShowCreditsMenu()
+    {
+        mainMenu.SetActive(false);
+        creditsMenu.SetActive(true);
     }
 }
