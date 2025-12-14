@@ -7,6 +7,7 @@ public class EndLevelUI : MonoBehaviour
 
     private void OnEnable()
     {
+        if (resultText == null) return;
         resultText.text = $"Orbs Collected {OrbCounterManager.lowOrbCount}/{RareOrbHandler.OrbCountRequired}\r\nTime Took {TimerUI.GetTimeString()}";
     }
 }

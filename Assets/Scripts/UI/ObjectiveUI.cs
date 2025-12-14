@@ -7,11 +7,12 @@ public class ObjectiveUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI objectiveText;
     [SerializeField] private float duration = 5;
+    [SerializeField] private bool isBonusStage = false;
     public static event Action OnHide;
 
     private void Awake()
     {
-        RareOrbHandler.OnRequirementSet += RareOrbHandler_OnRequirementSet;
+        if (!isBonusStage) RareOrbHandler.OnRequirementSet += RareOrbHandler_OnRequirementSet;
     }
 
     private void Start()

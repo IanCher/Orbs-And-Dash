@@ -13,6 +13,7 @@ public class EndLevel : MonoBehaviour
     [SerializeField] Canvas finishCanvas;
     [SerializeField] TMP_Text finishText;
     [SerializeField] RareOrbHandler rareOrbHandler;
+    [SerializeField] bool isBonusStage = false;
 
     void OnTriggerEnter(Collider other)
     {
@@ -21,6 +22,8 @@ public class EndLevel : MonoBehaviour
         timerUI.StopTrackingTime();
         finishCanvas.gameObject.SetActive(true);
 
+        if (isBonusStage) return;
+        
         if (HasPlayerWon())
         {
             finishText.text = "You win!!!";
