@@ -6,7 +6,7 @@ public class MusicManager : MonoBehaviour
 {
     private AudioSource audioSource;
 
-    private static MusicManager instance;
+    public static MusicManager instance;
 
     [Tooltip("The tracks should be in the same order as the scenes in the build profile.")]
     [SerializeField] AudioClip[] tracks;

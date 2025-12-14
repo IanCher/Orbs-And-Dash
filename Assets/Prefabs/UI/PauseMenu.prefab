@@ -1546,7 +1546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74eedcd8c51b24a5eb2954494e99829c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundSource: {fileID: 0}
+  audioManagerType: 0
 --- !u!1 &2867331745377351792
 GameObject:
   m_ObjectHideFlags: 0
@@ -2734,7 +2734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74eedcd8c51b24a5eb2954494e99829c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundSource: {fileID: 0}
+  audioManagerType: 1
 --- !u!1 &4118765231919686753
 GameObject:
   m_ObjectHideFlags: 0
