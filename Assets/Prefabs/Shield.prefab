@@ -9949,19 +9949,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7038627637922674648, guid: 8565d5ecdebd34c10b1cdeaedb947278, type: 3}
       propertyPath: TrailModule.colorOverTrail.maxGradient.key0.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7038627637922674648, guid: 8565d5ecdebd34c10b1cdeaedb947278, type: 3}
-      propertyPath: TrailModule.colorOverTrail.maxGradient.key0.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7038627637922674648, guid: 8565d5ecdebd34c10b1cdeaedb947278, type: 3}
-      propertyPath: TrailModule.colorOverTrail.maxGradient.key0.r
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7038627637922674648, guid: 8565d5ecdebd34c10b1cdeaedb947278, type: 3}
-      propertyPath: TrailModule.colorOverTrail.maxGradient.key1.b
+      propertyPath: TrailModule.colorOverTrail.maxGradient.key0.g
+      value: 0.9700117
+      objectReference: {fileID: 0}
+    - target: {fileID: 7038627637922674648, guid: 8565d5ecdebd34c10b1cdeaedb947278, type: 3}
+      propertyPath: TrailModule.colorOverTrail.maxGradient.key0.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7038627637922674648, guid: 8565d5ecdebd34c10b1cdeaedb947278, type: 3}
+      propertyPath: TrailModule.colorOverTrail.maxGradient.key1.b
+      value: 0.10399532
       objectReference: {fileID: 0}
     - target: {fileID: 7038627637922674648, guid: 8565d5ecdebd34c10b1cdeaedb947278, type: 3}
       propertyPath: TrailModule.colorOverTrail.maxGradient.key1.g
@@ -9969,7 +9969,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7038627637922674648, guid: 8565d5ecdebd34c10b1cdeaedb947278, type: 3}
       propertyPath: TrailModule.colorOverTrail.maxGradient.key1.r
-      value: 0.99285436
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8227135505693370727, guid: 8565d5ecdebd34c10b1cdeaedb947278, type: 3}
       propertyPath: prewarm
@@ -9981,19 +9981,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8227135505693370727, guid: 8565d5ecdebd34c10b1cdeaedb947278, type: 3}
       propertyPath: TrailModule.colorOverTrail.maxGradient.key0.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8227135505693370727, guid: 8565d5ecdebd34c10b1cdeaedb947278, type: 3}
-      propertyPath: TrailModule.colorOverTrail.maxGradient.key0.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8227135505693370727, guid: 8565d5ecdebd34c10b1cdeaedb947278, type: 3}
-      propertyPath: TrailModule.colorOverTrail.maxGradient.key0.r
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8227135505693370727, guid: 8565d5ecdebd34c10b1cdeaedb947278, type: 3}
-      propertyPath: TrailModule.colorOverTrail.maxGradient.key1.b
+      propertyPath: TrailModule.colorOverTrail.maxGradient.key0.g
+      value: 0.9700117
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227135505693370727, guid: 8565d5ecdebd34c10b1cdeaedb947278, type: 3}
+      propertyPath: TrailModule.colorOverTrail.maxGradient.key0.r
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8227135505693370727, guid: 8565d5ecdebd34c10b1cdeaedb947278, type: 3}
+      propertyPath: TrailModule.colorOverTrail.maxGradient.key1.b
+      value: 0.10399532
       objectReference: {fileID: 0}
     - target: {fileID: 8227135505693370727, guid: 8565d5ecdebd34c10b1cdeaedb947278, type: 3}
       propertyPath: TrailModule.colorOverTrail.maxGradient.key1.g
@@ -10001,7 +10001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8227135505693370727, guid: 8565d5ecdebd34c10b1cdeaedb947278, type: 3}
       propertyPath: TrailModule.colorOverTrail.maxGradient.key1.r
-      value: 0.99285436
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
