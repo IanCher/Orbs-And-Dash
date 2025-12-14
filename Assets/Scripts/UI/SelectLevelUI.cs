@@ -5,9 +5,10 @@ public class SelectLevelUI : MonoBehaviour
 {
     [SerializeField] private Image[] rareOrbCollected;
 
-    private void Start()
+
+    private void OnEnable()
     {
-        for(int i = 0; i <= 2; i++)
+        for (int i = 0; i <= 2; i++)
         {
             if (PlayerData.RareOrbsTrack.Contains(i.ToString()))
             {
@@ -20,4 +21,5 @@ public class SelectLevelUI : MonoBehaviour
 
         }
     }
+    
 }
