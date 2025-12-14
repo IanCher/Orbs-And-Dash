@@ -1,8 +1,6 @@
 using System;
 using UnityEngine;
 using TMPro;
-using NUnit.Framework.Internal;
-using UnityEditor.SearchService;
 
 public class EndLevel : MonoBehaviour
 {
