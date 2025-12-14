@@ -28,7 +28,7 @@ public class OrbCounterManager : MonoBehaviour
         PotionBomb.OnCollidedWithPotion += PlayerOrbCollector_OnCollidedWithPotion;
         MysterySpell.OnCollideWithMysterySpell += PlayerOrbCollector_OnCollidedWithMysterySpell;
         EndLevel.OnPlayerWon += EndLevel_OnPlayerWon;
-
+        lowOrbCount = 0;
     }
 
     private void EndLevel_OnPlayerWon()
