@@ -31,17 +31,16 @@ public class SetControlType : MonoBehaviour
 
     public void SwitchControlType()
     {
-        string controlStyle = PlayerPrefs.GetString("ControlStyle", "default");
-
-        if (controlStyle == "default")
+        if (toggle.isOn)
         {
             PlayerPrefs.SetString("ControlStyle", "rotational");
+            UpdateText("rotational");
         }
         else
         {
             PlayerPrefs.SetString("ControlStyle", "default");
+            UpdateText("default");
         }
-        UpdateText(PlayerPrefs.GetString("ControlStyle", "default"));
     }
 
     void UpdateText(string controlStyle)
