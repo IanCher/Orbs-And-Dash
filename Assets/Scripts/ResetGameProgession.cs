@@ -12,6 +12,9 @@ public class ResetGameProgession : MonoBehaviour
         PlayerPrefs.DeleteKey(PlayerData.TUTORIAL_COMPLETED);
         PlayerPrefs.DeleteKey(PlayerData.INTRO_COMPLETED);
         PlayerPrefs.DeleteKey(PlayerData.OUTRO_COMPLETED);
+        PlayerPrefs.DeleteKey(PlayerData.UNLOCKED_LEVEL_2);
+        PlayerPrefs.DeleteKey(PlayerData.UNLOCKED_LEVEL_3);
+        PlayerPrefs.DeleteKey("ControlStyle");
 
         mainMenuUI.SetProgressionText();
     }

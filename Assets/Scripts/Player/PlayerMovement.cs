@@ -67,6 +67,18 @@ public class PlayerMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        string controlStyle = PlayerPrefs.GetString("ControlStyle", "default");
+        if (controlStyle == "default")
+        {
+            moveStyle = MoveStyle.Directional;
+            loopStyle = LoopStyle.Classic;
+        }
+        else
+        {
+            moveStyle = MoveStyle.Rotational;
+            loopStyle = LoopStyle.Gravity;
+        }
+
         movementAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
         muteAction = InputSystem.actions.FindAction("Mute");
