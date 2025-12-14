@@ -699,6 +699,8 @@ MonoBehaviour:
   finishCanvas: {fileID: 4090968738425131930}
   finishText: {fileID: 6110060136576643000}
   rareOrbHandler: {fileID: 2485067970480292621}
+  isBonusStage: 0
+  sceneLoader: {fileID: 1565546545704149174}
 --- !u!1 &3717355509063452979
 GameObject:
   m_ObjectHideFlags: 0

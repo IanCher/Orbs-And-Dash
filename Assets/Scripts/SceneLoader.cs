@@ -52,7 +52,7 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene(sceneIdx);
     }
 
-    private int GetActiveSceneIdx()
+    public int GetActiveSceneIdx()
     {
         return SceneManager.GetActiveScene().buildIndex;
     }

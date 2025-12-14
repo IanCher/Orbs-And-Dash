@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using TMPro;
 using NUnit.Framework.Internal;
+using UnityEditor.SearchService;
 
 public class EndLevel : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class EndLevel : MonoBehaviour
     [SerializeField] TMP_Text finishText;
     [SerializeField] RareOrbHandler rareOrbHandler;
     [SerializeField] bool isBonusStage = false;
+    [SerializeField] SceneLoader sceneLoader;
 
     void OnTriggerEnter(Collider other)
     {
@@ -34,6 +36,8 @@ public class EndLevel : MonoBehaviour
             finishText.text = "You lose...";
         }
 
+        UnlockNextLevel();
+
         OnEndLevelTriggerd?.Invoke();
     }
 
@@ -44,5 +48,12 @@ public class EndLevel : MonoBehaviour
         float timeLimit = rareOrbHandler.GetTimeLimit();
 
         return (finishTime <= timeLimit) && (totalOrbCount > rareOrbHandler.GetRareOrbCountRequired());
+    }
+
+    void UnlockNextLevel()
+    {
+        int currentSceneIdx = sceneLoader.GetActiveSceneIdx();
+        if (currentSceneIdx == 2) PlayerData.UnlockedLevel2 = 1;
+        else if (currentSceneIdx == 3) PlayerData.UnlockedLevel3 = 1;
     }
 }

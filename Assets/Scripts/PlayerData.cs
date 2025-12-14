@@ -8,6 +8,8 @@ public static class PlayerData
     public const string TUTORIAL_COMPLETED = "TUTORIAL_COMPLETED";
     public const string OUTRO_COMPLETED = "OUTRO_COMPLETED";
     public const string INTRO_COMPLETED = "INTRO_COMPLETED";
+    public const string UNLOCKED_LEVEL_2 = "UNLOCKED_LEVEL_2";
+    public const string UNLOCKED_LEVEL_3 = "UNLOCKED_LEVEL_3";
     public static int NormalOrbs
     {
         get
@@ -54,8 +56,6 @@ public static class PlayerData
         }
     }
 
-
-
     public static string RareOrbsTrack
     {
         get
@@ -76,6 +76,30 @@ public static class PlayerData
         set
         {
             PlayerPrefs.SetInt(TUTORIAL_COMPLETED, value);
+        }
+    }
+
+    public static int UnlockedLevel2
+    {
+        get
+        {
+            return PlayerPrefs.GetInt(UNLOCKED_LEVEL_2, 0);
+        }
+        set
+        {
+            PlayerPrefs.SetInt(UNLOCKED_LEVEL_2, value);
+        }
+    }
+
+    public static int UnlockedLevel3
+    {
+        get
+        {
+            return PlayerPrefs.GetInt(UNLOCKED_LEVEL_3, 0);
+        }
+        set
+        {
+            PlayerPrefs.SetInt(UNLOCKED_LEVEL_3, value);
         }
     }
 }
