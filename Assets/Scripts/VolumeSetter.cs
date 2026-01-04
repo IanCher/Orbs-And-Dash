@@ -35,5 +35,9 @@ public class VolumeSetter : MonoBehaviour
     public void SetVolume(float volume)
     {
         audioSource.volume = volume;
+        if (audioManagerType == AudioManagerType.Music)
+        {
+            MusicManager.instance.SetCurrentVolume(volume);
+        }
     }
 }
